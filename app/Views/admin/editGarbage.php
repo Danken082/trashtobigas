@@ -20,19 +20,20 @@
 <body>
 
     <div class="container">
-    <form action="<?= base_url('admin/create')?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('admin/edit/' .$edittrsh['id'])?>" method="post"enctype="multipart/form-data">
             <input type="hidden" id="trashId" name="trashId">
-            <input type="text" placeholder="Trash Name" name="trashName" id="trashName" required>
+            <input type="text" placeholder="Trash Name" name="trashName" id="trashName" value="<?= $edittrsh['trashName']?>" required>
             <select name="trashType" id="trashType" required>
+                <option value="<?= $edittrsh['trashType']?>" selected><?= $edittrsh['trashType']?></option>
                 <option value="Recyclable">Recyclable</option>
                 <option value="Biodegradable">Biodegradable</option>
             </select>
-            <input type="file" accept="image/*" name="trashPicture" id="trashPicture">
+            <input type="file" accept="image/*" name="trashPicture" value="<?= $edittrsh['trashPicture']?>" id="trashPicture">
             <div class="points-container">
                 <label for="points">Points: </label>
-                <input type="number" id="points" name="points" value="0" min="0" required>
+                <input type="number" id="points" name="points" value="<?= $edittrsh['points']?>" min="0" required>
             </div>
-            <button type="submit">Save</button>
+            <button type="submit">update</button>
         </form>
     </div>
 
@@ -76,7 +77,7 @@
                             <td><?= $inv['points'] ?></td>
                             <td>
                              <!--<button class="edit-btn" onclick="editTrash(<?= $inv['id'] ?>, '<?= $inv['trashName'] ?>', '<?= $inv['trashType'] ?>', <?= $inv['points'] ?>)">Edit</button>-->
-                        <a class="edit-btn" href="<?= base_url('admin/viewEdit/' .$inv['id'])?>"
+                        <a class="edit-btn" href="<?= base_url('admin/edit/' .$inv['id'])?>"
                           onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
                              <!-- <button class="delete-btn" onclick="deleteTrash()">Delete</button> -->
                         <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"
@@ -88,64 +89,6 @@
             </tbody>
         </table>
     </div>
-
-    <script>
-        document.getElementById('trashForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const formData = new FormData(this);
-            const trashId = document.getElementById('trashId').value;
-            const url = trashId ? '<?= base_url('admin/update') ?>/' + trashId : '<?= base_url('admin/create') ?>';
-
-            fetch('<?= base_url('admin/edit') ?>' , {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'id','name','type','points=' + encodeURIComponent('id','name','type','points')
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    alert('Trash item saved successfully');
-                    location.reload();
-                } else {
-                    alert('Failed to save trash item');
-                    console.error('Error:', data);
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        });
-
-        function editTrash(id, name, type, points) {
-            document.getElementById('trashId').value = id;
-            document.getElementById('trashName').value = name;
-            document.getElementById('trashType').value = type;
-            document.getElementById('points').value = points;
-        }
-
-        function deleteTrash(id) {
-            if (!confirm("Are you sure you want to delete this item?")) return;
-
-            fetch('<?= base_url('admin/delete') ?>', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'id=' + encodeURIComponent(id)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    document.getElementById('trash-' + id).remove();
-                    alert('Trash item deleted successfully!');
-                } else {
-                    alert('Failed to delete trash item.');
-                    console.error('Error:', data);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while deleting.');
-            });
-        }
-    </script>
 
 </body>
 </html>

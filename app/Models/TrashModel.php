@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class TrashModel extends Model
 {
-    protected $table            = 'trashtype';
+    protected $table            = 'trash_items';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['trashName', 'trashType', 'trashPicture', 'TotalKls'];
+    protected $allowedFields    = ['trashName', 'trashType', 'trashPicture', 'points'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
