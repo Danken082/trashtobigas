@@ -12,3 +12,7 @@ $routes->get('/home', 'AdminController::home');
 $routes->get('/inventory', 'AdminController::inventory');
 $routes->post('insertTrash', 'AdminController::insertTrash');
 $routes->get('pos', 'AdminController::pos');
+//converter
+$routes->post('convert-trash', 'TrashController::convertTrash');
+//converter
+$routes->post('qr/generate', 'QrController::generate');
