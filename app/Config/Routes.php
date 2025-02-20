@@ -16,3 +16,11 @@ $routes->get('pos', 'AdminController::pos');
 $routes->post('convert-trash', 'TrashController::convertTrash');
 //converter
 $routes->post('qr/generate', 'QrController::generate');
+
+
+//applicantRegistration
+$routes->post('/admin/register', 'AdminController::registerUser');
+    
+//searchApplicant
+$routes->get('search', 'AdminController::search');
+$routes->get('user/(:num)', 'AdminController::getUserDetails/$1');
