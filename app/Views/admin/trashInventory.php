@@ -19,6 +19,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
     <div class="container">
     <form action="<?= base_url('admin/create')?>" method="post" enctype="multipart/form-data">
             <input type="hidden" id="trashId" name="trashId">
@@ -34,6 +35,11 @@
             </div>
             <button type="submit">Save</button>
         </form>
+=======
+    <button type="submit">save</button>
+    </form>
+
+>>>>>>> b140ca20ddbc9208c64652211f5f12519af1be6e
     </div>
 
     <div>

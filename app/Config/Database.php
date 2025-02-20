@@ -29,7 +29,11 @@ class Database extends Config
         'hostname'     => 'localhost',
         'username'     => 'root',
         'password'     => '',
+<<<<<<< HEAD
         'database'     => 'trashtobigasdb',
+=======
+        'database'     => 'trashtobigas',
+>>>>>>> b140ca20ddbc9208c64652211f5f12519af1be6e
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
