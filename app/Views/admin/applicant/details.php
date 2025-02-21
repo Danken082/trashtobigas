@@ -265,8 +265,15 @@
     </div>
   </div>
   
-  <div id="userDetails"></div>
-  
+  <div class="container-details">
+  <h3>Applicant Details:</h3>
+                    <p><strong>ID Number:</strong><?= $details['idNumber']?></p>
+                    <p><strong>Name:</strong> <?= $details['firstName'] . ' ' . $details['lastName']?></p>
+                    <p><strong>Email:</strong><?= $details['email']?></p>
+                    <p><strong>Phone:</strong><?= $details['contactNo']?></p>
+                    <p><strong>Address:</strong><?= $details['address']?></p>
+                    <p><strong>Points:</strong> <?=$details['totalPoints']?></p>
+    </div>
   <div class="container">
     <h1>
       <img src="<?= base_url('images/systemlogo.png') ?>" alt="Trash to Rice Logo" class="logo-image" />
@@ -276,16 +283,6 @@
     <button onclick="convertPoints()">Convert</button>
     <div class="output" id="conversionResult"></div>
     <hr />
-    <h2>QR Code Generator</h2>
-    <input type="text" id="qr-data" placeholder="Enter text" />
-    <button onclick="generateQrCode()">Generate QR Code</button>
-    <br />
-    <img id="qr-image" style="margin-top: 10px; display: none;" />
-    <h2>QR Code Scanner</h2>
-    <button id="start-scan">Start Scan</button>
-    <button id="stop-scan" style="display: none;">Stop Scan</button>
-    <div id="qr-reader"></div>
-    <div id="qr-result"></div>
   </div>
   
   <!--profileMenu Modal-->
@@ -389,7 +386,7 @@
         return;
       }
       $.ajax({
-        url: "<?= base_url('convert-trash') ?>",
+        url: "<?= base_url('convert-trash/' . $details['id']) ?>",
         type: "POST",  
         data: { trashWeight: weight },
         success: function(response) {

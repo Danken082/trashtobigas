@@ -6,15 +6,19 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\TrashModel;
 use App\Models\ClientModel;
+use App\Models\LogHistoryModel;
 
 class AdminController extends BaseController
 {
 
+
+    private $log;
     private $trsh;
     private $client;
   
     public function __construct()
     {
+        $this->log = new LogHistoryModel();
         $this->trsh = new TrashModel();
         $this->client = new ClientModel();
     }
@@ -23,12 +27,27 @@ class AdminController extends BaseController
         return view('admin/home');
     }
 
+    private function generateIdNumber()
+    {
+
+        $lastUser = $this->client->orderBy('id', 'DESC')->first();
+    
+
+        if ($lastUser && isset($lastUser['idNumber'])) {
+            $lastIdNumber = intval($lastUser['idNumber']);
+            $newIdNumber = str_pad($lastIdNumber + 1, 5, '0', STR_PAD_LEFT);
+        } else {
+            $newIdNumber = '00001';
+        }
+    
+        return $newIdNumber;
+    }
+    
     public function registerUser()
     {
 
 
-        $newId = $this->client->generateId();
-
+        $newId = $this->generateIdNumber();
 
        $rules = [
             'firstName' => 'required|min_length[3]',
@@ -122,7 +141,7 @@ class AdminController extends BaseController
 
         $search = $this->request->getGet('query');
 // $results = 0;
-        $results = $this->client->like('firstName', $search)->findAll();
+        $results = $this->client->like('idNumber', $search)->findAll();
         return $this->response->setJSON($results);
     }
 
@@ -132,6 +151,64 @@ class AdminController extends BaseController
         $user = $this->client->find($id);
         // $user = 1;
         return $this->response->setJSON($user);
+    }
+
+
+
+    //pointingsystem
+    public function detailsView($id)
+    {
+       $data =['details' => $this->client->find($id)];
+
+       return view('admin/applicant/details', $data);
+
+    }
+
+    public function editApplicant($id)
+    {
+        $data = ['Applicant' => $this->client->find($id)];
+        
+
+        return view('admin/editApplicant', $data);
+    }
+
+    public function updateApplicant($id)
+    {
+        $data = ['firstName' => $this->request->getPost('firstName'),
+                 'lastName' => $this->request->getPost('lastName'),
+                 'birthdate' => $this->request->getPost('birthdate'),
+                 'gender'   => $this->request->getPost('gender'),
+                 'address' => $this->request->getPost('address'),
+                 'email' => $this->request->getPost('email'),
+                 'contactNo' => $this->request->getPost('contactNo')                 
+                ];
+
+
+        $this->client->where('id', $id)->set($data)->update();
+
+        return $this->response->setJSON(
+            ['status' => 'success']
+        );
+
+
+    }
+
+    public function delete($id)
+    {
+        $this->client->delete($id);
+
+        return $this->response->setJSON(['status'=> 'success']);
+    }
+
+
+
+    
+
+
+
+    public function historyLogs()
+    {
+        
     }
 
 

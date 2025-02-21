@@ -35,7 +35,7 @@ class ClientModel extends Model
 
     // Callbacks
     protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
+    protected $beforeInsert   = ['addUUID'];
     protected $afterInsert    = [];
     protected $beforeUpdate   = [];
     protected $afterUpdate    = [];
@@ -45,22 +45,41 @@ class ClientModel extends Model
     protected $afterDelete    = [];
 
 
+
+    protected function addUUID(array $data)
+    {
+        if(!isset($data['data']['uuid']))
+        {
+            $data['data']['uuid'] = $this->generateUUIDv4();
+        }
+
+        return $data;
+    }
+
+    private function generateUUIDv4()
+    {// Generate 16 random bytes
+        $data = random_bytes(16);
+        // Set version to 0100
+        $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+        // Set bits 6-7 to 10
+        $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+        // Format the bytes into a UUID string
+        return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));   
+    }
+
     public function generateId()
     {
-        $lastRecord = $this->orderBy('idNumber', 'DESC')->first();
+        // Get the last inserted user
+        $lastUser = $this->orderBy('id', 'DESC')->first();
         
-
-        if($lastRecord){
-            $newId = (int)$lastRecord['id'] + 1;
-
-
-
+        // Extract the last idNumber and increment
+        if ($lastUser && isset($lastUser['idNumber'])) {
+            $lastIdNumber = intval($lastUser['idNumber']);
+            $newIdNumber = str_pad($lastIdNumber + 1, 5, '0', STR_PAD_LEFT);
+        } else {
+            $newIdNumber = '00001';
         }
-        else
-        {
-            $newId = 1;
-        }
-
-        return sprintf('%06d', $newId);
+        
+        return $newIdNumber;
     }
 }

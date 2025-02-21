@@ -13,7 +13,7 @@ $routes->get('/inventory', 'AdminController::inventory');
 $routes->post('insertTrash', 'AdminController::insertTrash');
 $routes->get('pos', 'AdminController::pos');
 //converter
-$routes->post('convert-trash', 'TrashController::convertTrash');
+$routes->post('convert-trash/(:any)', 'TrashController::convertTrash/$1');
 //converter
 $routes->post('qr/generate', 'QrController::generate');
 
@@ -24,3 +24,10 @@ $routes->post('/admin/register', 'AdminController::registerUser');
 //searchApplicant
 $routes->get('search', 'AdminController::search');
 $routes->get('user/(:num)', 'AdminController::getUserDetails/$1');
+
+//showing of applicantDetails
+$routes->get('applicantdetails/(:any)', 'AdminController::detailsView/$1');
+
+
+$routes->get('index', 'TrashController::index');
+$routes->get('user/getUser/(:num)', 'TrashController::getUser/$1');
