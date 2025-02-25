@@ -6,22 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trash Sorting</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        table { width: 45%; border-collapse: collapse; margin: 20px; float: left; }
-        th, td { border: 1px solid black; padding: 10px; text-align: center; }
-        th { background-color: #f2f2f2; }
-        .container { margin-bottom: 20px; }
-        .points-container input { width: 60px; text-align: center; }
-        .button-container button { margin: 5px; }
-        .edit-btn { background-color: yellow; }
-        .delete-btn { background-color: red; color: white; }
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 50%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, select, button {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        /* Table Styles */
+        .table-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 45%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color:rgb(6, 83, 30);
+            color: white;
+        }
+
+        td img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Buttons */
+        .edit-btn, .delete-btn {
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+            display: inline-block;
+            margin: 3px;
+        }
+
+        .edit-btn {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .edit-btn:hover {
+            background-color: #e0a800;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 750px) {
+            .container {
+                width: 90%;
+            }
+
+            table {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
-
-<<<<<<< HEAD
     <div class="container">
-    <form action="<?= base_url('admin/create')?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('admin/create') ?>" method="post" enctype="multipart/form-data">
             <input type="hidden" id="trashId" name="trashId">
             <input type="text" placeholder="Trash Name" name="trashName" id="trashName" required>
             <select name="trashType" id="trashType" required>
@@ -35,31 +141,27 @@
             </div>
             <button type="submit">Save</button>
         </form>
-=======
-    <button type="submit">save</button>
-    </form>
-
->>>>>>> b140ca20ddbc9208c64652211f5f12519af1be6e
     </div>
 
-    <div>
+    <div class="table-container">
         <table>
             <thead>
                 <tr><th colspan="5">Recyclable Trash</th></tr>
                 <tr><th>Name</th><th>Type</th><th>Picture</th><th>Points</th><th>Actions</th></tr>
-            </thead>
-            <tbody id="recyclableTrashList">
+            </thead>    
+            <tbody>
                 <?php foreach ($Inv as $inv): ?>
                     <?php if ($inv['trashType'] === 'Recyclable'): ?>
                         <tr id="trash-<?= $inv['id'] ?>">
                             <td><?= $inv['trashName'] ?></td>
                             <td><?= $inv['trashType'] ?></td>
-                            <td><img src="<?= base_url('admin/edit/' . $inv['trashPicture']) ?>" width="50"></td>
+                            <td><img src="<?= base_url('uploads/' . $inv['trashPicture']) ?>" width="50"></td>
                             <td><?= $inv['points'] ?></td>
                             <td>
-                            <a class="edit-btn" href="<?= base_url('admin/viewEdit/' .$inv['id'])?>"
-                            onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
-                                <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"   onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                <a class="edit-btn" href="<?= base_url('admin/viewEdit/' .$inv['id'])?>"
+                                   onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
+                                <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"
+                                   onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                             </td>
                         </tr>
                     <?php endif; ?>
@@ -72,7 +174,7 @@
                 <tr><th colspan="5">Biodegradable Trash</th></tr>
                 <tr><th>Name</th><th>Type</th><th>Picture</th><th>Points</th><th>Actions</th></tr>
             </thead>
-            <tbody id="biodegradableTrashList">
+            <tbody>
                 <?php foreach ($Inv as $inv): ?>
                     <?php if ($inv['trashType'] === 'Biodegradable'): ?>
                         <tr id="trash-<?= $inv['id'] ?>">
@@ -81,12 +183,10 @@
                             <td><img src="<?= base_url('uploads/' . $inv['trashPicture']) ?>" width="50"></td>
                             <td><?= $inv['points'] ?></td>
                             <td>
-                             <!--<button class="edit-btn" onclick="editTrash(<?= $inv['id'] ?>, '<?= $inv['trashName'] ?>', '<?= $inv['trashType'] ?>', <?= $inv['points'] ?>)">Edit</button>-->
-                        <a class="edit-btn" href="<?= base_url('admin/viewEdit/' .$inv['id'])?>"
-                          onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
-                             <!-- <button class="delete-btn" onclick="deleteTrash()">Delete</button> -->
-                        <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"
-                          onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                <a class="edit-btn" href="<?= base_url('admin/viewEdit/' .$inv['id'])?>"
+                                   onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
+                                <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"
+                                   onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                             </td>
                         </tr>
                     <?php endif; ?>
@@ -94,64 +194,5 @@
             </tbody>
         </table>
     </div>
-
-    <script>
-        document.getElementById('trashForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const formData = new FormData(this);
-            const trashId = document.getElementById('trashId').value;
-            const url = trashId ? '<?= base_url('admin/update') ?>/' + trashId : '<?= base_url('admin/create') ?>';
-
-            fetch('<?= base_url('admin/edit') ?>' , {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'id','name','type','points=' + encodeURIComponent('id','name','type','points')
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    alert('Trash item saved successfully');
-                    location.reload();
-                } else {
-                    alert('Failed to save trash item');
-                    console.error('Error:', data);
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        });
-
-        function editTrash(id, name, type, points) {
-            document.getElementById('trashId').value = id;
-            document.getElementById('trashName').value = name;
-            document.getElementById('trashType').value = type;
-            document.getElementById('points').value = points;
-        }
-
-        function deleteTrash(id) {
-            if (!confirm("Are you sure you want to delete this item?")) return;
-
-            fetch('<?= base_url('admin/delete') ?>', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'id=' + encodeURIComponent(id)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    document.getElementById('trash-' + id).remove();
-                    alert('Trash item deleted successfully!');
-                } else {
-                    alert('Failed to delete trash item.');
-                    console.error('Error:', data);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while deleting.');
-            });
-        }
-    </script>
-
 </body>
 </html>

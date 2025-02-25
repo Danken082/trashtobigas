@@ -192,7 +192,7 @@ class AdminController extends BaseController
     public function delete($id)
     {
         $this->trsh->delete($id);
-        return redirect()->to('/admin')->with('success', 'Trash item deleted successfully.');
+        return redirect()->to('/inventory')->with('success', 'Trash item deleted successfully.');
     }
 
 
