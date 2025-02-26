@@ -4,16 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TrashModel extends Model
+class UserModel extends Model
 {
-
-    protected $table            = 'trash_items';
-    protected $primaryKey       = 'id';
+    protected $table            = 'users';
+    protected $primaryKey       = '';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['trashName', 'trashType', 'trashPicture', 'points'];
+    protected $allowedFields    = ['username', 'password'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

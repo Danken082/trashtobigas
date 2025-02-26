@@ -50,7 +50,7 @@
 
         /* Table Styles */
         .table-container {
-            display: flex;
+            display: flex;  
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
@@ -73,7 +73,7 @@
         }
 
         th {
-            background-color:rgb(6, 83, 30);
+            background-color:rgb(23, 47, 73);
             color: white;
         }
 
@@ -118,7 +118,6 @@
             .container {
                 width: 90%;
             }
-
             table {
                 width: 90%;
             }
@@ -126,42 +125,43 @@
     </style>
 </head>
 <body>
+
     <div class="container">
-        <form action="<?= base_url('admin/create') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('admin/edit/' .$edittrsh['id'])?>" method="post"enctype="multipart/form-data">
             <input type="hidden" id="trashId" name="trashId">
-            <input type="text" placeholder="Trash Name" name="trashName" id="trashName" required>
+            <input type="text" placeholder="Trash Name" name="trashName" id="trashName" value="<?= $edittrsh['trashName']?>" required>
             <select name="trashType" id="trashType" required>
+                <option value="<?= $edittrsh['trashType']?>" selected><?= $edittrsh['trashType']?></option>
                 <option value="Recyclable">Recyclable</option>
                 <option value="Biodegradable">Biodegradable</option>
             </select>
-            <input type="file" accept="image/*" name="trashPicture" id="trashPicture">
+            <input type="file" accept="image/*" name="trashPicture" value="<?= $edittrsh['trashPicture']?>" id="trashPicture">
             <div class="points-container">
                 <label for="points">Points: </label>
-                <input type="number" id="points" name="points" value="0" min="0" required>
+                <input type="number" id="points" name="points" value="<?= $edittrsh['points']?>" min="0" required>
             </div>
-            <button type="submit">Save</button>
+            <button type="submit">update</button>
         </form>
     </div>
 
-    <div class="table-container">
+    <div>
         <table>
             <thead>
                 <tr><th colspan="5">Recyclable Trash</th></tr>
                 <tr><th>Name</th><th>Type</th><th>Picture</th><th>Points</th><th>Actions</th></tr>
-            </thead>    
-            <tbody>
+            </thead>
+            <tbody id="recyclableTrashList">
                 <?php foreach ($Inv as $inv): ?>
                     <?php if ($inv['trashType'] === 'Recyclable'): ?>
                         <tr id="trash-<?= $inv['id'] ?>">
                             <td><?= $inv['trashName'] ?></td>
                             <td><?= $inv['trashType'] ?></td>
-                            <td><img src="<?= base_url('uploads/' . $inv['trashPicture']) ?>" width="50"></td>
+                            <td><img src="<?= base_url('admin/edit/' . $inv['trashPicture']) ?>" width="50"></td>
                             <td><?= $inv['points'] ?></td>
                             <td>
-                                <a class="edit-btn" href="<?= base_url('admin/viewEdit/' .$inv['id'])?>"
-                                   onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
-                                <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"
-                                   onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                            <a class="edit-btn" href="<?= base_url('admin/viewEdit/' .$inv['id'])?>"
+                            onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
+                                <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"   onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                             </td>
                         </tr>
                     <?php endif; ?>
@@ -174,7 +174,7 @@
                 <tr><th colspan="5">Biodegradable Trash</th></tr>
                 <tr><th>Name</th><th>Type</th><th>Picture</th><th>Points</th><th>Actions</th></tr>
             </thead>
-            <tbody>
+            <tbody id="biodegradableTrashList">
                 <?php foreach ($Inv as $inv): ?>
                     <?php if ($inv['trashType'] === 'Biodegradable'): ?>
                         <tr id="trash-<?= $inv['id'] ?>">
@@ -183,10 +183,12 @@
                             <td><img src="<?= base_url('uploads/' . $inv['trashPicture']) ?>" width="50"></td>
                             <td><?= $inv['points'] ?></td>
                             <td>
-                                <a class="edit-btn" href="<?= base_url('admin/viewEdit/' .$inv['id'])?>"
-                                   onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
-                                <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"
-                                   onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                             <!--<button class="edit-btn" onclick="editTrash(<?= $inv['id'] ?>, '<?= $inv['trashName'] ?>', '<?= $inv['trashType'] ?>', <?= $inv['points'] ?>)">Edit</button>-->
+                        <a class="edit-btn" href="<?= base_url('admin/edit/' .$inv['id'])?>"
+                          onclick="return confirm('Are you sure you want to edit this item?');">Edit</a>
+                             <!-- <button class="delete-btn" onclick="deleteTrash()">Delete</button> -->
+                        <a class="delete-btn" href="<?= base_url('admin/delete/' .$inv['id'])?>"
+                          onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                             </td>
                         </tr>
                     <?php endif; ?>
@@ -194,5 +196,6 @@
             </tbody>
         </table>
     </div>
+
 </body>
 </html>
