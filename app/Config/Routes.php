@@ -31,3 +31,9 @@ $routes->get('applicantdetails/(:any)', 'AdminController::detailsView/$1');
 
 $routes->get('index', 'TrashController::index');
 $routes->get('user/getUser/(:num)', 'TrashController::getUser/$1');
+
+$routes->get('login', 'AuthController::login');
+$routes->post('login', 'AuthController::attemptLogin');
+$routes->get('logout', 'AuthController::logout');
+
+
