@@ -4,14 +4,17 @@ namespace App\Controllers;
 use App\Models\TrashModel;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\ClientModel;
+use App\Models\LogHistoryModel;
 
 class TrashController extends ResourceController {
 
     private $client;
+    private $log;
 
     public function _construct()
     {
         $this->client = new ClientModel();
+        $this->log = new LogHistoryModel();
     }
     public function convertTrash($id) {
 
@@ -47,7 +50,7 @@ class TrashController extends ResourceController {
 
        
 
-    //    // Save conversion to database
+    //// Save conversion to database
 
         
 
@@ -62,12 +65,32 @@ class TrashController extends ResourceController {
                 'status' => 'success',
                 'points' => number_format($points, 2),
                 'riceKilos' => number_format($riceKilos, 2),
+                'totalPoints' => number_format($updatePoints, 2)
             ]);
 
         // $this->addHistory($updatePoints, $id, $weight);
 
     }
 
+    private function updateUserPointsLog($id)
+    {
+        // $this->client->find($id);
+        $userID = 1;#session()->get('id');
+
+        $client = new ClientModel();
+        // $user
+         $client = $this->client->where('id', $id)->first();
+            // print($client);
+         $data = ['userID' => $userID,
+                  'accID' => $client['idNumber'],
+                  'actionType' => 'Update'    
+        ];
+
+        $this->log->save($data);
+
+
+
+    }
 
     private function addHistory($points, $id, $weight)
     {

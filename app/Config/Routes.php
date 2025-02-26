@@ -31,3 +31,13 @@ $routes->get('applicantdetails/(:any)', 'AdminController::detailsView/$1');
 
 $routes->get('index', 'TrashController::index');
 $routes->get('user/getUser/(:num)', 'TrashController::getUser/$1');
+
+
+//view users
+$routes->get('viewapplicants/', 'AdminController::viewAllApplicant');
+$routes->get('deleteUser/(:num)', 'AdminController::insertIDNumber/$1');
+
+
+//for inventory
+$routes->get('viewInventory', 'AdminController::viewInventory');
+$routes->get('displayInventory', 'AdminController::displayInventoryTable');

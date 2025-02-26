@@ -7,6 +7,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\TrashModel;
 use App\Models\ClientModel;
 use App\Models\LogHistoryModel;
+use App\Models\InventoryModel;
 
 class AdminController extends BaseController
 {
@@ -15,12 +16,15 @@ class AdminController extends BaseController
     private $log;
     private $trsh;
     private $client;
+    private $inv;
   
     public function __construct()
     {
-        $this->log = new LogHistoryModel();
+        $this->log = new LogHistoryModel();  
         $this->trsh = new TrashModel();
         $this->client = new ClientModel();
+        $this->inv = new InventoryModel();
+
     }
     public function home()
     {
@@ -193,17 +197,67 @@ class AdminController extends BaseController
 
     }
 
-    public function delete($id)
+    public function insertIDNumber($id)
+    {
+
+    $userID = 1;#session()->get('id');
+
+    $client = new ClientModel();
+    // $user
+     $client = $client->where('id', $id)->first();
+        // print($client);
+     $data = ['userID' => $userID,
+              'accID' => $client['idNumber'],
+              'actionType' => 'Delete'    
+    ];
+
+
+    $this->delete($id);
+    $this->log->save($data);
+
+    return $this->response->setJSON(['status'=> 'success']);
+    }
+
+    private function delete($id)
     {
         $this->client->delete($id);
 
-        return $this->response->setJSON(['status'=> 'success']);
+        //to find the id of deleted applicant
+    //    $applicant = $this->client->find($id);
+    // $this->insertIDNumber($id);
+    //    echo($applicant['id']);
+    $client = new ClientModel();
+    $clients = $client->where('id', $id)->first();
+    // var_dump($clients);
+    }
+
+    
+
+
+    public function viewAllApplicant()
+    {
+     $data =  ['applicant' =>$this->client->findAll(),];
+
+
+     return view('admin/applicant/editApplicant', $data);
     }
 
 
 
+    //for inventory
+    public function viewInventory()
+    {
+       return view('admin/inventory/viewInventory');
+    }
     
 
+
+    public function displayInventoryTable()
+    {
+        $client = $this->inv->findAll();
+
+        return $this->response->setJSON($client);
+    }
 
 
     public function historyLogs()
