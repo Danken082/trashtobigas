@@ -11,6 +11,8 @@
 <body>
 
 <div class="container">
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveToInventory">Add Items</button>
+
     <table border="1" class="table table-striped table-hover table-bordered" style="border-radius: 15px; overflow: hidden;">
         <thead class="table-dark">
             <tr>
@@ -26,6 +28,47 @@
     </table>
 </div>
 
+<div class="modal fade" id="saveToInventory" tabindex="-1" aria-labelledby="saveToInventorylabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="saveToInventorylabel">Inventory</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="saveInventory">
+                <div class="modal-body">
+                    <input type="hidden" name="id" id="itemId">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="itemName" class="form-label">Item</label>
+                            <input type="text" class="form-control" name="item" id="itemName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="itemPrice" class="form-label">Category</label>
+                            <input type="text" class="form-control" name="category" id="itemCategory" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" name="quantity" id="itemQuantity" required>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="pointsPrice" class="form-label">Point Price</label>
+                            <input type="text" class="form-control"  name="pointPrice" id="pointPrice" required>
+                        </div>
+
+                    </div>
+                  </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 <div class="modal fade" id="editInventory" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -55,7 +98,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="pointsPrice" class="form-label">Point Price</label>
-                            <input type="text" class="form-control" disabled name="pointPrice" id="pointPrice" required>
+                            <input type="text" class="form-control"  name="pointPrice" id="pointPrice" required>
                         </div>
                     </div>
                   </div>
@@ -102,12 +145,12 @@
 
     loadAdminData();
 
-    $("#adminRegisterForm").submit(function(event) {
+    $("#saveInventory").submit(function(event) {
         event.preventDefault();
         let formData = $(this).serialize();
 
         $.ajax({
-            url: "<?= base_url('/admin/register') ?>",
+            url: "<?= base_url('/addInventory') ?>",
             type: "POST",
             data: formData,
             dataType: "json",
@@ -121,9 +164,9 @@
                     $("#alert-message").html(errorMessage);
                 } else {
                     $("#alert-message").html('<div class="alert alert-success">' + response.message + '</div>');
-                    $("#adminRegisterForm")[0].reset();
+                    $("#saveInventory")[0].reset();
                     setTimeout(() => {
-                        $("#registerModal").modal('hide');
+                        $("#saveToInventory").modal('hide');
                         $("#alert-message").html('');
                         loadAdminData();
                     }, 2000);
@@ -131,6 +174,9 @@
             }
         });
     });
+
+
+    // $()
 });
 
 

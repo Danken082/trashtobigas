@@ -9,6 +9,11 @@ use App\Models\ClientModel;
 use App\Models\LogHistoryModel;
 use App\Models\InventoryModel;
 
+
+//library for qr code
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Writer\PngWriter;
+
 class AdminController extends BaseController
 {
 
@@ -47,11 +52,21 @@ class AdminController extends BaseController
     
         return $newIdNumber;
     }
+
+    public function list()
+    {
+        $client = $this->client->findAll();
+        return $this->response->setJSON($client);
+    }
     
+
+
+
+    //registration of users
     public function registerUser()
     {
 
-
+        //id generator
         $newId = $this->generateIdNumber();
 
        $rules = [
@@ -83,6 +98,8 @@ class AdminController extends BaseController
 
         ];
 
+        // $this->qrGenerator($newId);
+
 
 
         $this->client->save($data);
@@ -94,6 +111,24 @@ class AdminController extends BaseController
     
     }
 
+
+    //qr generator
+    public function Generate()
+    {
+        $data = $this->generateIdNumber();
+
+        if (!$data) {
+            return $this->response->setJSON(['error' => 'No data provided']);
+        }
+
+        $qrCode = QrCode::create($data)->setSize(300)->setMargin(10);
+        $writer = new PngWriter();
+        $qrCodeImage = $writer->write($qrCode)->getString();
+
+        return $this->response->setJSON([
+            'qr_code' => 'data:image/png;base64,' . base64_encode($qrCodeImage)
+        ]);
+    }
     public function insertTrash()
     {
         $data = [
@@ -212,7 +247,7 @@ class AdminController extends BaseController
         return view('admin/editGarbage', $data);
 
     }
-    public function delete($id)
+    public function deletetrsh($id)
     {
         $this->trsh->delete($id);
         return redirect()->to('/inventory')->with('success', 'Trash item deleted successfully.');
@@ -338,6 +373,20 @@ class AdminController extends BaseController
         $client = $this->inv->findAll();
 
         return $this->response->setJSON($client);
+    }
+
+
+    public function addToInventory()
+    {
+        $data = ['item' => $this->request->getVar('item'),
+                 'category' => $this->request->getVar('category'),
+                 'quantity' => $this->request->getVar('quantity'),
+                 'point_price' => $this->request->getVar('pointPrice')
+                ];
+
+        $this->inv->save($data);
+
+        return $this->response->setJSON(['status' => 'success']);
     }
 
 
