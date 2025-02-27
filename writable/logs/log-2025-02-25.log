@@ -1,4 +1,0 @@
-CRITICAL - 2025-02-25 02:56:14 --> ErrorException: Cannot redeclare App\Controllers\AdminController::delete()
-[Method: GET, Route: inventory]
-in APPPATH\Controllers\AdminController.php on line 277.
- 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
