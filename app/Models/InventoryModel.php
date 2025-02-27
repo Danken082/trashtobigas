@@ -4,29 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class InventoryModel extends Model
 {
-
-    protected $table            = 'users';
+    protected $table            = 'inventory_table';
     protected $primaryKey       = 'id';
-    protected $primaryKey       = '';
-
-    protected $table            = 'user_tbl';
-    protected $primaryKey       = 'id';
-
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-
-
-    protected $allowedFields    = [];
-
-    protected $allowedFields    = ['username', 'password'];
-
-    protected $allowedFields    = ['userName', 'password', 'lastName', 'firstName','updated_at'];
-
-
+    protected $allowedFields    = ['item', 'category', 'quantity', 'point_price', 'update_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

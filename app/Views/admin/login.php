@@ -115,14 +115,14 @@
   <!-- Login Card -->
   <div class="login-card">
     <div class="login-title">Trash to Bigas Login</div>
-    <form>
-      <div class="form-group">
+  <form action="<?= base_url('auth/login')?>" method="post">
+    <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" placeholder="Enter username">
+        <input type="text" class="form-control" name="username"id="username" placeholder="Enter username">
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter password">
+        <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
       </div>
       <button type="submit" class="btn btn-login">Login</button>
       <a href="#" class="forgot-password" data-toggle="modal" data-target="#forgotPasswordModal">Forgot Password?</a>

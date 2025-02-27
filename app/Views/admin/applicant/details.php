@@ -376,33 +376,35 @@
       }
     });
 
+
+    function convertPoints() {
+    let weight = $("#trashWeight").val();
+    if (weight <= 0) {
+      alert("Please enter a valid trash weight!");
+      return;
+    }
+    $.ajax({
+      url: "<?= base_url('convert-trash/' . $details['id']) ?>",
+      type: "POST",  
+      data: { trashWeight: weight },
+      success: function(response) {
+        if (response.status === "success") {
+          $("#conversionResult").html(`You earned <strong>${response.points}</strong> points, which equals <strong>${response.riceKilos}</strong> kilo/s of rice!`);
+          
+          // Update totalPoints in container-details
+          $(".container-details").find("p:contains('Points:')").html(`<strong>Points:</strong> ${response.totalPoints}`);
+        } else {
+          $("#conversionResult").html(`<span style="color: red;">${response.message}</span>`);
+        }
+      },
+      error: function() {
+        alert("An error occurred while converting points. Please try again later.");
+      }
+    });
+  }
     
 
-    
-    function convertPoints() {
-      let weight = $("#trashWeight").val();
-      if (weight <= 0) {
-        alert("Please enter a valid trash weight!");
-        return;
-      }
-      $.ajax({
-        url: "<?= base_url('convert-trash/' . $details['id']) ?>",
-        type: "POST",  
-        data: { trashWeight: weight },
-        success: function(response) {
-          if (response.status === "success") {
-            $("#conversionResult").html(`You earned <strong>${response.points}</strong> points, which equals <strong>${response.riceKilos}</strong> kilo/s of rice!`);
-          } else {
-            $("#conversionResult").html(`<span style="color: red;">${response.message}</span>`);
-          }
-        },
-        error: function() {
-          $("#conversionResult").html(`<span style="color: red;">Error processing request.</span>`);
-        }
-      });
-    }
-    
-    function generateQrCode() {
+      function generateQrCode() {
       let data = $('#qr-data').val();
       if (!data) {
         alert("Enter some text!");
@@ -501,6 +503,7 @@
   
   <script src="<?= base_url('/js/admin/modal.js')?>"></script>
   <script src="<?= base_url('/js/admin/search.js')?>"></script>
+  <script src="<?= base_url('js/admin/detailstoload.js')?>"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

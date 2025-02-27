@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => '',
+        'password'     => 'dankeneth22113344',
         'database'     => 'trashtobigasdb',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',

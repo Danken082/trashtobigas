@@ -21,12 +21,13 @@ $routes->get('admin/viewEdit/(:any)', 'AdminController::viewEdit/$1');
 //converter
 $routes->post('convert-trash/(:any)', 'TrashController::convertTrash/$1');
 //converter
-$routes->post('qr/generate', 'QrController::generate');
+$routes->post('qr/generate', 'AdminController::generate');
 
 
 
 //applicantRegistration
 $routes->post('/admin/register', 'AdminController::registerUser');
+$routes->get('/admin/list/', 'AdminController::list');
     
 //searchApplicant
 $routes->get('search', 'AdminController::search');
@@ -39,6 +40,7 @@ $routes->get('applicantdetails/(:any)', 'AdminController::detailsView/$1');
 
 $routes->get('index', 'TrashController::index');
 $routes->get('user/getUser/(:num)', 'TrashController::getUser/$1');
+
 
 
 //products to ha
@@ -54,7 +56,24 @@ $routes->get('/ecommerce', 'ProductController::index');
 
 $routes->get('login', 'AuthController::login');
 $routes->post('login', 'AuthController::attemptLogin');
+
+//view users
+$routes->get('viewapplicants/', 'AdminController::viewAllApplicant');
+$routes->get('deleteUser/(:num)', 'AdminController::insertIDNumber/$1');
+
+
+//for inventory
+$routes->get('viewInventory', 'AdminController::viewInventory');
+$routes->get('displayInventory', 'AdminController::displayInventoryTable');
+$routes->post('addInventory', 'AdminController::addToInventory');
+
+
+//===login====
+$routes->match(['get', 'post'], 'login', 'AuthController::login');
+$routes->post('auth/login', 'AuthController::attemptLogin');
+
 $routes->get('logout', 'AuthController::logout');
+
 
 
 

@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class LogHistoryModel extends Model
 {
-    protected $table            = 'loghistories';
+    protected $table            = 'log_history';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
