@@ -9,6 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 //insert ng basura
 $routes->get('/', 'Home::index');
 $routes->get('/home', 'AdminController::home');
+// $routes->get('/ecommerce', 'AdminController::ecommerce');
 $routes->get('/inventory', 'AdminController::inventory');
 $routes->post('insertTrash', 'AdminController::insertTrash');
 $routes->get('pos', 'AdminController::pos');
@@ -41,6 +42,21 @@ $routes->get('index', 'TrashController::index');
 $routes->get('user/getUser/(:num)', 'TrashController::getUser/$1');
 
 
+
+//products to ha
+$routes->get('/admin/products/', 'ProductController::index');
+$routes->get('/products/create', 'ProductController::create');
+$routes->post('/products/store', 'ProductController::store');
+$routes->get('/products/edit/(:num)', 'ProductController::edit/$1');
+$routes->post('/products/update/(:num)', 'ProductController::update/$1');
+$routes->get('/products/delete/(:num)', 'ProductController::delete/$1');
+
+$routes->get('/ecommerce', 'ProductController::index');
+
+
+$routes->get('login', 'AuthController::login');
+$routes->post('login', 'AuthController::attemptLogin');
+
 //view users
 $routes->get('viewapplicants/', 'AdminController::viewAllApplicant');
 $routes->get('deleteUser/(:num)', 'AdminController::insertIDNumber/$1');
@@ -55,9 +71,10 @@ $routes->post('addInventory', 'AdminController::addToInventory');
 //===login====
 $routes->match(['get', 'post'], 'login', 'AuthController::login');
 $routes->post('auth/login', 'AuthController::attemptLogin');
+
 $routes->get('logout', 'AuthController::logout');
 
 
 
 
-// >>>>>>> 864b6cebd8709db269757bf8146f2f6e2a28cccd
+

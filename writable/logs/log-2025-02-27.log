@@ -1,84 +1,106 @@
-CRITICAL - 2025-02-27 00:15:00 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "ho,"
-[Method: GET, Route: ho,]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('ho,')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('ho,')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 00:15:29 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
-[Method: GET, Route: %3C]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('<')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('<')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-CRITICAL - 2025-02-27 01:54:55 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "40 onlick="
-[Method: GET, Route: deleteUser/40%20onlick=]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('deleteUser/40 onlick=')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('deleteUser/40 onlick=')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 01:55:03 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "40 onlick="
-[Method: GET, Route: deleteUser/40%20onlick=]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('deleteUser/40 onlick=')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('deleteUser/40 onlick=')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 01:55:07 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "40 onclick="
-[Method: GET, Route: deleteUser/40%20onclick=]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('deleteUser/40 onclick=')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('deleteUser/40 onclick=')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 01:55:29 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "40 onclick="
-[Method: GET, Route: deleteUser/40%20onclick=]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('deleteUser/40 onclick=')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('deleteUser/40 onclick=')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 01:56:31 --> ErrorException: Undefined variable $client
-[Method: GET, Route: viewapplicants]
-in APPPATH\Views\admin\applicant\editApplicant.php on line 33.
- 1 APPPATH\Views\admin\applicant\editApplicant.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client', 'C:\\Backup\\trashtobigas\\app\\Views\\admin\\applicant\\editApplicant.php', 33)
- 2 SYSTEMPATH\View\View.php(234): include('C:\\Backup\\trashtobigas\\app\\Views\\admin\\applicant\\editApplicant.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/applicant/editApplicant', [], true)
- 5 APPPATH\Controllers\AdminController.php(356): view('admin/applicant/editApplicant', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->viewAllApplicant()
+ERROR - 2025-02-27 03:47:23 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\laragon\www\trashtobigas\system\Database\MySQLi\Connection.php:187
+Stack trace:
+#0 C:\laragon\www\trashtobigas\system\Database\MySQLi\Connection.php(187): mysqli->real_connect('localhost', 'root', 'dankeneth221133...', 'trashtobigasdb', 3306, '', 0)
+#1 C:\laragon\www\trashtobigas\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\trashtobigas\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\trashtobigas\app\Controllers\AdminController.php(259): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AdminController->viewEdit('24')
+#8 C:\laragon\www\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\laragon\www\trashtobigas\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\laragon\www\trashtobigas\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\laragon\www\trashtobigas\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\trashtobigas\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\trashtobigas\app\Controllers\AdminController.php(259): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AdminController->viewEdit('24')
+#7 C:\laragon\www\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#8 C:\laragon\www\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\laragon\www\trashtobigas\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2025-02-27 03:47:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: admin/viewEdit/24]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `trash_items`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\AdminController.php(259): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->viewEdit('24')
  7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
  8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 02:56:00 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+ERROR - 2025-02-27 03:47:53 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\laragon\www\trashtobigas\system\Database\MySQLi\Connection.php:187
+Stack trace:
+#0 C:\laragon\www\trashtobigas\system\Database\MySQLi\Connection.php(187): mysqli->real_connect('localhost', 'root', 'dankeneth221133...', 'trashtobigasdb', 3306, '', 0)
+#1 C:\laragon\www\trashtobigas\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\trashtobigas\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\trashtobigas\app\Controllers\AdminController.php(259): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AdminController->viewEdit('24')
+#8 C:\laragon\www\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#9 C:\laragon\www\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\laragon\www\trashtobigas\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\laragon\www\trashtobigas\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\laragon\www\trashtobigas\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\trashtobigas\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\trashtobigas\app\Controllers\AdminController.php(259): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AdminController->viewEdit('24')
+#7 C:\laragon\www\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#8 C:\laragon\www\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\laragon\www\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\laragon\www\trashtobigas\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2025-02-27 03:47:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: admin/viewEdit/24]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `trash_items`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\AdminController.php(259): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->viewEdit('24')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-27 04:55:07 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
 [Method: GET, Route: %3C]
 in SYSTEMPATH\Router\Router.php on line 737.
  1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('<')
@@ -88,136 +110,7 @@ in SYSTEMPATH\Router\Router.php on line 737.
  5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 02:56:55 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
-[Method: GET, Route: applicantdetails/%3C]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('applicantdetails/<')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('applicantdetails/<')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 02:56:55 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
-[Method: GET, Route: applicantdetails/%3C]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('applicantdetails/<')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('applicantdetails/<')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 02:56:59 --> Error: Call to a member function findAll() on null
-[Method: POST, Route: convert-trash/39]
-in APPPATH\Controllers\TrashController.php on line 44.
- 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TrashController->convertTrash('39')
- 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TrashController))
- 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:00:50 --> Error: Call to a member function findAll() on null
-[Method: POST, Route: convert-trash/39]
-in APPPATH\Controllers\TrashController.php on line 44.
- 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TrashController->convertTrash('39')
- 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TrashController))
- 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:01:11 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
-[Method: GET, Route: applicantdetails/%3C]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('applicantdetails/<')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('applicantdetails/<')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:01:11 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
-[Method: GET, Route: applicantdetails/%3C]
-in SYSTEMPATH\Router\Router.php on line 737.
- 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('applicantdetails/<')
- 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('applicantdetails/<')
- 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:01:19 --> Error: Call to a member function findAll() on null
-[Method: POST, Route: convert-trash/39]
-in APPPATH\Controllers\TrashController.php on line 44.
- 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TrashController->convertTrash('39')
- 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TrashController))
- 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:02:02 --> Error: Call to a member function findAll() on null
-[Method: POST, Route: convert-trash/39]
-in APPPATH\Controllers\TrashController.php on line 44.
- 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TrashController->convertTrash('39')
- 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TrashController))
- 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:03:54 --> ErrorException: Undefined variable $riceKilos
-[Method: POST, Route: convert-trash/39]
-in APPPATH\Controllers\TrashController.php on line 70.
- 1 APPPATH\Controllers\TrashController.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riceKilos', 'C:\\Backup\\trashtobigas\\app\\Controllers\\TrashController.php', 70)
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TrashController->convertTrash('39')
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TrashController))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:07:34 --> ErrorException: Undefined variable $points
-[Method: POST, Route: convert-trash/39]
-in APPPATH\Controllers\TrashController.php on line 45.
- 1 APPPATH\Controllers\TrashController.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $points', 'C:\\Backup\\trashtobigas\\app\\Controllers\\TrashController.php', 45)
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TrashController->convertTrash('39')
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TrashController))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:07:59 --> ErrorException: Undefined variable $trashToPoints
-[Method: POST, Route: convert-trash/39]
-in APPPATH\Controllers\TrashController.php on line 58.
- 1 APPPATH\Controllers\TrashController.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $trashToPoints', 'C:\\Backup\\trashtobigas\\app\\Controllers\\TrashController.php', 58)
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TrashController->convertTrash('39')
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TrashController))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:08:09 --> ErrorException: Undefined variable $pointsToRice
-[Method: POST, Route: convert-trash/39]
-in APPPATH\Controllers\TrashController.php on line 59.
- 1 APPPATH\Controllers\TrashController.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pointsToRice', 'C:\\Backup\\trashtobigas\\app\\Controllers\\TrashController.php', 59)
- 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TrashController->convertTrash('39')
- 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TrashController))
- 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
-CRITICAL - 2025-02-27 03:09:42 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+CRITICAL - 2025-02-27 05:04:40 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
 [Method: GET, Route: %3C]
 in SYSTEMPATH\Router\Router.php on line 737.
  1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('<')

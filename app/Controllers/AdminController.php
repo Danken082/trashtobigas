@@ -7,12 +7,15 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\TrashModel;
 use App\Models\ClientModel;
 use App\Models\LogHistoryModel;
+
+use App\Models\ProductModel;
 use App\Models\InventoryModel;
 
 
 //library for qr code
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
+
 
 class AdminController extends BaseController
 {
@@ -37,7 +40,19 @@ class AdminController extends BaseController
         return view('admin/home');
     }
 
-    private function generateIdNumber()
+    public function ecommerce()
+    {
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'price' => $this->request->getPost('price'),
+            'image' => $this->request->getPost('image'),
+            'points' => $this->request->getPost('points'),
+        ];
+
+        return view('/ecommerce');
+    }
+
+    private function generateIdNumber() 
     {
 
         $lastUser = $this->client->orderBy('id', 'DESC')->first();
@@ -247,11 +262,13 @@ class AdminController extends BaseController
         return view('admin/editGarbage', $data);
 
     }
+
     public function deletetrsh($id)
     {
         $this->trsh->delete($id);
         return redirect()->to('/inventory')->with('success', 'Trash item deleted successfully.');
     }
+
 
 
     //searchApplicant
