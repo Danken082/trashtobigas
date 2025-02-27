@@ -1,0 +1,804 @@
+CRITICAL - 2025-02-26 07:40:45 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: admin/products]
+in APPPATH\Controllers\ProductController.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\trashtobigas\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:41:24 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: admin/products]
+in APPPATH\Controllers\ProductController.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\trashtobigas\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:41:25 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: admin/products]
+in APPPATH\Controllers\ProductController.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\trashtobigas\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:44:57 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: admin/products]
+in APPPATH\Controllers\ProductController.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\trashtobigas\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:45:43 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: admin/products]
+in APPPATH\Controllers\ProductController.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\trashtobigas\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:46:07 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: admin/products/]
+in APPPATH\Controllers\ProductController.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\trashtobigas\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:48:03 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: admin/products/]
+in APPPATH\Controllers\ProductController.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\trashtobigas\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:48:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:49:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:49:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:49:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:49:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:49:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:50:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:50:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:50:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:50:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:50:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:51:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:52:15 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: admin/products/]
+in APPPATH\Controllers\ProductController.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\trashtobigas\\app\\Controllers\\ProductController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\ProductController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 07:56:57 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: admin/Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:00:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: admin/Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:00:51 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: admin/Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:00:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: admin/Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:00:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: admin/Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:00:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: admin/Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:04:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: admin/Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:04:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: admin/Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:10:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:10:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:11:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:11:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:11:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:11:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:11:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:11:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:12:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:12:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:12:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:12:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:12:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:12:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:16:24 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:16:25 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:16:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:16:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:19:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:19:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:19:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:19:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:19:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:19:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:21:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:22:36 --> ErrorException: Cannot redeclare App\Controllers\AdminController::index()
+[Method: GET, Route: Ecommerce]
+in APPPATH\Controllers\AdminController.php on line 160.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-02-26 08:22:56 --> ErrorException: Cannot redeclare App\Controllers\AdminController::Ecommerce()
+[Method: GET, Route: Ecommerce]
+in APPPATH\Controllers\AdminController.php on line 36.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-02-26 08:23:07 --> Error: Class "App\Controllers\ProductModel" not found
+[Method: GET, Route: Ecommerce]
+in APPPATH\Controllers\AdminController.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:23:17 --> ErrorException: Undefined variable $data
+[Method: GET, Route: Ecommerce]
+in APPPATH\Controllers\AdminController.php on line 36.
+ 1 APPPATH\Controllers\AdminController.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\laragon\\www\\trashtobigas\\app\\Controllers\\AdminController.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:23:18 --> ErrorException: Undefined variable $data
+[Method: GET, Route: Ecommerce]
+in APPPATH\Controllers\AdminController.php on line 36.
+ 1 APPPATH\Controllers\AdminController.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\laragon\\www\\trashtobigas\\app\\Controllers\\AdminController.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:23:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(36): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:23:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(36): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:23:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(36): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:23:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-02-26 08:34:52 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: %3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('<')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('<')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-26 08:39:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Ecommerce.php"
+[Method: GET, Route: Ecommerce]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Ecommerce.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/Ecommerce', [], true)
+ 3 APPPATH\Controllers\AdminController.php(33): view('admin/Ecommerce')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->Ecommerce()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\trashtobigas\\public\\index.php')
