@@ -77,4 +77,7 @@ $routes->get('logout', 'AuthController::logout');
 
 
 
-
+//points
+$routes->get('ranges', 'TrashController::viewRange');
+$routes->get('points', 'TrashController::points');
+$routes->post('savePoints', 'TrashController::InsertPoints');

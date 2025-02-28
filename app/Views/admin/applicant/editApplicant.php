@@ -85,7 +85,7 @@
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success" onclick="generateQrCode()">Register</button>
+                    <button type="submit" class="btn btn-success"  onclick="generateQrCode()" data-bs-toggle="modal" data-bs-target="#qrModal">Register</button>
                 </form>
             </div>
         </div>
@@ -177,6 +177,22 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="qrModalLabel">Generated QR Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="qr-image" style="display: none; max-width: 100%;">
+                    <p id="qr-error" class="text-danger" style="display: none;">Failed to generate QR code.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

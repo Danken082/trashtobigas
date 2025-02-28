@@ -13,13 +13,41 @@ class TrashController extends ResourceController {
     private $log;
     private $points;
 
-    public function _construct()
+    public function __construct()
     {
         $this->client = new ClientModel();
         $this->log = new LogHistoryModel();
-        $this->point  = new PointRangeModel();
+        $this->points  = new PointRangeModel();
     }
 
+
+    public function points()
+    {
+
+    
+    $points = new PointRangeModel();
+     $range =  $this->points->findAll();
+    
+
+
+
+     return $this->response->setJSON($range);
+    }
+
+    public function viewRange()
+    {
+        return view('admin/range/viewPoints');
+    }
+    public function InsertPoints()
+    {
+        $data = ['min_weight' => $this->request->getPost('minweight'),
+                 'max_weight' => $this->request->getPost('minweight'),
+                 'points'     => $this->request->getPost('points')    
+            ];
+
+        $this->points->save($data);
+        return $this->response->setJSON(['status' => 'Success']);
+    }
     public function convertTrash($id)
     {
         $client = new ClientModel();

@@ -107,6 +107,7 @@ class AdminController extends BaseController
             'lastName' => $this->request->getVar('lastName'),
             'address' => $this->request->getVar('address'),
             'email'  => $this->request->getVar('email'),
+            'qrcode' => $newId .'.png',
             'gender' => $this->request->getVar('gender'),
             'contactNo' => $this->request->getVar('contactNo'),
             'birthdate' => $this->request->getVar('birthdate')
