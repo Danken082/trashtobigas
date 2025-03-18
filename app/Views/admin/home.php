@@ -21,18 +21,14 @@
     }
     
     body {
-      text-align: center;
-      background-image: url('<?= base_url('images/systemBg.png') ?>');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: url('<?= base_url('images/systemBg.png') ?>') no-repeat center center/cover;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       padding: 20px;
     }
-    
+
     .profile-logo
     {
         right:100%;
@@ -114,17 +110,12 @@
     .container {
       max-width: 500px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.25);
       border-radius: 15px;
       padding: 30px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-      border: 2px solid rgba(255, 255, 255, 0.4);
       text-align: center;
-      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       margin-top: 65px;
       margin-left: auto;
-      margin-right: 0;
+      margin-right: auto;
     }
 
     .container-details {
@@ -135,11 +126,10 @@
       backdrop-filter: blur(10px);
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
       border: 2px solid rgba(255, 255, 255, 0.4);
-  
       transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
       margin-top: 65px;
       margin-left: auto;
-      margin-right: 0;
+      margin-right: auto;
     }
     
     .container:hover {
@@ -155,7 +145,7 @@
     }
     
     .logo-image {
-      height: 120px;
+      height: 300px;
       margin-bottom: 15px;
     }
     
@@ -257,11 +247,7 @@
     <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="profile-logo" class="profile-logo">
 </a>
 
-      <!-- <a class="btn btn-primary mb-3 btn-register" style="background:purple;color:white;" data-bs-toggle="modal" data-bs-target="#registerModal">Register Applicant</a>
-      <a href="">Home</a>
-      <a href="https://cityofcalapan.gov.ph/about-calapan-city/">About</a>
-      <a href="#">How It Works</a>
-      <a href="#">Contact</a> -->
+    
     </div>
   </div>
   
@@ -271,50 +257,11 @@
     <h1>
       <img src="<?= base_url('images/systemlogo.png') ?>" alt="Trash to Rice Logo" class="logo-image" />
     </h1>
-    <h2>Convert your recyclable trash into valuable kilos of rice!</h2>
-    <input type="number" id="trashWeight" name="trashWeight" placeholder="Enter trash weight (kilo)" />
-    <button onclick="convertPoints()">Convert</button>
-    <div class="output" id="conversionResult"></div>
-    <hr />
-    <h2>QR Code Generator</h2>
-    <input type="text" id="qr-data" placeholder="Enter text" />
-    <button onclick="generateQrCode()">Generate QR Code</button>
-    <br />
-    <img id="qr-image" style="margin-top: 10px; display: none;" />
-    <h2>QR Code Scanner</h2>
-    <button id="start-scan">Start Scan</button>
-    <button id="stop-scan" style="display: none;">Stop Scan</button>
-    <div id="qr-reader"></div>
-    <div id="qr-result"></div>
-  </div>
+   </div>
   
   <!--profileMenu Modal-->
  
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header bg-primary text-white">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
-    <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <a href="/home" class="text-decoration-none text-dark">
-          🏠 Home
-        </a>
-      </li>
-      <li class="list-group-item">
-        <a href="/inventory" class="text-decoration-none text-dark">
-          📦 Inventory
-        </a>
-      </li>
-      <li class="list-group-item">
-        <a href="/applicants" class="text-decoration-none text-dark">
-          📋 Applicant Details
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+<?php include('include/offsetSidebar.php')?>
 
         
   <!-- Register Modal -->

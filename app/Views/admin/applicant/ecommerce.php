@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Product List</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="/css/tailwind.min.css">
 </head>
 <body class="p-6">
     <h1 class="text-2xl font-bold mb-4">Product List</h1>

@@ -310,25 +310,28 @@ class AdminController extends BaseController
         return view('admin/editApplicant', $data);
     }
 
-    public function updateApplicant($id)
+    public function updateApplicant()
     {
+
+        $id = $this->request->getPost('id');
         $data = ['firstName' => $this->request->getPost('firstName'),
                  'lastName' => $this->request->getPost('lastName'),
                  'birthdate' => $this->request->getPost('birthdate'),
                  'gender'   => $this->request->getPost('gender'),
                  'address' => $this->request->getPost('address'),
                  'email' => $this->request->getPost('email'),
-                 'contactNo' => $this->request->getPost('contactNo')                 
+                 'contactNo' => $this->request->getPost('contactNo'),
+                 'totalPoints' => $this->request->getPost('points')                
                 ];
 
 
         $this->client->where('id', $id)->set($data)->update();
 
-        return $this->response->setJSON(
-            ['status' => 'success']
-        );
+        // return $this->response->setJSON(
+        //     ['status' => 'success']
+        // );
 
-
+            return redirect()->to('viewapplicants');
     }
 
     public function insertIDNumber($id)
@@ -381,6 +384,8 @@ class AdminController extends BaseController
     //for inventory
     public function viewInventory()
     {
+
+        // $data['inv'] = $this->inv->find();
        return view('admin/inventory/viewInventory');
     }
     
@@ -402,12 +407,83 @@ class AdminController extends BaseController
                  'point_price' => $this->request->getVar('pointPrice')
                 ];
 
+                $inventoryImg = $this->request->getFile('img');
+
+                if($inventoryImg->isValid() && !$inventoryImg->hasMoved())
+                {
+                    $newName = $inventoryImg->getRandomName();
+                    
+                    $inventoryImg->move($_SERVER['DOCUMENT_ROOT'] . '/images/inventory/redeemed', $newName);
+
+                    $data['img'] = $newName;
+                }
+
         $this->inv->save($data);
 
-        return $this->response->setJSON(['status' => 'success']);
+        return redirect()->to('viewInventory');
+    }
+    public function updateInventory()
+    {
+
+        $id = $this->request->getPost('id');
+
+        // Fetch existing item to get the current image
+        $existingItem = $this->inv->where('id', $id)->first();
+        
+        $data = [
+            'item' => $this->request->getVar('item'),
+            'category' => $this->request->getVar('category'),
+            'quantity' => $this->request->getVar('quantity'),
+            'point_price' => $this->request->getVar('pointPrice')
+        ];
+        
+        $inventoryImg = $this->request->getFile('img');
+        
+        if ($inventoryImg && $inventoryImg->isValid() && !$inventoryImg->hasMoved()) {
+            // Generate a random name for the new image
+            $newName = $inventoryImg->getRandomName();
+        
+            // Move the new image
+            $inventoryImg->move($_SERVER['DOCUMENT_ROOT'] . '/images/inventory/redeemed', $newName);
+        
+            // Delete the old image if it exists
+            if (!empty($existingItem['img'])) {
+                $oldImagePath = $_SERVER['DOCUMENT_ROOT'] . '/images/inventory/redeemed/' . $existingItem['img'];
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+        
+            $data['img'] = $newName;
+        }
+        
+        $this->inv->where('id', $id)->set($data)->update();
+        
+        return redirect()->to('viewInventory');
+         
+        
     }
 
-
+    public function deleteInventory($id)
+    {
+        // Fetch the existing item to get the image filename
+        $existingItem = $this->inv->where('id', $id)->first();
+    
+        if ($existingItem && !empty($existingItem['img'])) {
+            $imagePath = $_SERVER['DOCUMENT_ROOT'] . '/images/inventory/redeemed/' . $existingItem['img'];
+    
+            // Check if the file exists before attempting to delete it
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+    
+        // Delete the inventory item from the database
+        $this->inv->delete($id);
+    
+        return redirect()->to('viewInventory'); 
+    }
+    
     public function historyLogs()
     {
         

@@ -19,15 +19,16 @@
         }
         body {
             text-align: center;
-            background-image: url('<?= base_url('images/systemBg.png') ?>');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
+      background-image: url('<?= base_url('images/systemBg.png') ?>');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
         }
         .navbar {
             display: flex;
@@ -49,57 +50,125 @@
             height: 50px;
         }
         .container {
-            max-width: 500px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.25);
-            border-radius: 15px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-            margin-top: 80px;
-        }
-        input, select, button {
-            padding: 10px;
-            width: 100%;
-            margin-top: 10px;
-            border-radius: 10px;
-            font-size: 16px;
-        }
-        button {
-            background: linear-gradient(45deg, rgb(17, 173, 113), rgb(228, 112, 199));
-            border: none;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-        .table-container {
-            margin-top: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        .edit-btn {
-            background-color: #ffc107;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        .delete-btn {
-            background-color: #dc3545;
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: white;
-        }
+      max-width: 600px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 15px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      text-align: center;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      margin-top: 80px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container-details {
+      font-size: 100px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 15px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      margin-top: 80px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input, select, button {
+      padding: 20px;
+      width: 100%;
+      margin-top: 15px;
+      border-radius: 15px;
+      font-size: 20px;
+    }
+
+    button {
+      background: linear-gradient(45deg, rgb(17, 173, 113), rgb(228, 112, 199));
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      font-size: 22px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .edit-btn, .delete-btn {
+      padding: 12px 18px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .container, .container-details {
+        width: 95%;
+        padding: 25px;
+      }
+
+      input, select, button {
+        padding: 15px;
+        font-size: 18px;
+      }
+
+      table {
+        font-size: 18px;
+      }
+
+      th, td {
+        padding: 15px;
+      }
+
+      .edit-btn, .delete-btn {
+        padding: 10px 15px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container, .container-details {
+        width: 98%;
+        padding: 20px;
+      }
+
+      input, select, button {
+        padding: 12px;
+        font-size: 16px;
+      }
+
+      table {
+        font-size: 16px;
+      }
+
+      th, td {
+        padding: 10px;
+      }
+
+      .edit-btn, .delete-btn {
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+    }
+
+
     </style>
 </head>
 <body>
@@ -130,7 +199,7 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="/applicants" class="text-decoration-none text-dark">
+        <a href="/viewapplicants" class="text-decoration-none text-dark">
           📋 Applicant Details
         </a>
       </li>

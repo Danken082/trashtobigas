@@ -7,77 +7,90 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 //insert ng basura
-$routes->get('/', 'Home::index');
-$routes->get('/home', 'AdminController::home');
+$routes->get('/', 'Home::index', ['filter' => 'guestFilter']);
+$routes->get('/home', 'AdminController::home', ['filter' => 'authFilter']);
 // $routes->get('/ecommerce', 'AdminController::ecommerce');
-$routes->get('/inventory', 'AdminController::inventory');
-$routes->post('insertTrash', 'AdminController::insertTrash');
-$routes->get('pos', 'AdminController::pos');
-$routes->post('admin/create', 'AdminController::create');
-$routes->get('admin/delete/(:any)', 'AdminController::delete/$1');
-$routes->post('admin/edit/(:any)', 'AdminController::edit/$1');
-$routes->get('admin/viewEdit/(:any)', 'AdminController::viewEdit/$1');
+$routes->get('/inventory', 'AdminController::inventory', ['filter' => 'authFilter']);
+$routes->post('insertTrash', 'AdminController::insertTrash', ['filter' => 'authFilter']);
+$routes->get('pos', 'AdminController::pos', ['filter' => 'authFilter']);
+$routes->post('admin/create', 'AdminController::create', ['filter' => 'authFilter']);
+$routes->get('admin/delete/(:any)', 'AdminController::delete/$1', ['filter' => 'authFilter']);
+$routes->post('admin/edit/(:any)', 'AdminController::edit/$1', ['filter' => 'authFilter']);
+$routes->get('admin/viewEdit/(:any)', 'AdminController::viewEdit/$1', ['filter' => 'authFilter']);
 
 //converter
-$routes->post('convert-trash/(:any)', 'TrashController::convertTrash/$1');
+$routes->post('convert-trash/(:any)', 'TrashController::convertTrash/$1', ['filter' => 'authFilter']);
 //converter
-$routes->post('qr/generate', 'AdminController::generate');
+$routes->post('qr/generate', 'AdminController::generate', ['filter' => 'authFilter']);
 
 
 
 //applicantRegistration
-$routes->post('/admin/register', 'AdminController::registerUser');
-$routes->get('/admin/list/', 'AdminController::list');
-    
+$routes->post('/admin/register', 'AdminController::registerUser', ['filter' => 'authFilter']);
+$routes->get('/admin/list/', 'AdminController::list', ['filter' => 'authFilter']);
+$routes->post('applicant/update/', 'AdminController::updateApplicant', ['filter' => 'authFilter']);
 //searchApplicant
-$routes->get('search', 'AdminController::search');
-$routes->get('user/(:num)', 'AdminController::getUserDetails/$1');
+$routes->get('search', 'AdminController::search', ['filter' => 'authFilter']);
+$routes->get('user/(:num)', 'AdminController::getUserDetails/$1', ['filter' => 'authFilter']);
 
 
 //showing of applicantDetails
-$routes->get('applicantdetails/(:any)', 'AdminController::detailsView/$1');
+$routes->get('applicantdetails/(:any)', 'AdminController::detailsView/$1', ['filter' => 'authFilter']);
 
 
-$routes->get('index', 'TrashController::index');
-$routes->get('user/getUser/(:num)', 'TrashController::getUser/$1');
+$routes->get('index', 'TrashController::index', ['filter' => 'authFilter']);
+$routes->get('user/getUser/(:num)', 'TrashController::getUser/$1', ['filter' => 'authFilter']);
 
 
 
 //products to ha
-$routes->get('/admin/products/', 'ProductController::index');
-$routes->get('/products/create', 'ProductController::create');
-$routes->post('/products/store', 'ProductController::store');
-$routes->get('/products/edit/(:num)', 'ProductController::edit/$1');
-$routes->post('/products/update/(:num)', 'ProductController::update/$1');
-$routes->get('/products/delete/(:num)', 'ProductController::delete/$1');
+$routes->get('/admin/products/', 'ProductController::index', ['filter' => 'authFilter']);
+$routes->get('/products/create', 'ProductController::create', ['filter' => 'authFilter']);
+$routes->post('/products/store', 'ProductController::store', ['filter' => 'authFilter']);
+$routes->get('/products/edit/(:num)', 'ProductController::edit/$1', ['filter' => 'authFilter']);
+$routes->post('/products/update/(:num)', 'ProductController::update/$1', ['filter' => 'authFilter']);
+$routes->get('/products/delete/(:num)', 'ProductController::delete/$1',  ['filter' => 'authFilter']);
 
-$routes->get('/ecommerce', 'ProductController::index');
+$routes->get('/ecommerce', 'ProductController::index', ['filter' => 'authFilter']);
 
 
-$routes->get('login', 'AuthController::login');
+$routes->get('login', 'AuthController::login', ['filter' => 'guestFilter']);
 $routes->post('login', 'AuthController::attemptLogin');
 
+
+//register
+$routes->get('register', 'AuthController::viewregister', ['filter' => 'authFilter']);
+$routes->post('registerUser', 'AuthController::register', ['filter' => 'authFilter']);
+
 //view users
-$routes->get('viewapplicants/', 'AdminController::viewAllApplicant');
-$routes->get('deleteUser/(:num)', 'AdminController::insertIDNumber/$1');
+$routes->get('viewapplicants/', 'AdminController::viewAllApplicant', ['filter' => 'authFilter']);
+$routes->get('deleteUser/(:num)', 'AdminController::insertIDNumber/$1', ['filter' => 'authFilter']);
 
 
 //for inventory
-$routes->get('viewInventory', 'AdminController::viewInventory');
-$routes->get('displayInventory', 'AdminController::displayInventoryTable');
-$routes->post('addInventory', 'AdminController::addToInventory');
+$routes->get('viewInventory', 'AdminController::viewInventory', ['filter' => 'authFilter']);
+$routes->get('displayInventory', 'AdminController::displayInventoryTable', ['filter' => 'authFilter']);
+$routes->post('addInventory', 'AdminController::addToInventory', ['filter' => 'authFilter']);
+$routes->get('deleteInventory/(:any)', 'AdminController::deleteInventory/$1', ['filter' => 'authFilter']);
+$routes->post('items/update/', 'AdminController::updateInventory/', ['filter' => 'authFilter']);
 
 
-//===login====
-$routes->match(['get', 'post'], 'login', 'AuthController::login');
-$routes->post('auth/login', 'AuthController::attemptLogin');
 
-$routes->get('logout', 'AuthController::logout');
+$routes->post('loginAuth', 'AuthController::attemptLogin', ['filter' => 'guestFilter']);
+
+$routes->get('logout', 'AuthController::logout' , ['filter' => 'authFilter']);
 
 
 
 
 //points
-$routes->get('ranges', 'TrashController::viewRange');
-$routes->get('points', 'TrashController::points');
-$routes->post('savePoints', 'TrashController::InsertPoints');
+$routes->get('ranges', 'TrashController::viewRange', ['filter' => 'authFilter']);
+$routes->get('points', 'TrashController::points', ['filter' => 'authFilter']);
+$routes->post('savePoints', 'TrashController::InsertPoints', ['filter' => 'authFilter']);
+$routes->post('edit/rangespoints', 'TrashController::updatepoints', ['filter' => 'authFilter']);
+$routes->get('deleteRanges/(:num)', 'TrashController::deleteRanges/$1', ['filter' => 'authFilter']);
+
+
+$routes->get('ecommerce/(:num)', 'ProductController::index/$1', ['filter' => 'authFilter']);
+$routes->post('redeem', 'ProductController::redeem', ['filter' => 'authFilter']);
+

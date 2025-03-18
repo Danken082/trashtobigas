@@ -9,19 +9,18 @@
     body {
       position: relative;
       display: flex;
-      flex-direction: column; /* Stack the logo and form vertically */
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
       margin: 0;
-      background-image: url('<?= base_url('images/cityhall.jpg') ?>'); /* Adjust path if needed */
+      background-image: url('<?= base_url('images/cityhall.jpg') ?>');
       background-position: center;
       background-size: cover;
       background-attachment: fixed;
     }
 
-    /* Purple overlay */
     body::before {
       content: "";
       position: absolute;
@@ -29,58 +28,50 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(1, 52, 18, 0.73); /* Semi-transparent purple */
-      z-index: -1; /* Send the overlay behind the content */
+      background-color: rgba(1, 52, 18, 0.73);
+      z-index: -1;
     }
 
     .logo-image {
-      width: 200px; /* Resize the logo to make it smaller */
-      margin-bottom: 30px; /* Space between logo and login form */
-      opacity: 0; /* Start with the logo hidden */
-      animation: fadeIn 0.8s forwards; /* Apply fadeIn animation on page load */
+      width: 150px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
     }
 
-    /* Define the fade-in animation */
     @keyframes fadeIn {
-      0% {
-        opacity: 0; /* Start hidden */
-        transform: scale(0.8); /* Slightly smaller */
-      }
-      100% {
-        opacity: 1; /* Fully visible */
-        transform: scale(1); /* Normal size */
-      }
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
     }
 
     .login-card {
-      max-width: 500px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.75); /* Slight transparency for the card */
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 15px;
-      padding: 30px;
+      padding: 25px;
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
       border: 2px solid rgba(255, 255, 255, 0.4);
       text-align: center;
-      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
 
     .login-title {
-      text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       font-weight: bold;
-      font-size: 26px;
-      color: #2d6a4f; /* Dark green */
+      font-size: 24px;
+      color: #2d6a4f;
     }
 
     .form-control {
       border-radius: 10px;
       padding: 10px 15px;
+      margin-bottom: 15px;
     }
 
     .btn-login {
       width: 100%;
       border-radius: 10px;
-      background-color: #40916c; /* Medium green */
+      background-color: #40916c;
       color: white;
       padding: 10px;
       font-weight: bold;
@@ -88,7 +79,7 @@
     }
 
     .btn-login:hover {
-      background-color: #1b4332; /* Darker green */
+      background-color: #1b4332;
     }
 
     .forgot-password {
@@ -107,52 +98,20 @@
 </head>
 <body>
 
-  <!-- Logo above the form, centered -->
   <div class="text-center mb-4">
     <img src="<?= base_url('images/systemlogo.png') ?>" alt="Trash to Rice Logo" class="logo-image" />
   </div>
 
-  <!-- Login Card -->
   <div class="login-card">
     <div class="login-title">Trash to Bigas Login</div>
-  <form action="<?= base_url('auth/login')?>" method="post">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" name="username"id="username" placeholder="Enter username">
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
-      </div>
+    <form action="<?= base_url('loginAuth') ?>" method="post">
+      <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
+      <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" required>
       <button type="submit" class="btn btn-login">Login</button>
-      <a href="#" class="forgot-password" data-toggle="modal" data-target="#forgotPasswordModal">Forgot Password?</a>
     </form>
   </div>
 
-  <!-- Forgot Password Modal -->
-  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="reset-email">Enter your email address</label>
-              <input type="email" class="form-control" id="reset-email" placeholder="Enter email">
-            </div>
-            <button type="submit" class="btn btn-login">Send Reset Code</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

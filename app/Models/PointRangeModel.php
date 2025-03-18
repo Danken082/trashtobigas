@@ -12,7 +12,7 @@ class PointRangeModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['min_weight','max_weight', 'points'];
+    protected $allowedFields    = ['min_weight','max_weight', 'points', 'categ'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

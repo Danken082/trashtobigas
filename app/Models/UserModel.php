@@ -10,15 +10,11 @@ class UserModel extends Model
 
     protected $table            = 'user_tbl';
     protected $primaryKey       = 'id';
-
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-
-
-
-    protected $allowedFields    = ['userName', 'password', 'lastName', 'firstName','updated_at'];
+    protected $allowedFields    = ['userName', 'password', 'contactNo', 'lastName', 'firstName','updated_at'];
 
 
 

@@ -12,7 +12,7 @@ class InventoryModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['item', 'category', 'quantity', 'point_price', 'update_at'];
+    protected $allowedFields    = ['item', 'category', 'quantity', 'img', 'point_price', 'update_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -23,7 +23,7 @@ class QrController extends BaseController
             return $this->response->setJSON(['error' => 'No data provided']);
         }
 
-        $qrCode = QrCode::create($data)->setSize(300)->setMargin(10);
+        $qrCode = QrCodex::create($data)->setSize(300)->setMargin(10);
         $writer = new PngWriter();
         $qrCodeImage = $writer->write($qrCode)->getString();
 

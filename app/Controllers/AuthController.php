@@ -7,7 +7,8 @@ use CodeIgniter\Controller;
 
 class AuthController extends Controller
 {
-
+    private $maxLoginAttempts = 5;
+    private $lockoutTime = 300;
 
     private $user;
     public function __construct()
@@ -19,41 +20,64 @@ class AuthController extends Controller
         return view('admin/login'); // Points to the login view
     }
 
+
+    public function viewRegister()
+    {
+        return view('register');
+    }
+    public function register()
+    {
+
+        $model = new UserModel();
+
+
+        $data = [
+            'lastName' => $this->request->getPost('lastName'),
+            'firstName' => $this->request->getPost('firstName'),
+            'contactNo' => $this->request->getPost('contactNo'),
+            'userName' => $this->request->getPost('userName'),
+            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
+        ];
+
+        $model->save($data);
+        session()->setFlashdata('success', 'Registration successful. Please login.');
+        return redirect()->to('/login');
+        
+    }
+
     public function attemptLogin()
     {
         $session = session();
-    
-        $username = $this->request->getVar('username'); // Get input from form field
-        $password = $this->request->getVar('password');
-    
-        $user = $this->user->where('userName', $username)->first();
-    
-        if ($user) {
-    
-            $pass = $user['password'];
-            $authenticate = password_verify($password, $pass);
-    
-            if ($authenticate) {
-                $ses_data = [
-                    'id' => $user['id'],
-                    'firstName' => $user['firstName'],
-                    'lastName' => $user['lastName'],
-                    'contactNo' => $user['contactNo'],
-                    'userName' => $user['userName'],
-                    'isLoggedIn' => TRUE
-                ];
-    
-                $session->set($ses_data);
-    
-                return redirect()->to('/home');
-            } else {
-                $session->setFlashdata('msg', 'Incorrect Username or Password');
-                return redirect()->to('/login');
-            }
+        $model = new UserModel();
+
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
+
+        $user = $model->where('userName', $username)->first();
+
+        if ($user && password_verify($password, $user['password'])) {
+            $sessionData = [
+                'id' => $user['id'],
+                'userName' => $user['userName'],
+                'lastName' => $user['lastName'],
+                'firstName' => $user['firstName'],
+                'contactNo' => $user['contactNo'],
+                'isLoggedIn' => true
+            ];
+            $session->set($sessionData);
+            return redirect()->to('/home');
+
+
         } else {
-            $session->setFlashdata('error', 'Invalid Username or Password');
-            return redirect()->to('/login');
+            $session->setFlashdata('error', 'Invalid username or password');
+
+
+            return redirect()->back();   
+
+            // echo 2;
         }
+
+
     }
     
     public function logout()

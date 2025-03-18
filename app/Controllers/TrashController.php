@@ -36,70 +36,124 @@ class TrashController extends ResourceController {
 
     public function viewRange()
     {
+
+
         return view('admin/range/viewPoints');
     }
     public function InsertPoints()
     {
         $data = ['min_weight' => $this->request->getPost('minweight'),
-                 'max_weight' => $this->request->getPost('minweight'),
-                 'points'     => $this->request->getPost('points')    
+                 'max_weight' => $this->request->getPost('maxweight'),
+                 'points'     => $this->request->getPost('points'),
+                 'categ'      => $this->request->getPost('categ')
             ];
 
         $this->points->save($data);
         return $this->response->setJSON(['status' => 'Success']);
     }
-    public function convertTrash($id)
-    {
-        $client = new ClientModel();
-        $applicant = $client->find($id);
-    
-        if (!$applicant) {
-            return $this->respond(['status' => 'error', 'message' => 'Client not found'], 404);
-        }
-    
-        $weight = $this->request->getPost('trashWeight');
-    
-        if ($weight <= 0) {
-            return $this->respond(['status' => 'error', 'message' => 'Invalid weight'], 400);
-        }
-    
-        $points = 10;
 
-        $pointRange = new PointRangeModel();
-        $ranges = $pointRange->findAll();
-    
-        foreach ($ranges as $range) {
-            if ($weight >= $range['min_weight'] && $weight <= $range['max_weight']) {
-                $points = $range['points'];
-                break;
-            }
-        }
-    
-        if ($points === 0) {
-            return $this->respond(['status' => 'error', 'message' => 'No point range matched'], 400);
-        }
-    
-        $updatePoints = $points + $applicant['totalPoints'];
-    
-        $client->update($id, ['totalPoints' => $updatePoints]);
-    
-        // $riceKilos = $points * 0.5; // Assuming the conversion rate is fixed here
-    
-        // $trashModel = new TrashModel();
-        // $trashModel->insert([
-        //     'client_id' => $id,
-        //     'trash_weight' => $weight,
-        //     'points' => $points,
-        //     'rice_kilos' => $riceKilos,
+    public function updatepoints()
+    {
+        $id = $this->request->getPost('id');
+        $data = [
+            'min_weight' => $this->request->getPost('minweight'),
+            'max_weight' => $this->request->getPost('maxweight'),
+            'points'     => $this->request->getPost('points'),
+            'categ'      => $this->request->getPost('categ')
+        ];
+
+        $this->points->where('id', $id)->set($data)->update();
+
+        return redirect()->to('ranges');
+    }
+
+    public function deleteRanges($id)
+    {
+        $this->points->delete($id);
+
+        return redirect()->to('ranges'); 
+        
+        // $this->response->setJSON([
+        //     'success' => true,
+        //     'message' => 'Data deleted Successfully'
         // ]);
-    
-        return $this->respond([
-            'status' => 'success',
-            'points' => number_format($points, 2),
-            'riceKilos' => number_format($weight, 2),
-            'totalPoints' => number_format($updatePoints, 2)
-        ]);
-    } 
+    }
+    // public function 
+    public function convertTrash($id)
+{
+    $client = new ClientModel();
+    $applicant = $client->find($id);
+
+    if (!$applicant) {
+        return $this->respond(['status' => 'error', 'message' => 'Client not found'], 404);
+    }
+
+    $weight = $this->request->getPost('trashWeight');
+    $categ = $this->request->getPost('category');
+
+    if ($weight <= 0) {
+        return $this->respond(['status' => 'error', 'message' => 'Invalid weight'], 400);
+    }
+
+    $points = 10;
+    $pointRange = new PointRangeModel();
+    $rangesklg = $pointRange->where('categ', 'klg/s')->findAll();
+    $rangesgrams = $pointRange->where('categ', 'gram/s')->findAll();
+
+    switch ($categ) {
+        case 'kilogram/s':
+
+            foreach ($rangesklg as $range) {
+                if ($weight >= $range['min_weight'] && $weight <= $range['max_weight']) {
+                    $points = $range['points'];
+                    break;
+                }
+            }
+            $updatePoints = $points + $applicant['totalPoints'];
+            $client->update($id, ['totalPoints' => $updatePoints]);
+
+            return $this->response->setJSON([
+                'status' => 'success',
+                'categ'  => strtoupper($categ),
+                'points' => number_format($points, 2),
+                'riceKilos' => number_format($weight, 2),
+                'totalPoints' => number_format($updatePoints, 2)
+            ]);
+        case 'gram/s':
+
+            foreach ($rangesgrams as $range) {
+                if ($weight >= $range['min_weight'] && $weight <= $range['max_weight']) {
+                    $points = $range['points'];
+                    break;
+                }
+            }
+            $updatePoints = $points + $applicant['totalPoints'];
+            $client->update($id, ['totalPoints' => $updatePoints]);
+
+            return $this->response->setJSON([
+                'status' => 'success',
+                'categ'  => strtoupper($categ),
+                'points' => number_format($points, 2),
+                'riceKilos' => number_format($weight, 2),
+                'totalPoints' => number_format($updatePoints, 2)
+            ]);
+        default:
+            return $this->response->setJSON(['success' => true, 'category' => 'others']);
+    }
+    // Calculate points based on weight range
+
+    if ($points === 0) {
+        return $this->respond(['status' => 'error', 'message' => 'No point range matched'], 400);
+    }
+
+    // Calculate updated points
+
+
+    // Update client's total points
+
+
+}
+ 
     
     private function updateUserPointsLog($id)
     {

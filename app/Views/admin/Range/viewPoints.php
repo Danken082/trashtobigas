@@ -1,139 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trash to Rice Exchange</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      text-align: center;
+      background-image: url('<?= base_url('images/systemBg.png') ?>');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    
+    .profile-logo
+    {
+        right:100%;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      color: purple;
+      background-color: rgba(255, 255, 255, 0.3);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Group logo and search icon/input */
+    .logo-search {
+      display: flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .logo img {
+      height: 50px;
+    }
+    
+    .search-icon {
+      margin-left: 15px;
+      font-size: 1.5rem;
+      color: purple;
+    }
+    
+    /* Hidden search input positioned absolutely to the right of the icon */
+    .search-input {
+      display: none;
+      position: absolute;
+      top: 60px; /* Adjust based on navbar height */
+      left: 0;
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+      background: #fff;
+      z-index: 20;
+    }
+    
+    /* Search result container with a top border for separation */
+    #result {
+      display: none;
+      position: absolute;
+      top: calc(60px + 40px); /* 60px from top + approx. 40px input height */
+      left: 0;
+      width: 200px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-top: 1px solid #ccc; /* Separation line */
+      border-radius: 0 0 5px 5px;
+      z-index: 20;
+      padding: 5px;
+    }
+    
+    .nav-links a {
+      color: purple;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: #d63384;
+    }
+    
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+    
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      .nav-links a {
+        display: block;
+        margin: 5px 0;
+      }
+    }
 
-    <title>Inventory</title>
+    .profile-logo{
+        height:50px;
+    }
+  </style>
 </head>
 <body>
+    <br>  
+  <div class="navbar">
+    <div class="logo-search" id="searchToggle">
+      <div class="logo">
+        <img src="<?= base_url('images/systemlogo.png') ?>" alt="Trash to Rice Logo" />
+      </div>
+      <div class="search-icon" id="searchIcon">
+        <i class="bi bi-search"></i>
+      </div>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search..." autocomplete="off"/>
+      <!-- Search result container -->
+      <div id="result">Search results here...</div>
+    </div>
+    <div class="nav-links">
+    <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+    <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="profile-logo" class="profile-logo">
+</a>
 
-<div class="container">
-<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveToPoints">Add Items</button>
+      <!-- <a class="btn btn-primary mb-3 btn-register" style="background:purple;color:white;" data-bs-toggle="modal" data-bs-target="#registerModal">Register Applicant</a>
+      <a href="">Home</a>
+      <a href="https://cityofcalapan.gov.ph/about-calapan-city/">About</a>
+      <a href="#">How It Works</a>
+      <a href="#">Contact</a> -->
+    </div>
+  </div>
+  <div class="container mt-5">
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveToPoints">Add Items</button>
 
-    <table border="1" class="table table-striped table-hover table-bordered" style="border-radius: 15px; overflow: hidden;">
-        <thead class="table-dark">
-            <tr>
-                <th>Weight</th>
-                <th>Points</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody id="adminTableBody">
-        </tbody>
-    </table>
+<table border="1" class="table table-striped table-hover table-bordered" style="border-radius: 15px; overflow: hidden;">
+    <thead class="table-dark">
+        <tr>
+            <th>Weight</th>
+            <th>Category</th>
+            <th>Points</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="adminTableBody">
+    </tbody>
+</table>
 </div>
 
-<div class="modal fade" id="saveToPoints" tabindex="-1" aria-labelledby="saveToPointslabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="saveToPointslabel">Pointing System</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form id="savePoints">
-                <div class="modal-body">
-                    <input type="hidden" name="id" id="itemId">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="MininumWeight" class="form-label">Minimum Weight</label>
-                            <input type="number" class="form-control" name="minweight" id="minwieght" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="MaximumWeight" class="form-label">Maximum Weight</label>
-                            <input type="number" class="form-control" name="maxwieght" id="maxweight" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="points" class="form-label">Points</label>
-                            <input type="number" class="form-control" name="points" id="points" required>
-                        </div>
-                        
-                        
-                    </div>
-                  </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                </div>
-            </form>
+<div class="modal fade modal-lg modal-fullscreen" id="saveToPoints" tabindex="-1" aria-labelledby="saveToPointslabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="saveToPointslabel">Pointing System</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form id="savePoints" enctype="multipart/form-data">
+            <div class="modal-body">
+                <input type="hidden" name="id" id="itemId">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="MininumWeight" class="form-label">Minimum Weight</label>
+                        <input type="number" class="form-control" name="minweight" id="minwieght" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="MaximumWeight" class="form-label">Maximum Weight</label>
+                        <input type="number" class="form-control" name="maxweight" id="maxweight" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="points" class="form-label">Points</label>
+                        <input type="number" class="form-control" name="points" id="points" step="any" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="Category">Category</label>
+                      <select name="categ" class="form-control" id="categ">
+                        <option disabled selected>--Select Category--</option>
+                        <option value="klg/s">Kilo/Kilos Grams</option>
+                        <option value="gram/s">Gram/Grams</option>
+                      </select>
+                    </div>
+                    
+                </div>
+              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
     </div>
 </div>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header bg-gradient-to-r from-blue-500 to-blue-700 text-white">
+    <h5 class="offcanvas-title text-xl font-semibold" id="offcanvasExampleLabel">📂 Menu</h5>
+    <button type="button" class="btn-close text-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body bg-gray-100">
+    <ul class="list-group space-y-2">
+      <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
+        <a href="/home" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
+          <span>🏠</span>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
+        <a href="/inventory" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
+          <span>📦</span>
+          <span>Inventory</span>
+        </a>
+      </li>
+      <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
+        <a href="/viewapplicants" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
+          <span>📋</span>
+          <span>Applicant Details</span>
+        </a>
+      </li>
+
+      <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
+        <a href="/viewInventory" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
+          <span>📋</span>
+          <span>Points Convertion</span>
+        </a>
+      </li>
+      <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
+        <a href="/ranges" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
+          <span>📋</span>
+          <span>Point Range</span>
+        </a>
+      </li>
+      <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
+        <a href="/logout" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
+          <span></span>
+          <span>Log Out</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 
-<div class="modal fade" id="editInventory" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit Item</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form id="editForm" action="<?= base_url('items/update') ?>" method="post">
-                <div class="modal-body">
-                    <input type="hidden" name="id" id="itemId">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="itemName" class="form-label">Item</label>
-                            <input type="number"class="form-control" name="item" id="itemName" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="itemPrice" class="form-label">Category</label>
-                            <input type="number" class="form-control" name="category" id="itemCategory" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="quantity" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" name="quantity" id="itemQuantity" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="pointsPrice" class="form-label">Point Price</label>
-                            <input type="text" class="form-control"  name="pointPrice" id="pointPrice" required>
-                        </div>
-                    </div>
-                  </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                </div>
-            </form>
+<div class="modal fade modal-lg modal-fullscreen" id="editInventory" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit Item</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form id="editForm" action="<?= base_url('edit/rangespoints/')?>" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <input type="hidden" name="id" id="id">
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                        <label for="MininumWeight" class="form-label">Minimum Weight</label>
+                        <input type="number" class="form-control" name="minweight" id="min_weight" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="MaximumWeight" class="form-label">Maximum Weight</label>
+                        <input type="number" class="form-control" name="maxweight" id="max_weight" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="points" class="form-label">Points</label>
+                        <input type="number" class="form-control" name="points" id="point" step="any" required>
+                        
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="Category">Category</label>
+                      <select name="categ" class="form-control" id="categ">
+                        <option disabled selected>--Select Category--</option>
+                        <option value="kl">Kilo/Kilos</option>
+                        <option value="gram">Gram/Grams</option>
+                      </select>
+                    </div>
+                     </div>
+              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
     </div>
 </div>
+</div>
+
+
 
 <script> 
-    $(document).ready(function() {
-    function loadAdminData() {
-        $.ajax({
-            url: "<?= base_url('/points') ?>",
-            type: "GET", 
-            dataType: "json",
-            success: function(response) {
-                let tableRows = '';
-                $.each(response, function(index, weight) {
-                    tableRows += `<tr>
+   $(document).ready(function() {
+        let currentPage = 1;
+        const rowsPerPage = 6;
 
-                        <td>${weight.min_weight} - ${weight.max_weight}</td>
-                        <td>${weight.points}</td>
-                        <td><a href="#" class="btn btn-warning btn-sm" 
-                        data-bs-toggle="modal" data-bs-target="#editInventory" data-bs-label="inventoryLabel"
-                        data-id="${weight.id}"
-                        data-item="${weight.item}"
-                        data-category="${weight.category}"
-                        data-quantity="${weight.quantity}"
-                        data-pointPrice="${weight.point_price}">edit</a>
-                        <a href="" class="btn btn-danger btn-sm" >Delete</a>
-                        </td>
-                    </tr>`;
-                });
-                $("#adminTableBody").html(tableRows);
+        function loadAdminData(page = 1) {
+            $.ajax({
+                url: "<?= base_url('/points') ?>",
+                type: "GET",
+                dataType: "json",
+                success: function(response) {
+                    const start = (page - 1) * rowsPerPage;
+                    const end = start + rowsPerPage;
+                    const paginatedData = response.slice(start, end);
+
+                    let tableRows = '';
+
+                    if(paginatedData.length === 0 )
+                    {
+                      tableRows = `<tr>
+                                <td colspan="6" class="text-center text-muted">No Range is Available.</td>
+                             </tr>`;
+                    }
+                    else{
+                      
+                    $.each(paginatedData, function(index, weight) {
+                        tableRows += `<tr>
+                            <td>${weight.min_weight} - ${weight.max_weight}</td>
+                            <td>${weight.categ}</td>
+                            <td>${weight.points}</td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-lg" 
+                                data-bs-toggle="modal" data-bs-target="#editInventory"
+                                data-id="${weight.id}"
+                                data-minweight="${weight.min_weight}"
+                                data-maxweight="${weight.max_weight}"
+                                data-points="${weight.points}">Edit</a>
+                                <a href="deleteRanges/${weight.id}" onclick="return confirm('Are you sure you want to delete this item?')"class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>`;
+                    });
+                    
+                  }
+                    $("#adminTableBody").html(tableRows);
+                    setupPagination(response.length, page);
+                }
+            });
+        }
+
+        function setupPagination(totalRows, currentPage) {
+            const totalPages = Math.ceil(totalRows / rowsPerPage);
+            let paginationHtml = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHtml += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <a class="page-link" href="#" data-page="${i}">${i}</a>
+                </li>`;
+            }
+
+            $("#pagination").html(paginationHtml);
+        }
+
+        $(document).on('click', '.page-link', function(e) {
+            e.preventDefault();
+            const page = parseInt($(this).data('page'));
+            if (page !== currentPage) {
+                currentPage = page;
+                loadAdminData(page);
             }
         });
-    }
 
     loadAdminData();
 
@@ -142,7 +398,7 @@
         let formData = $(this).serialize();
 
         $.ajax({
-            url: "<?= base_url('/addInventory') ?>",
+            url: "<?= base_url('/savePoints') ?>",
             type: "POST",
             data: formData,
             dataType: "json",
@@ -177,16 +433,14 @@ document.addEventListener('DOMContentLoaded', function () {
     editModal.addEventListener('show.bs.modal', function (event) {
         const button = event.relatedTarget;
         const id = button.getAttribute('data-id');
-        const item = button.getAttribute('data-item');
-        const category = button.getAttribute('data-category');
-        const quantity = button.getAttribute('data-quantity');
-        const pointPrice = button.getAttribute('data-pointPrice'); // Fixed variable name
+        const minweight = button.getAttribute('data-minweight');
+        const maxweight = button.getAttribute('data-maxweight');
+        const points = button.getAttribute('data-points');
 
-        document.getElementById('itemId').value = id;
-        document.getElementById('itemName').value = item;
-        document.getElementById('itemCategory').value = category;
-        document.getElementById('itemQuantity').value = quantity;
-        document.getElementById('pointPrice').value = pointPrice; // Fixed variable name
+        document.getElementById('id').value = id;
+        document.getElementById('min_weight').value = minweight;
+        document.getElementById('max_weight').value = maxweight;
+        document.getElementById('point').value = points;
 
         // Removed address — it's not part of your form or table
     });
@@ -194,7 +448,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
 </script>
+
+<nav>
+    <ul class="pagination" id="pagination"></ul>
+</nav>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
