@@ -103,6 +103,11 @@
   </div>
 
   <div class="login-card">
+  <?php if (session()->getFlashdata('error')): ?>
+            <div class="alert alert-danger">
+                <?= session()->getFlashdata('error') ?>
+            </div>
+        <?php endif; ?>
     <div class="login-title">Trash to Bigas Login</div>
     <form action="<?= base_url('loginAuth') ?>" method="post">
       <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>

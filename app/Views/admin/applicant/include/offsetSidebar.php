@@ -11,12 +11,7 @@
           <span>Home</span>
         </a>
       </li>
-      <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
-        <a href="/inventory" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
-          <span>📦</span>
-          <span>Inventory</span>
-        </a>
-      </li>
+
       <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
         <a href="/viewapplicants" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
           <span>📋</span>
@@ -30,12 +25,21 @@
           <span>Points Convertion</span>
         </a>
       </li>
+
+    <?php if(session()->get('role')=== 'Admin'):?>
       <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
         <a href="/ranges" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
           <span>📋</span>
           <span>Point Range</span>
         </a>
       </li>
+      <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
+        <a href="/register" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
+          <span>📋</span>
+          <span>Register User</span>
+        </a>
+      </li>
+    <?php endif;?>
       <li class="list-group-item bg-white rounded-lg shadow-sm hover:bg-blue-100 transition">
         <a href="/logout" class="flex items-center space-x-2 text-decoration-none text-gray-800 font-medium">
           <span></span>

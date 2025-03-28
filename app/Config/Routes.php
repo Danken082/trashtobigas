@@ -59,7 +59,7 @@ $routes->post('login', 'AuthController::attemptLogin');
 
 
 //register
-$routes->get('register', 'AuthController::viewregister', ['filter' => 'authFilter']);
+
 $routes->post('registerUser', 'AuthController::register', ['filter' => 'authFilter']);
 
 //view users
@@ -77,14 +77,15 @@ $routes->post('items/update/', 'AdminController::updateInventory/', ['filter' =>
 
 
 $routes->post('loginAuth', 'AuthController::attemptLogin', ['filter' => 'guestFilter']);
-
 $routes->get('logout', 'AuthController::logout' , ['filter' => 'authFilter']);
-
-
+$routes->get('getuser', 'AuthController::showUser', ['filter' => 'authFilter']);
+$routes->get('/disableaccount/(:any)', 'AuthController::disableaccount/$1');
+$routes->get('/enableaccount/(:any)', 'AuthController::enableaccount/$1');
+$routes->get('/deleteuseradmin/(:any)', 'AuthController::deleteUser/$1');
 
 
 //points
-$routes->get('ranges', 'TrashController::viewRange', ['filter' => 'authFilter']);
+
 $routes->get('points', 'TrashController::points', ['filter' => 'authFilter']);
 $routes->post('savePoints', 'TrashController::InsertPoints', ['filter' => 'authFilter']);
 $routes->post('edit/rangespoints', 'TrashController::updatepoints', ['filter' => 'authFilter']);
@@ -94,3 +95,12 @@ $routes->get('deleteRanges/(:num)', 'TrashController::deleteRanges/$1', ['filter
 $routes->get('ecommerce/(:num)', 'ProductController::index/$1', ['filter' => 'authFilter']);
 $routes->post('redeem', 'ProductController::redeem', ['filter' => 'authFilter']);
 
+
+
+if(session()->get('role')=='Admin')
+{
+
+$routes->get('ranges', 'TrashController::viewRange', ['filter' => 'authFilter']);
+$routes->get('register', 'AuthController::viewregister', ['filter' => 'authFilter']);
+$routes->post('updateUser', 'AuthController::updateUser',['filter'=> 'authFilter']);
+}

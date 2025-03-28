@@ -70,7 +70,17 @@ class AdminController extends BaseController
 
     public function list()
     {
-        $client = $this->client->findAll();
+        $userID = session()->get('id');
+
+        if(session()->get('role') === 'Staff')
+        {
+            $client = $this->client->where('user_ID', $userID)->findAll();
+        }
+
+        elseif(session()->get('role') === 'Admin')
+        {
+            $client = $this->client->findAll();
+        }
         return $this->response->setJSON($client);
     }
     
@@ -103,6 +113,7 @@ class AdminController extends BaseController
 
         $data = [
             'idNumber' => $newId,
+            'user_ID' => session()->get('id'),
             'firstName' => $this->request->getVar('firstName'),
             'lastName' => $this->request->getVar('lastName'),
             'address' => $this->request->getVar('address'),
@@ -296,7 +307,7 @@ class AdminController extends BaseController
     //pointingsystem
     public function detailsView($id)
     {
-       $data =['details' => $this->client->find($id)];
+       $data =['details' => $this->client->where('id', $id)->first()];
 
        return view('admin/applicant/details', $data);
 
@@ -389,7 +400,7 @@ class AdminController extends BaseController
        return view('admin/inventory/viewInventory');
     }
     
-
+    
 
     public function displayInventoryTable()
     {

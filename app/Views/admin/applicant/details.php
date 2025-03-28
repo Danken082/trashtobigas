@@ -38,7 +38,9 @@
 <body>
   <div class="navbar">
       <div class="logo">
+        <a href="/home">
         <img src="<?= base_url('images/systemlogo.png') ?>" alt="Trash to Rice Logo" />
+        </a>
       </div>
     <div class="nav-links">
     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">

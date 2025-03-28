@@ -4,19 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class RedeemHistoryModel extends Model
 {
-
-
-    protected $table            = 'user_tbl';
+    protected $table            = 'redeemed_items';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['userName', 'password', 'contactNo', 'lastName', 'firstName','role', 'status','updated_at'];
-
-
+    protected $allowedFields    = ['user_id', 'client_id', 'product_id', 'points_used', 'redeem_Code'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

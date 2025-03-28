@@ -3,17 +3,21 @@ namespace App\Controllers;
 use App\Models\ProductModel;
 use App\Models\UserModel;
 use App\Models\ClientModel;
+use App\Models\RedeemHistoryModel;
 
 use App\Controllers\BaseController;
 
 class ProductController extends BaseController {
+
+    private $redeem;
     public function __construct()
     {
-        
+        $this->redeem = new RedeemHistoryModel();
     }
     public function index($id) {
         $productModel = new ProductModel();
         $clientModel = new ClientModel();
+        $userID = session()->get('id');
 
         // Fetch client points, ensuring it's set to 0 if the client is not found
         $client = $clientModel->where('idNumber', $id)->first();
@@ -31,54 +35,63 @@ class ProductController extends BaseController {
         return view('admin/ecommerce', $data);
     }
 
+    //for generating ordercode
+    private function generateAlphanumericBarcode($length = 10)
+    {
+       $characters = 'QWh1g2f3YeOzPwPv4u5t6sArSKwFJx7w8b9rZXCcBdN10aLKJ';
+       $barcodeData = '';
+   
+       for ($i = 0; $i < $length; $i++) {
+           $barcodeData .= $characters[rand(0, strlen($characters) - 1)];
+       }
+   
+       return $barcodeData;
+   }
 
     public function redeem()
-    {
-        $request = $this->request->getJSON();
-        foreach ($request->cart as $item) {
-            $productId = $item->productId;
-            $userid = $item->user_id;
-            $price = $item->totalCost;
-        
-            // Now you can process each item
-            log_message('info', "Product ID: $productId, User ID: $userid, Price: $price");
-        }
-        
-    
-        $userModel = new ClientModel();
-        
-        // $newPoints = 1;
-        // // // Fetch the user
-        $user = $userModel->find($userid);
+{
 
-        $userId = $user ? $user['id'] : 0;
-        // // // Debugging: Log retrieved user data
-        log_message('debug', 'User Data: ' . json_encode($user));
-        
-        if (!$user) {
-            return $this->response->setJSON(['success' => false, 'message' => 'User not found']);
-        }
+    $code = $this->generateAlphanumericBarcode();
+    $request = $this->request->getJSON();
+    $userModel = new ClientModel();
     
-        if ($user['totalPoints'] < $price) {
-            return $this->response->setJSON(['success' => false, 'message' => 'Not enough points']);
-        }
-    
-        // // // Deduct points
-        $newPoints = $user['totalPoints'] - $price;
-        $userModel->where('id', $userid)->set(['totalPoints' => $newPoints])->update();
-    
-        // // Save redemption record
-        // $this->db->table('redemptions')->insert([
-        //     'id' => $userId,
-        //     'product_id' => $productId,
-        //     'points_spent' => $price,
-        //     'created_at' => date('Y-m-d H:i:s')
-        // ]);
-    
-        return $this->response->setJSON(['success' => true, 'new_points' => $newPoints ]);
+    $userid = $request->cart[0]->user_id ?? null; // Assuming all items belong to the same user
+    if (!$userid) {
+        return $this->response->setJSON(['success' => false, 'message' => 'Invalid user ID']);
     }
-    
 
+    // Fetch the user
+    $user = $userModel->find($userid);
+    if (!$user) {
+        return $this->response->setJSON(['success' => false, 'message' => 'User not found']);
+    }
 
+    $totalCost = array_sum(array_column($request->cart, 'totalCost')); // Sum all item costs
+
+    if ($user['totalPoints'] < $totalCost) {
+        return $this->response->setJSON(['success' => false, 'message' => 'Not enough points']);
+    }
+
+    // Deduct points
+    $newPoints = $user['totalPoints'] - $totalCost;
+    $userModel->update($userid, ['totalPoints' => $newPoints]);
+
+    // Prepare redemption records
+    $redemptions = [];
+    foreach ($request->cart as $item) {
+        $redemptions[] = [
+            'client_id' => $userid,
+            'user_id' => session()->get('id'), // Who processed the redemption
+            'product_id' => $item->productId,
+            'points_used' => $item->totalCost,
+            'redeem_Code' => 'RC_' . $code
+        ];
+    }
+
+    // Save all redemption records
+    $this->redeem->insertBatch($redemptions);
+
+    return $this->response->setJSON(['success' => true, 'new_points' => number_format(esc($newPoints), 2)]);
+}
 
 }
