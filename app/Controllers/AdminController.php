@@ -10,6 +10,7 @@ use App\Models\LogHistoryModel;
 
 use App\Models\ProductModel;
 use App\Models\InventoryModel;
+use App\Models\RedeemHistoryModel;
 
 
 //library for qr code
@@ -23,7 +24,7 @@ class AdminController extends BaseController
 
     private $log;
     private $trsh;
-
+    private $redeem;
     private $client;
     private $inv;
   
@@ -33,6 +34,7 @@ class AdminController extends BaseController
         $this->trsh = new TrashModel();
         $this->client = new ClientModel();
         $this->inv = new InventoryModel();
+        $this->redeem = new RedeemHistoryModel();
 
     }
     public function home()
@@ -495,9 +497,38 @@ class AdminController extends BaseController
         return redirect()->to('viewInventory'); 
     }
     
-    public function historyLogs()
+    public function redeemItemsHistory()
     {
         
+
+    
+        $data['redeem'] = $this->redeem->select('
+        redeemed_items.id, 
+        redeemed_items.user_id, 
+        redeemed_items.client_id, 
+        redeemed_items.product_id, 
+        redeemed_items.points_used, 
+        redeemed_items.redeem_Code, 
+        user_tbl.lastName, 
+        user_tbl.firstName,
+        user_tbl.userName, 
+        user_tbl.contactNo,
+        inventory_table.id,
+        inventory_table.item,
+        registrationdb.id,
+        registrationdb.idNumber,
+        registrationdb.firstName,
+        registrationdb.lastName,
+        registrationdb.contactNo
+    ')->join('user_tbl', 'user_tbl.id = redeemed_items.user_id')
+      ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
+      ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
+      ->groupBy('redeemed_items.redeem_Code')
+      ->findAll();
+    
+        
+        // var_dump($data);
+      return view('admin/viewRedeemPoints', $data);
     }
 
 

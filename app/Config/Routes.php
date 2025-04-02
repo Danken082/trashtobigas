@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 //insert ng basura
-$routes->get('/', 'Home::index', ['filter' => 'guestFilter']);
+
 $routes->get('/home', 'AdminController::home', ['filter' => 'authFilter']);
 // $routes->get('/ecommerce', 'AdminController::ecommerce');
 $routes->get('/inventory', 'AdminController::inventory', ['filter' => 'authFilter']);
@@ -54,7 +54,7 @@ $routes->get('/products/delete/(:num)', 'ProductController::delete/$1',  ['filte
 $routes->get('/ecommerce', 'ProductController::index', ['filter' => 'authFilter']);
 
 
-$routes->get('login', 'AuthController::login', ['filter' => 'guestFilter']);
+$routes->get('/', 'AuthController::login', ['filter' => 'guestFilter']);
 $routes->post('login', 'AuthController::attemptLogin');
 
 
@@ -104,3 +104,5 @@ $routes->get('ranges', 'TrashController::viewRange', ['filter' => 'authFilter'])
 $routes->get('register', 'AuthController::viewregister', ['filter' => 'authFilter']);
 $routes->post('updateUser', 'AuthController::updateUser',['filter'=> 'authFilter']);
 }
+
+$routes->get('showredeemed', 'AdminController::redeemItemsHistory');

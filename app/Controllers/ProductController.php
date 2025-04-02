@@ -84,6 +84,7 @@ class ProductController extends BaseController {
             'user_id' => session()->get('id'), // Who processed the redemption
             'product_id' => $item->productId,
             'points_used' => $item->totalCost,
+            // 'quantity' => $item->quantity,
             'redeem_Code' => 'RC_' . $code
         ];
     }

@@ -134,7 +134,7 @@
             +
         </button>
     </div>
-                    <button class="mt-2 w-full bg-blue-500 text-white hover:bg-blue-600 p-2 rounded" 
+         <button class="mt-2 w-full bg-blue-500 text-white hover:bg-blue-600 p-2 rounded" 
                             onclick="addToCart(<?= esc($product['id']) ?>, '<?= esc($product['item']) ?>', <?= esc($product['point_price']) ?>, '<?= esc($user_id) ?>')">
                         Add to Cart
                     </button>

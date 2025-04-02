@@ -12,7 +12,7 @@ class RedeemHistoryModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['user_id', 'client_id', 'product_id', 'points_used', 'redeem_Code'];
+    protected $allowedFields    = ['user_id', 'client_id', 'product_id', 'points_used', 'redeem_Code', 'created_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

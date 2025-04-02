@@ -224,3 +224,171 @@ in APPPATH\Controllers\AuthController.php on line 107.
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+ERROR - 2025-03-28 14:22:15 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\Backup\trashtobigas\system\Database\MySQLi\Connection.php:187
+Stack trace:
+#0 C:\Backup\trashtobigas\system\Database\MySQLi\Connection.php(187): mysqli->real_connect('localhost', 'root', '', 'trashtobigasdb', 3306, '', 0)
+#1 C:\Backup\trashtobigas\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Backup\trashtobigas\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Backup\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Backup\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Backup\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Backup\trashtobigas\app\Controllers\AuthController.php(37): CodeIgniter\BaseModel->findAll()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->viewRegister()
+#8 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('C:\\Backup\\trash...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\Backup\trashtobigas\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Backup\trashtobigas\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Backup\trashtobigas\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Backup\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Backup\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Backup\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Backup\trashtobigas\app\Controllers\AuthController.php(37): CodeIgniter\BaseModel->findAll()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->viewRegister()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('C:\\Backup\\trash...')
+#13 {main}
+CRITICAL - 2025-03-28 14:22:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user_tbl`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\AuthController.php(37): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->viewRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+ERROR - 2025-03-28 14:22:18 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\Backup\trashtobigas\system\Database\MySQLi\Connection.php:187
+Stack trace:
+#0 C:\Backup\trashtobigas\system\Database\MySQLi\Connection.php(187): mysqli->real_connect('localhost', 'root', '', 'trashtobigasdb', 3306, '', 0)
+#1 C:\Backup\trashtobigas\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Backup\trashtobigas\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Backup\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Backup\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Backup\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Backup\trashtobigas\app\Controllers\AuthController.php(37): CodeIgniter\BaseModel->findAll()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->viewRegister()
+#8 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('C:\\Backup\\trash...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\Backup\trashtobigas\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Backup\trashtobigas\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Backup\trashtobigas\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Backup\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Backup\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Backup\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Backup\trashtobigas\app\Controllers\AuthController.php(37): CodeIgniter\BaseModel->findAll()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->viewRegister()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('C:\\Backup\\trash...')
+#13 {main}
+CRITICAL - 2025-03-28 14:22:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `user_tbl`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\AuthController.php(37): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->viewRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-03-28 06:23:53 --> ErrorException: Undefined variable $client
+[Method: GET, Route: admin/list]
+in APPPATH\Controllers\AdminController.php on line 84.
+ 1 APPPATH\Controllers\AdminController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client', 'C:\\Backup\\trashtobigas\\app\\Controllers\\AdminController.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->list()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-03-28 11:06:30 --> ErrorException: Undefined variable $client
+[Method: GET, Route: admin/list]
+in APPPATH\Controllers\AdminController.php on line 84.
+ 1 APPPATH\Controllers\AdminController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client', 'C:\\Backup\\trashtobigas\\app\\Controllers\\AdminController.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->list()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-03-28 11:08:28 --> ErrorException: Undefined variable $client
+[Method: GET, Route: admin/list]
+in APPPATH\Controllers\AdminController.php on line 84.
+ 1 APPPATH\Controllers\AdminController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client', 'C:\\Backup\\trashtobigas\\app\\Controllers\\AdminController.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->list()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-03-28 11:09:25 --> ErrorException: Undefined variable $client
+[Method: GET, Route: admin/list]
+in APPPATH\Controllers\AdminController.php on line 84.
+ 1 APPPATH\Controllers\AdminController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client', 'C:\\Backup\\trashtobigas\\app\\Controllers\\AdminController.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->list()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-03-28 11:09:28 --> ErrorException: Undefined variable $client
+[Method: GET, Route: admin/list]
+in APPPATH\Controllers\AdminController.php on line 84.
+ 1 APPPATH\Controllers\AdminController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client', 'C:\\Backup\\trashtobigas\\app\\Controllers\\AdminController.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->list()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-03-28 11:10:07 --> ErrorException: Undefined variable $client
+[Method: GET, Route: admin/list]
+in APPPATH\Controllers\AdminController.php on line 84.
+ 1 APPPATH\Controllers\AdminController.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $client', 'C:\\Backup\\trashtobigas\\app\\Controllers\\AdminController.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->list()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
