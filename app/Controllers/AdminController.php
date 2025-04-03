@@ -360,7 +360,7 @@ class AdminController extends BaseController
     $this->delete($id);
     $this->log->save($data);
 
-    return $this->response->setJSON(['status'=> 'success']);
+    return redirect()->to('viewapplicants');
     }
 
     private function delete($id)
