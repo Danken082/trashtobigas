@@ -131,7 +131,7 @@
                 <th>Product Redeem</th>
                 <!-- <th>Quantity</th> -->
                 <th>Points Use</th>
-                <th>Date Redeem</th>
+                <!-- <th>Date Redeem</th> -->
                 
             </tr>
         </thead>
