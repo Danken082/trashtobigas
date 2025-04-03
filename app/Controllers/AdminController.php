@@ -304,7 +304,7 @@ class AdminController extends BaseController
     //pointingsystem
     public function detailsView($id)
     {
-       $data =['details' => $this->client->where('id', $id)->first()];
+       $data =['details' => $this->client->where('idNumber', $id)->first()];
 
        return view('admin/applicant/details', $data);
 
