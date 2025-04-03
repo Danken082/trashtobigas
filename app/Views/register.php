@@ -376,18 +376,8 @@
                                 month: 'long', 
                                 day: 'numeric' 
                             })}</td>  
-                        <td><button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#editModal"
-                            data-id="${admin.id}"
-                            data-firstname="${admin.firstName}"
-                            data-lastname="${admin.lastName}"
-                            data-contactno="${admin.contactNo}"
-                            data-role="${admin.role}"
-                            data-status="${admin.status}"
-                            data-username="${admin.userName}"
-                            data-password="${admin.password}">
-
-                            Edit Item</button>
-
+                        <td>
+                        
                     
                             
                             <a class="btn btn-danger btn-lg" style="margin-top:5px;"

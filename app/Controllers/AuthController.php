@@ -81,8 +81,11 @@ class AuthController extends Controller
         ];
 
         $model->save($data);
-        return $this->response->setJSON(['success' => true,
-                                         'message' => 'Resgistration Successful']);
+        // return $this->response->setJSON(['success' => true,
+        //                                  'message' => 'Resgistration Successful']);
+
+
+        return redirect()->to('/register'); 
         
     }
 
