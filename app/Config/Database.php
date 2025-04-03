@@ -27,9 +27,9 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'trashtobigasdb',
+        'username'     => 'u388637834_trash_root',
+        'password'     => ']s0J;9*y[38B',
+        'database'     => 'u388637834_trashbigas',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
