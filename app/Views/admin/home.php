@@ -101,6 +101,12 @@
             </div>
             </a>
             <?php endif;?>
+            <a href="showredeemed">
+            <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
+                <i class="fas fa-history text-7xl text-green-500 mb-6"></i>
+                <p class="text-2xl font-semibold">View Redeemed History</p>
+            </div>
+            </a>
             <!-- <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
                 <i class="fas fa-clock text-7xl text-gray-400 mb-6"></i>
                 <p class="text-2xl font-semibold">Time Clock</p>

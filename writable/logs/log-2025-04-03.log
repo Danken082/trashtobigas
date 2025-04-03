@@ -1,0 +1,172 @@
+CRITICAL - 2025-04-03 00:30:21 --> Error: Class "Locale" not found
+[Method: GET, Route: /]
+in SYSTEMPATH\CodeIgniter.php on line 190.
+ 1 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+ 2 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+ 3 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark()
+CRITICAL - 2025-04-03 00:30:22 --> ErrorException: Uncaught Error: Class "Locale" not found in C:\Backup\trashtobigas\system\I18n\TimeTrait.php:76
+Stack trace:
+#0 C:\Backup\trashtobigas\system\I18n\TimeTrait.php(117): CodeIgniter\I18n\Time->__construct()
+#1 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(395): CodeIgniter\I18n\Time::now()
+#2 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(373): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\Backup\trashtobigas\system\Debug\ExceptionHandler.php(83): CodeIgniter\HTTP\Response->send()
+#4 C:\Backup\trashtobigas\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle()
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#6 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\Backup\trashtobigas\system\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+#1 C:\Backup\trashtobigas\system\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+#2 C:\Backup\trashtobigas\spark(84): CodeIgniter\Boot::bootSpark()
+#3 {main}
+[Method: GET, Route: /]
+in SYSTEMPATH\I18n\TimeTrait.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-03 00:36:07 --> Error: Class "Locale" not found
+[Method: GET, Route: /]
+in SYSTEMPATH\CodeIgniter.php on line 190.
+ 1 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+ 2 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+ 3 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark()
+CRITICAL - 2025-04-03 00:36:07 --> ErrorException: Uncaught Error: Class "Locale" not found in C:\Backup\trashtobigas\system\I18n\TimeTrait.php:76
+Stack trace:
+#0 C:\Backup\trashtobigas\system\I18n\TimeTrait.php(117): CodeIgniter\I18n\Time->__construct()
+#1 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(395): CodeIgniter\I18n\Time::now()
+#2 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(373): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\Backup\trashtobigas\system\Debug\ExceptionHandler.php(83): CodeIgniter\HTTP\Response->send()
+#4 C:\Backup\trashtobigas\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle()
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#6 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\Backup\trashtobigas\system\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+#1 C:\Backup\trashtobigas\system\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+#2 C:\Backup\trashtobigas\spark(84): CodeIgniter\Boot::bootSpark()
+#3 {main}
+[Method: GET, Route: /]
+in SYSTEMPATH\I18n\TimeTrait.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-03 00:38:16 --> Error: Class "Locale" not found
+[Method: GET, Route: /]
+in SYSTEMPATH\CodeIgniter.php on line 190.
+ 1 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+ 2 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+ 3 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark()
+CRITICAL - 2025-04-03 00:38:16 --> ErrorException: Uncaught Error: Class "Locale" not found in C:\Backup\trashtobigas\system\I18n\TimeTrait.php:76
+Stack trace:
+#0 C:\Backup\trashtobigas\system\I18n\TimeTrait.php(117): CodeIgniter\I18n\Time->__construct()
+#1 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(395): CodeIgniter\I18n\Time::now()
+#2 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(373): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\Backup\trashtobigas\system\Debug\ExceptionHandler.php(83): CodeIgniter\HTTP\Response->send()
+#4 C:\Backup\trashtobigas\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle()
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#6 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\Backup\trashtobigas\system\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+#1 C:\Backup\trashtobigas\system\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+#2 C:\Backup\trashtobigas\spark(84): CodeIgniter\Boot::bootSpark()
+#3 {main}
+[Method: GET, Route: /]
+in SYSTEMPATH\I18n\TimeTrait.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-03 00:38:52 --> Error: Class "Locale" not found
+[Method: GET, Route: /]
+in SYSTEMPATH\CodeIgniter.php on line 190.
+ 1 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+ 2 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+ 3 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark()
+CRITICAL - 2025-04-03 00:38:52 --> ErrorException: Uncaught Error: Class "Locale" not found in C:\Backup\trashtobigas\system\I18n\TimeTrait.php:76
+Stack trace:
+#0 C:\Backup\trashtobigas\system\I18n\TimeTrait.php(117): CodeIgniter\I18n\Time->__construct()
+#1 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(395): CodeIgniter\I18n\Time::now()
+#2 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(373): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\Backup\trashtobigas\system\Debug\ExceptionHandler.php(83): CodeIgniter\HTTP\Response->send()
+#4 C:\Backup\trashtobigas\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle()
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#6 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\Backup\trashtobigas\system\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+#1 C:\Backup\trashtobigas\system\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+#2 C:\Backup\trashtobigas\spark(84): CodeIgniter\Boot::bootSpark()
+#3 {main}
+[Method: GET, Route: /]
+in SYSTEMPATH\I18n\TimeTrait.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-03 00:46:49 --> Error: Class "Locale" not found
+[Method: GET, Route: /]
+in SYSTEMPATH\CodeIgniter.php on line 190.
+ 1 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+ 2 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+ 3 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark()
+CRITICAL - 2025-04-03 00:46:49 --> ErrorException: Uncaught Error: Class "Locale" not found in C:\Backup\trashtobigas\system\I18n\TimeTrait.php:76
+Stack trace:
+#0 C:\Backup\trashtobigas\system\I18n\TimeTrait.php(117): CodeIgniter\I18n\Time->__construct()
+#1 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(395): CodeIgniter\I18n\Time::now()
+#2 C:\Backup\trashtobigas\system\HTTP\ResponseTrait.php(373): CodeIgniter\HTTP\Response->sendHeaders()
+#3 C:\Backup\trashtobigas\system\Debug\ExceptionHandler.php(83): CodeIgniter\HTTP\Response->send()
+#4 C:\Backup\trashtobigas\system\Debug\Exceptions.php(163): CodeIgniter\Debug\ExceptionHandler->handle()
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#6 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 C:\Backup\trashtobigas\system\Boot.php(312): CodeIgniter\CodeIgniter->initialize()
+#1 C:\Backup\trashtobigas\system\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+#2 C:\Backup\trashtobigas\spark(84): CodeIgniter\Boot::bootSpark()
+#3 {main}
+[Method: GET, Route: /]
+in SYSTEMPATH\I18n\TimeTrait.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-03 08:49:54 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 143.
+ 1 SYSTEMPATH\Database\Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH\Database\Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH\Controllers\AuthController.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\AuthController->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-03 08:50:50 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 143.
+ 1 SYSTEMPATH\Database\Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH\Database\Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH\Controllers\AuthController.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\AuthController->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-03 08:50:51 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 143.
+ 1 SYSTEMPATH\Database\Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH\Database\Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH\Controllers\AuthController.php(18): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\AuthController->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
