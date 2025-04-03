@@ -151,7 +151,7 @@
     </div>
   </div>
   <div class="container mt-5">
-        <h2 class="text-center mb-4">Applicant List</h2>
+        <h2 class="text-center mb-4">Users List</h2>
         <button class="btn btn-primary mb-3 btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal" style="margin-top:5px;">Register Barangay User</button>
         <div class="table-responsive">
             <table class="table table-striped table-hover table-bordered">

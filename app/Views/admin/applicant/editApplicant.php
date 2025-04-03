@@ -182,7 +182,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="registerModalLabel">Register Admin</h5>
+                <h5 class="modal-title" id="registerModalLabel">Register Applicant</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -228,7 +228,7 @@
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success"  onclick="generateQrCode()" data-bs-toggle="modal" data-bs-target="#qrModal">Register</button>
+                    <button type="submit" class="btn btn-success"  onclick="generateQrCode()">Register</button>
                 </form>
             </div>
         </div>
@@ -427,34 +427,35 @@
     loadAdminData();
  
     $("#adminRegisterForm").submit(function(event) {
-        event.preventDefault();
-        let formData = $(this).serialize();
+    event.preventDefault();
+    let formData = $(this).serialize();
 
-        $.ajax({
-            url: "<?= base_url('/admin/register') ?>",
-            type: "POST",
-            data: formData,
-            dataType: "json",
-            success: function(response) {
-                if (response.status === "error") {
-                    let errorMessage = '<div class="alert alert-danger">';
-                    $.each(response.errors, function(key, value) {
-                        errorMessage += `<p>${value}</p>`;
-                    });
-                    errorMessage += '</div>';
-                    $("#alert-message").html(errorMessage);
-                } else {
-                    $("#alert-message").html('<div class="alert alert-success">' + response.message + '</div>');
-                    $("#adminRegisterForm")[0].reset();
-                    setTimeout(() => {
-                        $("#registerModal").modal('hide');
-                        $("#alert-message").html('');
-                        // loadAdminData();
-                    }, 2000);
-                }
+    $.ajax({
+        url: "<?= base_url('/admin/register') ?>",
+        type: "POST",
+        data: formData,
+        dataType: "json",
+        success: function(response) {
+            if (response.status === "error") {
+                let errorMessage = '<div class="alert alert-danger">';
+                $.each(response.errors, function(key, value) {
+                    errorMessage += `<p>${value}</p>`;
+                });
+                errorMessage += '</div>';
+                $("#alert-message").html(errorMessage);
+            } else {
+                $("#alert-message").html('<div class="alert alert-success">' + response.message + '</div>');
+                $("#adminRegisterForm")[0].reset();
+                setTimeout(() => {
+                    $("#registerModal").modal('hide');
+                    $("#alert-message").html('');
+                    loadAdminData();
+                }, 2000);
             }
-        });
+        }
     });
+});
+
 });
 
 

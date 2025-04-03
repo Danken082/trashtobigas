@@ -92,27 +92,27 @@ class AdminController extends BaseController
     //registration of users
     public function registerUser()
     {
-
-        //id generator
+        // ID generator
         $newId = $this->generateIdNumber();
-
-       $rules = [
+    
+        // Validation rules
+        $rules = [
             'firstName' => 'required|min_length[3]',
             'lastName' => 'required|min_length[3]',
             'address' => 'required|min_length[5]',
             'email' => 'required|min_length[5]|valid_email',
             'contactNo' => 'required',
             'birthdate' => 'required|valid_date'
-       ];
-
-            if (!$this->validate($rules)) {
+        ];
+    
+        if (!$this->validate($rules)) {
             return $this->response->setJSON([
                 'status' => 'error',
+                'errors' => $this->validator->getErrors()
             ]);
-        }          
-
-
-
+        }
+    
+        // Data to save
         $data = [
             'idNumber' => $newId,
             'user_ID' => session()->get('id'),
@@ -120,25 +120,20 @@ class AdminController extends BaseController
             'lastName' => $this->request->getVar('lastName'),
             'address' => $this->request->getVar('address'),
             'email'  => $this->request->getVar('email'),
-            'qrcode' => $newId .'.png',
+            'qrcode' => $newId . '.png',
             'gender' => $this->request->getVar('gender'),
             'contactNo' => $this->request->getVar('contactNo'),
             'birthdate' => $this->request->getVar('birthdate')
-
         ];
-
-        // $this->qrGenerator($newId);
-
-
-
+    
         $this->client->save($data);
-
-        return $this->response->setJSON(['success' => true,
-                                         'message' => 'Resgistration Successful']);
     
-
-    
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Registration Successful'
+        ]);
     }
+    
 
 
     //qr generator
