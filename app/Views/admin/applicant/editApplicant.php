@@ -271,7 +271,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="contactNo" class="form-label">Contact Number</label>
-                            <input type="text" class="form-control" name="contactNo" id="ContactNo" required>
+                            <input type="text" class="form-control" name="contactNo" id="ContactNum" required>
                         </div>
                     </div>
                     <div class="row">
@@ -484,7 +484,7 @@ $("#ContactNo").on("input", function () {
             document.getElementById('FirstName').value = firstName;
             document.getElementById('LastName').value = lastName;
             document.getElementById('Email').value = email;
-            document.getElementById('ContactNo').value = contactNo;
+            document.getElementById('ContactNum').value = contactNo;
             document.getElementById('Address').value = address;
             document.getElementById('points').value = points;
             document.getElementById('birth_date').value = birth;
