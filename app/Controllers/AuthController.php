@@ -77,6 +77,7 @@ class AuthController extends Controller
             'userName' => $this->request->getPost('userName'),
             'role' => $this->request->getPost('role'),
             'status' => 'Active',
+            'address' => $this->request->getPost('address'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
         ];
 
