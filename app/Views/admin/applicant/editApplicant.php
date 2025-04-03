@@ -151,8 +151,8 @@
     </div>
   </div>
   <div class="container mt-5">
-        <h2 class="text-center mb-4">Applicant List</h2>
-        <button class="btn btn-primary mb-3 btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal" style="margin-top:5px;">Register Applicant</button>
+        <h2 class="text-center mb-4">Client List</h2>
+        <button class="btn btn-primary mb-3 btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal" style="margin-top:5px;">Register Client</button>
         <div class="table-responsive">
             <table class="table table-striped table-hover table-bordered">
                 <thead class="table-dark">
@@ -182,7 +182,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="registerModalLabel">Register Applicant</h5>
+                <h5 class="modal-title" id="registerModalLabel">Register Client</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

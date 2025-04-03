@@ -83,7 +83,7 @@
             <a href="viewapplicants">
             <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
                 <i class="fas fa-users text-7xl text-purple-500 mb-6"></i>
-                <p class="text-2xl font-semibold">Applicants</p>
+                <p class="text-2xl font-semibold">Clients</p>
             </div>
             </a>
             <?php if(session()->get('role') === 'Admin'):?>
