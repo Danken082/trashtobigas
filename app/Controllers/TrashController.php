@@ -38,7 +38,7 @@ class TrashController extends ResourceController {
     {
 
 
-        return view('admin/range/viewPoints');
+        return view('admin/Range/viewPoints');
     }
     public function InsertPoints()
     {
