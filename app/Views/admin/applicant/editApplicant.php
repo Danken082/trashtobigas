@@ -219,7 +219,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Contact Number</label>
-                            <input type="text" class="form-control" id="contactNo" name="contactNo" required>
+                            <input type="text" class="form-control" id="ContactNo" name="contactNo" required>
                         </div>
                     </div>
                     <div class="row">
@@ -328,6 +328,11 @@
     <!-- modal for updating applicants-->
 
     <script>
+
+$("#ContactNo").on("input", function () {
+    $(this).val($(this).val().replace(/[^0-9]/g, ""));
+});
+
 
     //inserting and fetching
 
