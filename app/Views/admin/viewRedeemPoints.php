@@ -142,7 +142,7 @@
             <td><?= $rdm['userName']?></td>
             <td><?= $rdm['item']?></td>
             <td><?= $rdm['points_used']?></td>
-            <td><?= $rdm['created_at']?></td>
+
         </tr>
         </tbody>
         <?php endforeach;?>
