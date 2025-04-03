@@ -282,14 +282,18 @@ class AdminController extends BaseController
 
     //searchApplicant
 
-    public function search()
-    {
+public function search()
+{
+    $user = session()->get('id'); // Get user ID from session
+    $search = $this->request->getGet('query');
 
-        $search = $this->request->getGet('query');
-// $results = 0;
-        $results = $this->client->like('idNumber', $search)->findAll();
-        return $this->response->setJSON($results);
-    }
+    $results = $this->client
+        ->like('idNumber', $search)
+        ->where('user_ID', $user) // Use $user instead of $id
+        ->findAll();
+
+    return $this->response->setJSON($results);
+}
 
     public function getUserDetails($id)
     {
@@ -401,7 +405,9 @@ class AdminController extends BaseController
 
     public function displayInventoryTable()
     {
-        $client = $this->inv->findAll();
+
+        $user_id = session()->get('id');
+        $client = $this->inv->where('user_ID', $user_id)->findAll();
 
         return $this->response->setJSON($client);
     }
@@ -494,6 +500,8 @@ class AdminController extends BaseController
     
     public function redeemItemsHistory()
     {
+
+        $user_id = session()->get('id');
         
 
     
@@ -518,6 +526,7 @@ class AdminController extends BaseController
     ')->join('user_tbl', 'user_tbl.id = redeemed_items.user_id')
       ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
       ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
+      ->where('redeemed_items.user_id', $user_id)
       ->groupBy('redeemed_items.redeem_Code')
       ->findAll();
     
