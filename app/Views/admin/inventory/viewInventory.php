@@ -111,9 +111,11 @@
 </style>
 <body>
 <div class="navbar">
+    <a href="/">
     <div class="logo">
         <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo">
     </div>
+    </a>
     <a data-bs-toggle="offcanvas" href="#offcanvasExample">
         <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="Profile" class="profile-logo">
     </a>
