@@ -99,7 +99,6 @@ class AdminController extends BaseController
         $rules = [
             'firstName' => 'required|min_length[3]',
             'lastName' => 'required|min_length[3]',
-            'address' => 'required|min_length[5]',
             'email' => 'required|min_length[5]|valid_email',
             'contactNo' => 'required',
             'birthdate' => 'required|valid_date'
@@ -118,7 +117,7 @@ class AdminController extends BaseController
             'user_ID' => session()->get('id'),
             'firstName' => $this->request->getVar('firstName'),
             'lastName' => $this->request->getVar('lastName'),
-            'address' => $this->request->getVar('address'),
+            'address' => session()->get('address'),
             'email'  => $this->request->getVar('email'),
             'qrcode' => $newId . '.png',
             'gender' => $this->request->getVar('gender'),
