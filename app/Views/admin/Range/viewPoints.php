@@ -139,16 +139,13 @@
 <body>
     <br>  
   <div class="navbar">
-    <div class="logo-search" id="searchToggle">
+    <div>
+      <a href="/home">
       <div class="logo">
         <img src="<?= base_url('images/systemlogo.png') ?>" alt="Trash to Rice Logo" />
       </div>
-      <div class="search-icon" id="searchIcon">
-        <i class="bi bi-search"></i>
-      </div>
-      <input type="text" class="search-input" id="searchInput" placeholder="Search..." autocomplete="off"/>
+      </a>
       <!-- Search result container -->
-      <div id="result">Search results here...</div>
     </div>
     <div class="nav-links">
     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
