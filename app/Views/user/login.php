@@ -120,6 +120,7 @@
       <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
       <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" required>
       <button type="submit" class="btn btn-login">Login</button>
+      <a href="#" class="forgot-password" data-toggle="modal" data-target="#forgotPasswordModal" style="font-size:20px;">Forgot Password?</a>
       
     </form>
   </div>
