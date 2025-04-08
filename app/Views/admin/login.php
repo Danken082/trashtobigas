@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trash to Bigas Login</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <style>
     body {
       position: relative;
@@ -107,15 +109,44 @@
             <div class="alert alert-danger">
                 <?= session()->getFlashdata('error') ?>
             </div>
+
+          <?php elseif(session()->getFlashdata('msg')):?>
+            <div class="alert alert-success">
+                <?= session()->getFlashdata('msg') ?>
+            </div>
+
         <?php endif; ?>
     <div class="login-title">Trash to Bigas Login</div>
     <form action="<?= base_url('loginAuth') ?>" method="post">
       <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
       <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" required>
       <button type="submit" class="btn btn-login">Login</button>
+      
     </form>
   </div>
 
+  <!-- Forgot Password Modal -->
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="<?= base_url('/forgotpassword')?>" method="post">
+            <div class="form-group">
+              <label for="reset-email">Enter your email address</label>
+              <input type="email" class="form-control" id="reset-email" name="email" placeholder="Enter email">
+            </div>
+            <button type="submit" class="btn btn-login">Send Reset Code</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

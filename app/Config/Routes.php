@@ -54,7 +54,7 @@ $routes->get('/products/delete/(:num)', 'ProductController::delete/$1',  ['filte
 $routes->get('/ecommerce', 'ProductController::index', ['filter' => 'authFilter']);
 
 
-$routes->get('/', 'AuthController::login', ['filter' => 'guestFilter']);
+$routes->get('/login', 'AuthController::login', ['filter' => 'guestFilter']);
 $routes->post('login', 'AuthController::attemptLogin');
 
 
@@ -106,3 +106,18 @@ $routes->post('updateUser', 'AuthController::updateUser',['filter'=> 'authFilter
 }
 
 $routes->get('showredeemed', 'AdminController::redeemItemsHistory');
+$routes->get('historyPointsConvertion', 'AdminController::viewHistoryPointsConvertion');
+$routes->post('forgotpassword', 'AuthController::forgot');
+
+$routes->post('/send', 'AuthController::sendSample');
+$routes->get('/trysend', 'AuthController::buttonsample');
+
+$routes->match(['get', 'post'], '/active/(:any)', 'AuthController::activeAccount/$1');
+$routes->match(['get', 'post'], '/resetpassword/(:any)', 'AuthController::resetPassword/$1');
+$routes->match(['get', 'post'], '/resetpasswordcon/(:any)', 'AuthController::resetpasswordcon/$1');
+$routes->match(['get', 'post'], '/passwordReseter/(:any)', 'AuthController::resetthispassword/$1');
+
+$routes->get('clienthome', 'ClientController::home');
+$routes->get('clientprofile', 'ClientController::profile');
+$routes->get('clienthistory', 'ClientController::history');
+$routes->get('/', 'ClientController::login');

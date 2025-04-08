@@ -73,15 +73,29 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    table {
-      border-radius: 10px;
-      overflow: hidden;
-      font-size:20px;
-    }
+  table {
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 22px; /* bigger font */
+  width: 100%;
+  table-layout: fixed;
+}
 
-    table tbody{
-        font-size:23px;
-    }
+thead th {
+  font-size: 24px; /* make headers bigger */
+  text-align: center;
+}
+
+table tbody {
+  font-size: 22px; /* make body text bigger */
+}
+
+table td {
+  font-size: 26px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 15px;
+}
 
     img .img-table{
         height:25px;
@@ -116,19 +130,20 @@
         <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo">
     </div>
     </a>
+    <p><?= session()->get('userName')?></p>
     <a data-bs-toggle="offcanvas" href="#offcanvasExample">
+    
         <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="Profile" class="profile-logo">
     </a>
 </div>
 
 <div class="container">
-    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#saveToInventory">Add Item</button>
+    <button class="btn btn-primary mb-3" style="width:200px; font-size:20px;" data-bs-toggle="modal" data-bs-target="#saveToInventory">Add Item</button>
     <table class="table table-striped table-hover table-bordered">
         <thead class="table-dark">
             <tr>
                 <th>Item</th>
                 <th>Category</th>
-                <th>Quantity</th>
                 <th>Point Price</th>
                 <th>Images</th>
                 <th>Action</th>
@@ -138,7 +153,7 @@
     </table>
 </div>
 
-<?php include('include/offsetSidebar.php')?>
+
 
 <!-- Image Preview Modal -->
 <div class="modal fade modal-lg modal-fullscreen" id="imagePreviewModal" tabindex="-1" aria-labelledby="imagePreviewLabel" aria-hidden="true">
@@ -199,24 +214,22 @@
 
                   </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width:200px; font-size:20px;">Close</button>
+                    <button type="submit" class="btn btn-primary" style="width:200px; font-size:20px;">Save changes</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-
 <div class="modal fade modal-lg modal-fullscreen" id="editInventory" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered" style="width: 150%; margin-left: 25%; margin-right: 25%;"> <!-- Adjust width and margins -->
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editModalLabel">Edit Item</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="editForm" action="<?= base_url('items/update/')?>" method="post" enctype="multipart/form-data">
-            <div class="modal-body">
+                <div class="modal-body">
                     <input type="hidden" name="id" id="item_Id">
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -226,10 +239,10 @@
                         <div class="col-md-6 mb-3">
                             <label for="itemPrice" class="form-label">Category</label>
                             <select name="category" class="form-control" id="item_Category">
-                                    <option disabled selected id="item_Category">--Select Category--</option>
-                                    <option value="GS">Good Supplies</option>
-                                    <option value="SS">School Supplies</option>
-                                    <option value="Others">Others</option>
+                                <option disabled selected>--Select Category--</option>
+                                <option value="GS">Good Supplies</option>
+                                <option value="SS">School Supplies</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
                     </div>
@@ -238,23 +251,20 @@
                             <label for="quantity" class="form-label">Quantity</label>
                             <input type="number" class="form-control" name="quantity" id="item_Quantity" required>
                         </div>
-                        
                         <div class="col-md-6 mb-3">
                             <label for="pointsPrice" class="form-label">Point Price</label>
-                            <input type="text" class="form-control"  name="pointPrice" id="point_Price" required>
+                            <input type="text" class="form-control" name="pointPrice" id="point_Price" required>
                         </div>
-
                     </div>
                     <div class="col-md-6 mb-3">
-    <label for="image" class="form-label">Image</label>
-    <input type="file" class="form-control" name="img" id="Item_image" accept="image/*" onchange="previewImage(event)">
-    <img id="imagePreview" src="" alt="Image Preview" style="display:none; height:100px; width:100px; margin-top:10px;">
-</div>
-
-                  </div>
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" class="form-control" name="img" id="Item_image" accept="image/*" onchange="previewImage(event)">
+                        <img id="imagePreview" src="" alt="Image Preview" style="display:none; height:100px; width:100px; margin-top:10px;">
+                    </div>
+                </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width:200px; font-size:20px;">Close</button>
+                    <button type="submit" class="btn btn-primary" style="width:200px; font-size:20px;">Save changes</button>
                 </div>
             </form>
         </div>
@@ -287,7 +297,6 @@
                     tableRows += `<tr>
                         <td>${inventory.item}</td>
                         <td>${inventory.category}</td>
-                        <td>${inventory.quantity}</td>
                         <td>${inventory.point_price}</td>
                         <td>
                             <img class="img-table" src="/images/inventory/redeemed/${inventory.img}" alt="Image" onclick="showImagePreview('/images/inventory/redeemed/${inventory.img}')">

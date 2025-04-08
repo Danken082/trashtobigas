@@ -66,17 +66,22 @@ class AuthController extends Controller
     }
     public function register()
     {
-
+        
         $model = new UserModel();
 
+
+        $email = $this->request->getPost('email');
+        $verificationToken = substr(md5(rand()), 0, 8);
 
         $data = [
             'lastName' => $this->request->getPost('lastName'),
             'firstName' => $this->request->getPost('firstName'),
+            'auth'      => $verificationToken,
             'contactNo' => $this->request->getPost('contactNo'),
+            'email'   => $email,
             'userName' => $this->request->getPost('userName'),
             'role' => $this->request->getPost('role'),
-            'status' => 'Active',
+            'status' => 'Inactive',
             'address' => $this->request->getPost('address'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
         ];
@@ -85,10 +90,33 @@ class AuthController extends Controller
         // return $this->response->setJSON(['success' => true,
         //                                  'message' => 'Resgistration Successful']);
 
-
+        $this->accActivationsend($email, $verificationToken);
         return redirect()->to('/register'); 
         
     }
+
+    private function accActivationsend($email, $verificationToken)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('rontaledankeneth@gmail.com', 'Trashtobigas');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Dear user <br> this is your Activation Link <a href=". base_url() . '/active/' . $verificationToken .">Activate</a>" );
+
+        $emailService->send();
+
+    }
+
+    public function activeAccount($verificationToken)
+    {
+        $activateUser = $this->user->where('auth', $verificationToken)->first();
+
+        $data = ['status' => 'Active'];
+
+        $this->user->where('id', $activateUser['id'])->set($data)->update();
+
+        return redirect()->to('/adminlogin')->with('msg', 'Account is now activated');
+    }   
 
 
     public function updateUser()
@@ -114,7 +142,140 @@ class AuthController extends Controller
         
 
     }
+    // //forgot pasword
+    // public function forgot()
+    // {
+    //     $email = $this->request->getPost('email');
+    
+    //     $user = $this->user->where('LOWER(email)', strtolower($email))->first();
 
+    //     $verificationToken = substr(md5(rand()), 0, 8);
+
+    //     if ($user) {
+    //         // print($user['id']);
+
+    //         $data = ['auth' => $verificationToken];
+
+    //         $this->user->where('id', $user['id'])->set($data)->update();
+
+
+
+    //         $this->sendEmailResetpassword($email, $verificationToken);
+    //         return redirect()->to('/')->with('msg', 'Check your Email');
+
+    //     } else {
+
+    //         return redirect()->to('/')->with('error', 'user not found try again');
+    //     }
+    // }
+
+
+    public function resetthispassword($id)
+    {
+             $verificationToken = substr(md5(rand()), 0, 8);
+       $user= $this->user->where('id', $id)->first();
+
+       $email = $user['email'];
+
+
+       $data = ['auth' => $verificationToken];
+       $this->user->where('id', $id)->set($data)->update();
+       $this->sendEmailResetpassword($email, $verificationToken);
+
+       return redirect()->to('/register')->with('msg', 'The reset link has been send in to the users email');
+       
+    }
+    public function sendEmailResetpassword($email, $verificationToken)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('rontaledankeneth@gmail.com', 'Trashtobigas');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Dear user this is your Account Password Reseter Link <a href=". base_url() . '/resetpassword/' . $verificationToken .">Activate</a>" );
+
+        $emailService->send();
+
+    }
+
+
+    public function resetPassword($auth)
+    {
+       $user =  $this->user->where('auth', $auth)->first();
+     
+
+      if($user)
+      {
+    $id= $user['id'];
+      $data =  ['user' => $this->user->where('id', $id)->first()];
+      return view('admin/changepassword', $data);
+      }
+      else{
+        return redirect()->to('adminlogin')->with('error', 'user not found try again');
+      }
+    
+
+    }
+
+    public function resetpasswordcon($id)
+    {
+        helper(['form']);
+
+        $pass = $this->request->getPost('password');
+            $rules = [
+                'password' => 'required|min_length[6]',
+                'confirmpassword' => 'required|matches[password]'
+            ];
+    
+            $messages = [
+                'confirmpassword' => [
+                    'matches' => 'Confirm password does not match the password.'
+                ]
+            ];
+    
+            if (!$this->validate($rules, $messages)) {
+                return view('register', [
+                    'validation' => $this->validator
+                ]);
+            }
+
+            
+            
+            $data =['password' =>password_hash($pass, PASSWORD_DEFAULT), 'auth' => null];
+
+
+            $this->user->where('id', $id)->set($data)->update();
+            
+
+
+        
+        return redirect()->to('adminlogin')->with('msg', 'password reset successfully');
+
+
+    }
+    public function buttonsample()
+    {
+     echo   '<form action="/send" method="post"><button type="submit">send</button></form>';
+    }
+
+    public function sendSample()
+{
+    $emailService = \Config\Services::email();
+    $emailService->setTo('danrontalem@gmail.com');
+    $emailService->setFrom('rontaledankeneth@gmail.com', 'Trashtobigas');
+    $emailService->setSubject('Email Verification');
+    $emailService->setMessage("Hello This is Your Verification Token Dont Share it to any one ");
+
+
+    if($emailService->send())
+    {
+        echo"Success";
+    }
+    else{
+        echo"Failed";
+    }
+
+    // echo"hello";
+}    
     public function attemptLogin()
     {
         $session = session();
@@ -163,6 +324,6 @@ class AuthController extends Controller
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/');
+        return redirect()->to('adminlogin');
     }
 }

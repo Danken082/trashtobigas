@@ -11,6 +11,7 @@ use App\Models\LogHistoryModel;
 use App\Models\ProductModel;
 use App\Models\InventoryModel;
 use App\Models\RedeemHistoryModel;
+use App\Models\HistoryModel;
 
 
 //library for qr code
@@ -27,7 +28,7 @@ class AdminController extends BaseController
     private $redeem;
     private $client;
     private $inv;
-  
+    private $history;
     public function __construct()
     {
         $this->log = new LogHistoryModel();  
@@ -35,7 +36,7 @@ class AdminController extends BaseController
         $this->client = new ClientModel();
         $this->inv = new InventoryModel();
         $this->redeem = new RedeemHistoryModel();
-
+        $this->history = new HistoryModel();
     }
     public function home()
     {
@@ -288,7 +289,6 @@ public function search()
 
     $results = $this->client
         ->like('idNumber', $search)
-        ->where('user_ID', $user) // Use $user instead of $id
         ->findAll();
 
     return $this->response->setJSON($results);
@@ -417,6 +417,7 @@ public function search()
         $data = ['item' => $this->request->getVar('item'),
                  'category' => $this->request->getVar('category'),
                  'quantity' => $this->request->getVar('quantity'),
+                 'user_ID' => session()->get('id'),
                  'point_price' => $this->request->getVar('pointPrice')
                 ];
 
@@ -508,11 +509,13 @@ public function search()
         redeemed_items.id, 
         redeemed_items.user_id, 
         redeemed_items.client_id, 
-        redeemed_items.product_id, 
+        redeemed_items.product_id,
+        redeemed_items.created_at, 
         redeemed_items.points_used, 
         redeemed_items.redeem_Code, 
         user_tbl.lastName, 
         user_tbl.firstName,
+        user_tbl.address,
         user_tbl.userName, 
         user_tbl.contactNo,
         inventory_table.id,
@@ -534,6 +537,38 @@ public function search()
       return view('admin/viewRedeemPoints', $data);
     }
 
+
+    public function viewHistoryPointsConvertion()
+    {
+
+        $userId = session()->get('id');
+        
+        if(session()->get('role') === 'Staff')
+        {
+            
+      $data['history'] = $this->history->select('history.id, history.user_id, history.client_id, history.gatherPoints,
+      registrationdb.address,  history.categ, history.weight, history.created_at,
+        registrationdb.lastName, registrationdb.firstName,
+        user_tbl.userName')
+        ->join('registrationdb', 'registrationdb.id = history.client_id')
+        ->join('user_tbl', 'user_tbl.id = history.user_id')
+        ->where('history.user_id' ,$userId)
+        ->findAll();
+
+        }
+        elseif(session()->get('role') === 'Admin')
+        {
+            $data['history'] = $this->history->select('history.id, history.user_id, history.client_id, history.gatherPoints,
+            registrationdb.address,  history.categ, history.weight, history.created_at,
+              registrationdb.lastName, registrationdb.firstName,
+              user_tbl.userName')
+              ->join('registrationdb', 'registrationdb.id = history.client_id')
+              ->join('user_tbl', 'user_tbl.id = history.user_id')
+              ->findAll();
+                  
+        }
+        return view("admin/historyRedeemtionTable", $data);
+    }
 
 }
 

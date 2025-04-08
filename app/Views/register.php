@@ -209,7 +209,22 @@
                             <label class="form-label">Contact Number</label>
                             <input type="text" class="form-control" id="ContactNo" name="contactNo" required>
                         </div>
+
                         <div class="col-md-6 mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="Email" name="email" required>
+                        </div>
+                    
+                    </div>
+                    
+                    
+                    <div class="row">
+                    <div class="col-md-6 mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" id="userName" name="userName" required>
+                        </div>
+                        
+                    <div class="col-md-6 mb-3">
                             <label class="form-label">Role</label>
                             <select name="role" class="form-control">
                                 <option disabled selected>--Select Role--</option>
@@ -217,24 +232,21 @@
                                 <option value="Admin">Admin</option>
                             </select>
                         </div>
-                    </div>
-                    
-                    
-                    <div class="row">
+
+                        </div>
+                        
+                        <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Address</label>
                             <input type="text" class="form-control" id="address" name="address" required>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Username</label>
-                            <input type="text" class="form-control" id="userName" name="userName" required>
-                        </div>
+                        
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                     
-                    </div>
+                        </div>
+
                     <button type="submit" class="btn btn-success">Register</button>
                 </form>
             </div>
@@ -390,11 +402,16 @@ $("#ContactNo").on("input", function () {
                             })}</td>  
                         <td>
                         
-                    
+                        <a class="btn btn-warning btn-lg" style="margin-top:5px;"
+                            href="<?= base_url('passwordReseter/')?>${admin.id}"
+                            onclick="return confirm('Are you sure you want to reset this user password')">Reset Password</a>
+
                             
                             <a class="btn btn-danger btn-lg" style="margin-top:5px;"
                             href="<?= base_url('deleteuseradmin/')?>${admin.id}"
-                            onclick="return confirm('Are you sure you want to delete this user')">Delete</a></td>
+                            onclick="return confirm('Are you sure you want to delete this user')">Delete</a> 
+                            </td>
+
 
                         <td><a href="<?= base_url('/disableaccount/')?>${admin.id}" class ="btn btn-danger">Disabled Account</a> <a href="<?= base_url('/enableaccount/')?>${admin.id}" class ="btn btn-primary">Enable Account</a></td>
                       

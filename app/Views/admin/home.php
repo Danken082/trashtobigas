@@ -52,21 +52,21 @@
 
     <!-- Background -->
     <div class="absolute top-0 left-0 w-full h-full bg-cover bg-center blur-sm" style="background-image: url('<?= base_url('images/systemBg.png') ?>');"></div>
+    <div id="blur-overlay" class="absolute top-0 left-0 w-full h-full bg-white/30 backdrop-blur-sm z-30 hidden"></div>
+
 
     <!-- Search Bar -->
-    <div class="absolute top-4 right-4 w-64">
-        <div class="relative">
-            <input type="text" id="searchInput" placeholder="Search..." class="w-full px-4 py-2 rounded-full shadow-lg focus:outline-none border">
-            <i class="fas fa-search absolute right-3 top-3 text-gray-500"></i>
+    <div class="absolute top-4 right-4 max-w-lg w-full px-4 z-40">
+    <div class="relative">
+    <input type="text" id="searchInput" placeholder="Search Client Number..." class="w-full px-4 py-4 rounded-full shadow-lg focus:outline-none border text-lg">
 
-            <!-- Search Results (Appears below search bar) -->
-           
-            <div id="searchResults" class="absolute w-full bg-white mt-2 rounded-lg shadow-lg hidden border">
-                <ul id="resultsList" class="divide-y divide-gray-300"></ul>
-            </div>
-            
+        <i class="fas fa-search absolute right-3 top-3 text-gray-500"></i>
+        <div id="searchResults" class="absolute w-full bg-white mt-2 rounded-lg shadow-lg hidden border z-50">
+            <ul id="resultsList" class="divide-y divide-gray-300"></ul>
         </div>
     </div>
+</div>
+
 
     <!-- Page Content -->
     <div class="relative z-10 text-center mt-20">
@@ -110,6 +110,13 @@
             </div>
             </a>
 
+            <a href="<?= base_url('')?>/historyPointsConvertion">
+            <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
+                <i class="fas fa-history text-7xl text-green-500 mb-6"></i>
+                <p class="text-2xl font-semibold">Convertion History</p>
+            </div>
+            </a>
+
             
             <a href="<?= base_url('')?>/logout">
             <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
@@ -139,59 +146,58 @@
     </div>
     
     <script>
-    $(document).ready(function () {
-        $('#searchInput').on('keyup', function () {
-            let query = $(this).val().trim();
-            
-            if (query.length > 0) {
-                $('#resultsList').html('<li class="p-2 text-gray-500">Loading...</li>'); // Loading indicator
-                $('#searchResults').removeClass('hidden');
+$(document).ready(function () {
+    $('#searchInput').on('keyup', function () {
+        let query = $(this).val().trim();
+        
+        if (query.length > 0) {
+            $('#blur-overlay').removeClass('hidden'); // Show blur
+            $('#resultsList').html('<li class="p-2 text-gray-500">Loading...</li>');
+            $('#searchResults').removeClass('hidden');
 
-                $.ajax({
-                    url: '<?= base_url('search') ?>',  // Adjust URL as needed
-                    type: 'GET',
-                    data: { query: query },
-                    success: function (response) {
-                        $('#resultsList').empty();
-
-                        if (Array.isArray(response) && response.length > 0) {
-                            response.forEach(function (item) {
-                                let link = `<?= base_url('applicantdetails') ?>/${item.idNumber}`; // Change 'profile' to your target page
-                                $('#resultsList').append(
-                                    `<li class="p-2 hover:bg-gray-200 cursor-pointer">
-                                        <a href="${link}" class="block">${item.idNumber}</a>
-                                    </li>`
-                                );
-                            });
-                        } else {
-                            $('#resultsList').append('<li class="p-2 text-gray-500">No results found</li>');
-                        }
-                    },
-                    error: function () {
-                        $('#resultsList').html('<li class="p-2 text-red-500">Error fetching results</li>');
+            $.ajax({
+                url: '<?= base_url('search') ?>',
+                type: 'GET',
+                data: { query: query },
+                success: function (response) {
+                    $('#resultsList').empty();
+                    if (Array.isArray(response) && response.length > 0) {
+                        response.forEach(function (item) {
+                            let link = `<?= base_url('applicantdetails') ?>/${item.idNumber}`;
+                            $('#resultsList').append(
+                                `<li class="p-2 hover:bg-gray-200 cursor-pointer">
+                                    <a href="${link}" class="block">${item.idNumber}</a>
+                                </li>`
+                            );
+                        });
+                    } else {
+                        $('#resultsList').append('<li class="p-2 text-gray-500">No results found</li>');
                     }
-                });
-            } else {
-                $('#searchResults').addClass('hidden');
-            }
-        });
-
-        // Hide search results when clicking outside
-        $(document).click(function (event) {
-            if (!$(event.target).closest("#searchInput, #searchResults").length) {
-                $('#searchResults').addClass('hidden');
-            }
-        });
-
-        // Make sure clicking a result navigates correctly
-        $(document).on('click', '#resultsList li a', function (e) {
-            let href = $(this).attr('href');
-            if (href) {
-                window.location.href = href; // Navigate to the link
-            }
-        });
+                },
+                error: function () {
+                    $('#resultsList').html('<li class="p-2 text-red-500">Error fetching results</li>');
+                }
+            });
+        } else {
+            $('#searchResults').addClass('hidden');
+            $('#blur-overlay').addClass('hidden'); // Hide blur
+        }
     });
 
+    $(document).click(function (event) {
+        if (!$(event.target).closest("#searchInput, #searchResults").length) {
+            $('#searchResults').addClass('hidden');
+            $('#blur-overlay').addClass('hidden'); // Hide blur
+        }
+    });
+
+    $(document).on('click', '#resultsList li a', function (e) {
+        let href = $(this).attr('href');
+        if (href) {
+            window.location.href = href;
+        }
+    });
+});
 
     function generateQrCode() {
       let data = $('#qr-data').val();

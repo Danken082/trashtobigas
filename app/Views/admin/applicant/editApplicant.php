@@ -28,108 +28,94 @@
       min-height: 100vh;
       padding: 20px;
     }
-
-    
-    .profile-logo {
-      height: 40px;
-      border-radius: 50%;
-    }
-
     .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      color: purple;
-      background-color: rgba(255, 255, 255, 0.9);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 22px; /* Increased padding for a taller header */
+  color: blue;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
     .logo img {
       height: 40px;
     }
 
-    
-    
-    .search-icon {
-      margin-left: 15px;
-      font-size: 1.5rem;
-      color: purple;
-    }
-    
-    /* Hidden search input positioned absolutely to the right of the icon */
-    .search-input {
-      display: none;
-      position: absolute;
-      top: 60px; /* Adjust based on navbar height */
-      left: 0;
-      padding: 6px 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 200px;
-      background: #fff;
-      z-index: 20;
-    }
-    
-    /* Search result container with a top border for separation */
-    #result {
-      display: none;
-      position: absolute;
-      top: calc(60px + 40px); /* 60px from top + approx. 40px input height */
-      left: 0;
-      width: 200px;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-top: 1px solid #ccc; /* Separation line */
-      border-radius: 0 0 5px 5px;
-      z-index: 20;
-      padding: 5px;
-    }
-    
     .nav-links a {
-      color: purple;
+      color: blue;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
       transition: color 0.3s ease;
     }
-    
+
     .nav-links a:hover {
       color: #d63384;
     }
-    
-    table tbody{
-        font-size:20px;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .container {
-        width: 90%;
-        padding: 20px;
-      }
-    
-      .nav-links {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-      }
-    
-      .nav-links a {
-        display: block;
-        margin: 5px 0;
-      }
+
+    .profile-logo {
+      height: 40px;
+      border-radius: 50%;
     }
 
-    .profile-logo{
-        height:50px;
-    }
-  </style>
+    .container {
+  margin-top: 80px;
+  width: 100%;
+  max-width: 100%; /* changed from 1200px */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Make the table horizontally scrollable */
+}
+
+table {
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 22px; /* bigger font */
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead th, tbody td {
+  text-align: center;
+  word-wrap: break-word; /* Ensures long text breaks and doesn't overflow */
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 18px;
+  }
+
+  thead th,
+  tbody td {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  table {
+    font-size: 18px;
+  }
+
+  thead th,
+  tbody td {
+    font-size: 18px;
+  }
+}
+
+</style>
 </head>
 <body>
   <div class="navbar">
@@ -153,32 +139,43 @@
     </div>
   </div>
   <div class="container mt-5">
-        <h2 class="text-center mb-4">Client List</h2>
-        <button class="btn btn-primary mb-3 btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal" style="margin-top:5px;">Register Client</button>
-        <div class="table-responsive">
-            <table class="table table-striped table-hover table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">ID Number</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Addres</th>
-                        <th scope="col">Birth Day</th>
-                        <th scope="col">Points</th>
-                        <th scope="col">Contact Number</th>
-                        <th scope="col">Email</th>
+    <h2 class="text-center mb-4">Client List</h2>
+    
+    <!-- Search bar to search by address -->
+    <div class="mb-3">
+        <?php if(session()->get('role') == 'Admin'):?>
+        <input type="text" id="searchAddress" class="form-control" placeholder="Search by Address" />
+        <?php elseif(session()->get('role') == 'Staff'):?>
+        <input type="text" id="idNumber" class="form-control" placeholder="Search by ID Number" />
+        <?php endif;?>
+    </div>
 
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody id="adminTableBody">
+    <button class="btn btn-primary mb-3 btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal" style="margin-top:5px;">Register Client</button>
 
-                   </tbody>
-            </table>
-        </div>
-        <nav aria-label="Page navigation">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Birth Day</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Contact Number</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody id="adminTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center" id="pagination"></ul>
     </nav>
-    </div>
+</div>
+
 <!--for insert-->
 <div class="modal fade modal-lg modal-fullscreen" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -363,8 +360,7 @@ $("#ContactNo").on("input", function () {
         }
 
 
-
-        $(document).ready(function() {
+        $(document).ready(function () {
     let currentPage = 1;
     const recordsPerPage = 3;
 
@@ -373,12 +369,12 @@ $("#ContactNo").on("input", function () {
             url: "<?= base_url('/admin/list') ?>",
             type: "GET",
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 let tableRows = '';
                 const startIndex = (page - 1) * recordsPerPage;
                 const paginatedData = response.slice(startIndex, startIndex + recordsPerPage);
 
-                $.each(paginatedData, function(index, admin) {
+                $.each(paginatedData, function (index, admin) {
                     tableRows += `<tr>
                         <td>${admin.idNumber}</td>
                         <td>${admin.firstName} ${admin.lastName}</td>
@@ -387,23 +383,22 @@ $("#ContactNo").on("input", function () {
                         <td>${admin.totalPoints}</td>
                         <td>${admin.contactNo}</td>
                         <td>${admin.email}</td>
-                        <td><button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#editModal"
-                            data-id="${admin.id}"
-                            data-firstname="${admin.firstName}"
-                            data-lastname="${admin.lastName}"
-                            data-address="${admin.address}"
-                            data-contactno="${admin.contactNo}"
-                            data-points="${admin.totalPoints}"
-                            data-email="${admin.email}"
-                            data-birth="${admin.birthdate}">
-
-                            Edit Item</button>
-
-                    
-                            
+                        <td>
+                            <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#editModal"
+                                data-id="${admin.id}"
+                                data-firstname="${admin.firstName}"
+                                data-lastname="${admin.lastName}"
+                                data-address="${admin.address}"
+                                data-contactno="${admin.contactNo}"
+                                data-points="${admin.totalPoints}"
+                                data-email="${admin.email}"
+                                data-birth="${admin.birthdate}">
+                                Edit Item
+                            </button>
                             <a class="btn btn-danger btn-lg" style="margin-top:5px;"
                             href="<?= base_url('deleteUser/')?>${admin.id}"
-                            onclick="return confirm('Are you sure you want to delete this user')">Delete</a></td>
+                            onclick="return confirm('Are you sure you want to delete this user')">Delete</a>
+                        </td>
                     </tr>`;
                 });
 
@@ -426,8 +421,139 @@ $("#ContactNo").on("input", function () {
         $('#pagination').html(paginationHtml);
     }
 
-    window.loadAdminData = loadAdminData; // Make accessible globally
+    // Search by address functionality
+    $("#searchAddress").on("input", function () {
+        const query = $(this).val().toLowerCase();
+        
+        // Filter the rows by address
+        $("#adminTableBody tr").each(function () {
+            const address = $(this).find("td:nth-child(3)").text().toLowerCase(); // Get the address from the third column
+            if (address.indexOf(query) > -1) {
+                $(this).show(); // Show the row if the address matches the search query
+            } else {
+                $(this).hide(); // Hide the row if the address doesn't match
+            }
+        });
+    });
+    
+    // Search by name functionality
+    $("#idNumber").on("input", function () {
+        const query = $(this).val().toLowerCase();
+        
+        // Filter the rows by name
+        $("#adminTableBody tr").each(function () {
+            const address = $(this).find("td:nth-child(1)").text().toLowerCase(); // Get the address from the third column
+            if (address.indexOf(query) > -1) {
+                $(this).show(); // Show the row if the address matches the search query
+            } else {
+                $(this).hide(); // Hide the row if the address doesn't match
+            }
+        });
+    });
+    
+    window.loadAdminData = loadAdminData; 
+
     loadAdminData();
+
+    
+    // Search functionality
+    $("#searchAddress").on("input", function () {
+        const query = $(this).val();
+        $.ajax({
+            url: "<?= base_url('/admin/list') ?>",
+            type: "GET",
+            dataType: "json",
+            success: function (response) {
+                let filteredData = response.filter(admin => {
+                    return admin.address.toLowerCase().includes(query.toLowerCase());
+                });
+
+                let tableRows = '';
+                const startIndex = (currentPage - 1) * recordsPerPage;
+                const paginatedData = filteredData.slice(startIndex, startIndex + recordsPerPage);
+
+                $.each(paginatedData, function (index, admin) {
+                    tableRows += `<tr>
+                        <td>${admin.idNumber}</td>
+                        <td>${admin.firstName} ${admin.lastName}</td>
+                        <td>${admin.address}</td>
+                        <td>${admin.birthdate}</td>
+                        <td>${admin.totalPoints}</td>
+                        <td>${admin.contactNo}</td>
+                        <td>${admin.email}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#editModal"
+                                data-id="${admin.id}"
+                                data-firstname="${admin.firstName}"
+                                data-lastname="${admin.lastName}"
+                                data-address="${admin.address}"
+                                data-contactno="${admin.contactNo}"
+                                data-points="${admin.totalPoints}"
+                                data-email="${admin.email}"
+                                data-birth="${admin.birthdate}">
+                                Edit Item
+                            </button>
+                            <a class="btn btn-danger btn-lg" style="margin-top:5px;"
+                            href="<?= base_url('deleteUser/')?>${admin.id}"
+                            onclick="return confirm('Are you sure you want to delete this user')">Delete</a>
+                        </td>
+                    </tr>`;
+                });
+
+                $('#adminTableBody').html(tableRows);
+                setupPagination(filteredData.length, currentPage);
+            }
+        });
+});
+
+$("#idNumbers").on("input", function () {
+        const query = $(this).val();
+        $.ajax({
+            url: "<?= base_url('/admin/list') ?>",
+            type: "GET",
+            dataType: "json",
+            success: function (response) {
+                let filteredData = response.filter(admin => {
+                    return admin.address.toLowerCase().includes(query.toLowerCase());
+                });
+
+                let tableRows = '';
+                const startIndex = (currentPage - 1) * recordsPerPage;
+                const paginatedData = filteredData.slice(startIndex, startIndex + recordsPerPage);
+
+                $.each(paginatedData, function (index, admin) {
+                    tableRows += `<tr>
+                        <td>${admin.idNumber}</td>
+                        <td>${admin.firstName} ${admin.lastName}</td>
+                        <td>${admin.address}</td>
+                        <td>${admin.birthdate}</td>
+                        <td>${admin.totalPoints}</td>
+                        <td>${admin.contactNo}</td>
+                        <td>${admin.email}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#editModal"
+                                data-id="${admin.id}"
+                                data-firstname="${admin.firstName}"
+                                data-lastname="${admin.lastName}"
+                                data-address="${admin.address}"
+                                data-contactno="${admin.contactNo}"
+                                data-points="${admin.totalPoints}"
+                                data-email="${admin.email}"
+                                data-birth="${admin.birthdate}">
+                                Edit Item
+                            </button>
+                            <a class="btn btn-danger btn-lg" style="margin-top:5px;"
+                            href="<?= base_url('deleteUser/')?>${admin.id}"
+                            onclick="return confirm('Are you sure you want to delete this user')">Delete</a>
+                        </td>
+                    </tr>`;
+                });
+
+                $('#adminTableBody').html(tableRows);
+                setupPagination(filteredData.length, currentPage);
+            }
+        });
+});
  
     $("#adminRegisterForm").submit(function(event) {
     event.preventDefault();
@@ -486,6 +612,7 @@ $("#ContactNo").on("input", function () {
             document.getElementById('birth_date').value = birth;
         });
     });
+
 </script>
 
 <script src="/js/admin/include/jquery/jsquery.min.js"></script>

@@ -6,18 +6,20 @@ use CodeIgniter\RESTful\ResourceController;
 use App\Models\ClientModel;
 use App\Models\LogHistoryModel;
 use App\Models\PointRangeModel;
-
+use App\Models\HistoryModel;
 class TrashController extends ResourceController {
 
     private $client;
     private $log;
     private $points;
+    private $history;
 
     public function __construct()
     {
         $this->client = new ClientModel();
         $this->log = new LogHistoryModel();
         $this->points  = new PointRangeModel();
+        $this->history = new HistoryModel();
     }
 
 
@@ -80,9 +82,15 @@ class TrashController extends ResourceController {
     }
     // public function 
     public function convertTrash($id)
-{
+    {
     $client = new ClientModel();
     $applicant = $client->find($id);
+
+    $history = new HistoryModel();
+
+
+
+
 
     if (!$applicant) {
         return $this->respond(['status' => 'error', 'message' => 'Client not found'], 404);
@@ -112,11 +120,20 @@ class TrashController extends ResourceController {
             $updatePoints = $points + $applicant['totalPoints'];
             $client->update($id, ['totalPoints' => $updatePoints]);
 
+            
+            //saving to history
+            $history->save(['client_id' => $applicant['id'],
+            'user_id' => session()->get('id'),
+            'gatherPoints' => $points,
+            'weight'=> $weight,
+            'categ' => $categ]);
+
+
             return $this->response->setJSON([
                 'status' => 'success',
                 'categ'  => strtoupper($categ),
-                'points' => number_format($points, 2),
-                'riceKilos' => number_format($weight, 2),
+                'points' => $points,
+                'riceKilos' => $weight,
                 'totalPoints' => number_format($updatePoints, 2)
             ]);
         case 'gram/s':
@@ -127,14 +144,24 @@ class TrashController extends ResourceController {
                     break;
                 }
             }
+
+
+            //saving to historyTable
+            $history->save(['client_id' => $applicant['id'],
+            'user_id' => session()->get('id'),
+            'gatherPoints' => $points,
+            'weight'=> $weight,
+            'categ' => $categ]);
+        
+        
             $updatePoints = $points + $applicant['totalPoints'];
             $client->update($id, ['totalPoints' => $updatePoints]);
 
             return $this->response->setJSON([
                 'status' => 'success',
                 'categ'  => strtoupper($categ),
-                'points' => number_format($points, 2),
-                'riceKilos' => number_format($weight, 2),
+                'points' => $point,
+                'riceKilos' => $weight,
                 'totalPoints' => number_format($updatePoints, 2)
             ]);
         default:
@@ -145,6 +172,7 @@ class TrashController extends ResourceController {
     if ($points === 0) {
         return $this->respond(['status' => 'error', 'message' => 'No point range matched'], 400);
     }
+
 
     // Calculate updated points
 

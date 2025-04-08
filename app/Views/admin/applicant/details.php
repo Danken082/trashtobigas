@@ -68,6 +68,7 @@
       <img src="<?= base_url('images/systemlogo.png') ?>" alt="Trash to Rice Logo" class="logo-image" />
 </h1>
 
+
     <h2>Convert your recyclable trash into valuable kilos of rice!</h2>
     <select name="category" id="category" class="form-controll">
       <option disabled selected>--Select Category--</option>
@@ -96,33 +97,41 @@
       }
     });
 
-
     function convertPoints() {
-    let weight = $("#trashWeight").val();
-    let category = $('#category').val();
-    if (weight <= 0) {
-      alert("Please enter a valid trash weight!");
-      return;
-    }
-    $.ajax({
-      url: "<?= base_url('convert-trash/' . $details['id']) ?>",
-      type: "POST",  
-      data: { trashWeight: weight, category: category },
-      success: function(response) {
-        if (response.status === "success") {
-          $("#conversionResult").html(`You earned <strong>${response.points}</strong> points, which equals <strong>${response.riceKilos}</strong> ${response.categ} of rice!`);
-          
-          // Update totalPoints in container-details
-          $(".container-details").find("p:contains('Points:')").html(`<strong>Points:</strong> ${response.totalPoints}`);
-        } else {
-          $("#conversionResult").html(`<span style="color: red;">${response.message}</span>`);
-        }
-      },
-      error: function() {
-        alert("An error occurred while converting points. Please try again later.");
-      }
-    });
+  let weight = $("#trashWeight").val();
+  let category = $('#category').val();
+
+  if (weight <= 0 || !category) {
+    alert("Please enter a valid trash weight and select a category!");
+    return;
   }
+
+  // Confirmation prompt
+  if (!confirm("Are you sure you want to convert this trash weight into points?")) {
+    return;
+  }
+
+  // AJAX request proceeds only if confirmed
+  $.ajax({
+    url: "<?= base_url('convert-trash/' . $details['id']) ?>",
+    type: "POST",  
+    data: { trashWeight: weight, category: category },
+    success: function(response) {
+      if (response.status === "success") {
+        $("#conversionResult").html(`Earned <strong>${response.points}</strong> point/s on your <strong>${response.riceKilos}</strong> ${response.categ} of Trash Materials!`);
+
+        // Update totalPoints in container-details
+        $(".container-details").find("p:contains('Points:')").html(`<strong>Points:</strong> ${response.totalPoints}`);
+        $("#trashWeight").val('');
+      } else {
+        $("#conversionResult").html(`<span style="color: red;">${response.message}</span>`);
+      }
+    },
+    error: function() {
+      alert("An error occurred while converting points. Please try again later.");
+    }
+  });
+}
     
 
       function generateQrCode() {

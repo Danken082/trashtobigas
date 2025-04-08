@@ -111,6 +111,29 @@
       color: #d63384;
     }
     
+    table {
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 22px; /* bigger font */
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead th {
+  font-size: 24px; /* make headers bigger */
+  text-align: center;
+}
+
+table tbody {
+  font-size: 22px; /* make body text bigger */
+}
+
+table td {
+  font-size: 26px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 15px;
+}
     
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -134,6 +157,24 @@
     .profile-logo{
         height:50px;
     }
+    .left-align-button {
+  position: absolute;
+  left: 50px;  /* Adjust this value as needed */
+  top: 200px;  /* Adjust based on your design */
+}
+.pagenotation-controller{
+  position: fixed;
+  bottom: 50px; /* Adjust the space from the bottom as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: to make it slightly transparent */
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+
   </style>
 </head>
 <body>
@@ -149,7 +190,9 @@
     </div>
     <div class="nav-links">
     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      <p><?= session()->get('userName')?></p>
     <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="profile-logo" class="profile-logo">
+
 </a>
 
       <!-- <a class="btn btn-primary mb-3 btn-register" style="background:purple;color:white;" data-bs-toggle="modal" data-bs-target="#registerModal">Register Applicant</a>
@@ -160,21 +203,28 @@
     </div>
   </div>
   <div class="container mt-5">
-  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveToPoints">Add Items</button>
+    <button class="btn btn-primary left-align-button btn-lg" data-bs-toggle="modal" data-bs-target="#saveToPoints">Add Ranges</button>
 
-<table border="1" class="table table-striped table-hover table-bordered" style="border-radius: 15px; overflow: hidden;">
-    <thead class="table-dark">
-        <tr>
-            <th>Weight</th>
-            <th>Category</th>
-            <th>Points</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody id="adminTableBody">
-    </tbody>
-</table>
-</div>
+    <table border="1" class="table table-striped table-hover table-bordered" style="border-radius: 15px; overflow: hidden;">
+      <thead class="table-dark">
+          <tr>
+              <th>Weight</th>
+              <th>Category</th>
+              <th>Points</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody id="adminTableBody">
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination section placed below the table -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination" id="pagination"></ul>
+  </nav>
+
+
 
 <div class="modal fade modal-lg modal-fullscreen" id="saveToPoints" tabindex="-1" aria-labelledby="saveToPointslabel" aria-hidden="true">
 <div class="modal-dialog">
@@ -221,7 +271,6 @@
 </div>
 </div>
 
-<?php include('include/offsetSidebar.php')?>
 
 <div class="modal fade modal-lg modal-fullscreen" id="editInventory" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
 <div class="modal-dialog">
@@ -307,7 +356,7 @@
                                 data-minweight="${weight.min_weight}"
                                 data-maxweight="${weight.max_weight}"
                                 data-points="${weight.points}">Edit</a>
-                                <a href="deleteRanges/${weight.id}" onclick="return confirm('Are you sure you want to delete this item?')"class="btn btn-danger btn-sm">Delete</a>
+                                <a href="deleteRanges/${weight.id}" onclick="return confirm('Are you sure you want to delete this item?')"class="btn btn-danger btn-lg">Delete</a>
                             </td>
                         </tr>`;
                     });
@@ -324,7 +373,7 @@
             let paginationHtml = '';
 
             for (let i = 1; i <= totalPages; i++) {
-                paginationHtml += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+                paginationHtml += `<li class="page-item ${i === currentPage ? 'active' : ''} pagenotation-controller" >
                     <a class="page-link" href="#" data-page="${i}">${i}</a>
                 </li>`;
             }
