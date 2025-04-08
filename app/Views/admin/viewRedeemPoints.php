@@ -132,6 +132,18 @@ table td {
 
 <div class="container">
 
+
+<div class="d-flex justify-content-between mb-3">
+        <div>
+            <input type="date" id="filter-date" class="form-control" style="font-size: 20px; display: inline-block; width: auto;">
+            <input type="text" id="search-name" class="form-control mt-2" placeholder="Search by client name" style="font-size: 20px;">
+        </div>
+        <div class="align-self-end">
+        <!-- Hidden export button to trigger download -->
+    <a id="export-link"  class="btn btn-success" style="font-size: 18px;">Export to Report</a>
+
+        </div>
+    </div>
     <table class="table table-striped table-hover table-bordered">
         <thead class="table-dark">
             <tr>
@@ -144,9 +156,7 @@ table td {
                 
             </tr>
         </thead>
-        <input type="date" id="filter-date" class="form-control mb-3">
-        <input type="text" id="search-name" class="form-control mb-3" placeholder="Search by client name">
-
+     
         <?php if (!empty($redeem)): ?>
     <?php foreach($redeem as $rdm): ?>
         <tbody>
@@ -182,10 +192,19 @@ table td {
 
     
     <script>
+
+$('#export-link').on('click', function(e) {
+        e.preventDefault();
+        const selectedDate = $('#filter-date').val();
+        const exportUrl = "<?= base_url('report/redemption') ?>?date=" + selectedDate;
+        window.location.href = exportUrl;
+    });
+
+
 $(document).ready(function() {
     // Set the date input to today
     const today = new Date().toISOString().split('T')[0];
-    $('#filter-date').val(today);
+    // $('#filter-date').val(today);
 
     function filterTable() {
         const selectedDate = $('#filter-date').val();

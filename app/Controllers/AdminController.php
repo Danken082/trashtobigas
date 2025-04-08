@@ -504,7 +504,8 @@ public function search()
         $user_id = session()->get('id');
         
 
-    
+    if(session()->get('role') === 'Staff')
+    {
         $data['redeem'] = $this->redeem->select('
         redeemed_items.id, 
         redeemed_items.user_id, 
@@ -528,10 +529,41 @@ public function search()
     ')->join('user_tbl', 'user_tbl.id = redeemed_items.user_id')
       ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
       ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
+      ->orderBy('redeemed_items.created_at')
+      ->groupBy('redeemed_items.redeem_Code')
       ->where('redeemed_items.user_id', $user_id)
+      ->findAll();
+    }
+    elseif(session()->get('role') === 'Admin')
+    {
+        
+        $data['redeem'] = $this->redeem->select('
+        redeemed_items.id, 
+        redeemed_items.user_id, 
+        redeemed_items.client_id, 
+        redeemed_items.product_id,
+        redeemed_items.created_at, 
+        redeemed_items.points_used, 
+        redeemed_items.redeem_Code, 
+        user_tbl.lastName, 
+        user_tbl.firstName,
+        user_tbl.address,
+        user_tbl.userName, 
+        user_tbl.contactNo,
+        inventory_table.id,
+        inventory_table.item,
+        registrationdb.id,
+        registrationdb.idNumber,
+        registrationdb.firstName,
+        registrationdb.lastName,
+        registrationdb.contactNo
+    ')->join('user_tbl', 'user_tbl.id = redeemed_items.user_id')
+      ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
+      ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
+      ->orderBy('redeemed_items.created_at', 'DESC')
       ->groupBy('redeemed_items.redeem_Code')
       ->findAll();
-    
+    }
         
         // var_dump($data);
       return view('admin/viewRedeemPoints', $data);
@@ -552,6 +584,7 @@ public function search()
         user_tbl.userName')
         ->join('registrationdb', 'registrationdb.id = history.client_id')
         ->join('user_tbl', 'user_tbl.id = history.user_id')
+        ->orderBy('history.created_at', 'DESC')
         ->where('history.user_id' ,$userId)
         ->findAll();
 
@@ -564,6 +597,7 @@ public function search()
               user_tbl.userName')
               ->join('registrationdb', 'registrationdb.id = history.client_id')
               ->join('user_tbl', 'user_tbl.id = history.user_id')
+              ->orderBy('history.created_at', 'DESC')
               ->findAll();
                   
         }

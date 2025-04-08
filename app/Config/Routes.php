@@ -94,7 +94,8 @@ $routes->get('deleteRanges/(:num)', 'TrashController::deleteRanges/$1', ['filter
 
 $routes->get('ecommerce/(:num)', 'ProductController::index/$1', ['filter' => 'authFilter']);
 $routes->post('redeem', 'ProductController::redeem', ['filter' => 'authFilter']);
-
+$routes->get('/report/export', 'ReportController::exportExcel');
+$routes->get('/report/redemption', 'ReportController::redemptionHistory');
 
 
 if(session()->get('role')=='Admin')
@@ -103,6 +104,8 @@ if(session()->get('role')=='Admin')
 $routes->get('ranges', 'TrashController::viewRange', ['filter' => 'authFilter']);
 $routes->get('register', 'AuthController::viewregister', ['filter' => 'authFilter']);
 $routes->post('updateUser', 'AuthController::updateUser',['filter'=> 'authFilter']);
+
+
 }
 
 $routes->get('showredeemed', 'AdminController::redeemItemsHistory');
