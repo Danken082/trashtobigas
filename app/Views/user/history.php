@@ -54,11 +54,12 @@
 
 <?php if (!empty($clienthistoryCon)): ?>
 <div id="convertTab" class="tab-content">
+<h2>Convertion History</h2>
 <?php foreach ($clienthistoryCon as $clh): ?>
   <div class="history-item" data-date="<?= date('Y-m-d', strtotime($clh['created_at'])) ?>">
   <strong><?= date('F j, Y g:i A', strtotime($clh['created_at'])) ?></strong><br>
-          <p style="color:red;">+ <?= $clh['gatherPoints']?> Points</p>
-          <p style="color:red;">Current Points: <?= $clh['totalCurrentPoints']?></p>
+          <p style="color:blue;">+ <?= $clh['gatherPoints']?> Points</p>
+          <p style="color:blue;">Current Points: <?= $clh['totalCurrentPoints']?></p>
           <small>weight:  <?= $clh['weight'] . ' ' . $clh['categ'] ?></small><br>
           <small>Convert at <?= $clh['address'] ?></small><br>
 
