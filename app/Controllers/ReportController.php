@@ -121,7 +121,7 @@ $sheet->setCellValue('M1', 'Date');
                 ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
                 ->join('user_tbl', 'user_tbl.id = redeemed_items.user_id')
                 ->join('inventory_table', 'user_tbl.id = inventory_table.user_id')
-                ->orderBy('redeem_items.created_at')
+                ->orderBy('redeemed_items.created_at', 'DESC')
                 ->where("DATE(redeemed_items.created_at)", $filterDate)
                 ->findAll();
         } else {
