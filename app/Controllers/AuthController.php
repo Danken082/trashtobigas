@@ -243,7 +243,7 @@ class AuthController extends Controller
 
       if($user)
       {
-    $id= $user['id'];
+        $id= $user['id'];
       $data =  ['user' => $this->user->where('id', $id)->first()];
       return view('admin/changepassword', $data);
       }

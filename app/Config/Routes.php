@@ -80,7 +80,7 @@ $routes->post('items/update/', 'AdminController::updateInventory/', ['filter' =>
 
 
 
-$routes->post('loginAuth', 'AuthController::attemptLogin', ['filter' => 'guestFilter']);
+
 $routes->get('logout', 'AuthController::logout' , ['filter' => 'authFilter']);
 $routes->get('getuser', 'AuthController::showUser', ['filter' => 'authFilter']);
 $routes->get('/disableaccount/(:any)', 'AuthController::disableaccount/$1');
@@ -119,7 +119,7 @@ $routes->get('/adminlogin', 'AuthController::login', ['filter' => 'guestFilter']
 
 
 
-
+$routes->post('loginAuth', 'AuthController::attemptLogin', ['filter' => 'guestFilter']);
 
 
 

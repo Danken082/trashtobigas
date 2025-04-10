@@ -105,8 +105,8 @@
       <p><strong>Email:</strong> <?= session()->get('email')?></p>
       <p><strong>Phone:</strong><?= session()->get('contactNo')?></p>
       <p><strong>Address:</strong><?= session()->get('address')?></p>
-      <p><strong>Points:</strong> <?= session()->get('totalPoints')?></p>
-      <p><strong>Points:</strong> <?= session()->get('id')?></p>
+      <p><strong>Points:</strong> <?= number_format(session()->get('totalPoints'),2 )?></p>
+
     </div>
 
 
