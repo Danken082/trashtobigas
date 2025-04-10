@@ -427,7 +427,16 @@ public function search()
     {
 
         $user_id = session()->get('id');
+
+        if(session()->get('role') === 'Staff')
+        {
+            
         $client = $this->inv->where('user_ID', $user_id)->findAll();
+        
+    }
+    else{
+        $client = $this->inv->findAll();
+    }
 
         return $this->response->setJSON($client);
     }

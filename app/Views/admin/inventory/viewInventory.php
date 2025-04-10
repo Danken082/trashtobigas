@@ -125,7 +125,7 @@ table td {
 </style>
 <body>
 <div class="navbar">
-    <a href="/">
+    <a href="<?= base_url('home')?>">
     <div class="logo">
         <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo">
     </div>

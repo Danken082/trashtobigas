@@ -9,8 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 //insert ng basura
 
 
-if(session()->get('role') === 'Admin' || session()->get('role') === 'Staff')
-{
+
 
 $routes->get('/home', 'AdminController::home', ['filter' => 'authFilter']);
 // $routes->get('/ecommerce', 'AdminController::ecommerce');
@@ -103,7 +102,7 @@ $routes->get('/report/redemption', 'ReportController::redemptionHistory');
 
 
    
-}
+
 if(session()->get('role')=='Admin')
 {
 
