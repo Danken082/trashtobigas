@@ -126,7 +126,8 @@ class TrashController extends ResourceController {
             'user_id' => session()->get('id'),
             'gatherPoints' => $points,
             'weight'=> $weight,
-            'categ' => $categ]);
+            'categ' => $categ,
+            'totalCurrentPoints' => $updatePoints]);
 
 
             return $this->response->setJSON([
@@ -151,7 +152,8 @@ class TrashController extends ResourceController {
             'user_id' => session()->get('id'),
             'gatherPoints' => $points,
             'weight'=> $weight,
-            'categ' => $categ]);
+            'categ' => $categ,
+            ]);
         
         
             $updatePoints = $points + $applicant['totalPoints'];

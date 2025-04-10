@@ -32,6 +32,7 @@
         <div class="history-item" data-code="<?= $clh['redeem_Code'] ?>" data-date="<?= date('Y-m-d', strtotime($clh['created_at'])) ?>">
           <strong><?= date('F j, Y g:i A', strtotime($clh['created_at'])) ?></strong><br>
           <p style="color:red;">- <?= $clh['points_used']?> Points</p>
+          <p>Current Points: <?= $clh['totalCurrentPoints']?></p>
           <small>Redeemed at <?= $clh['address'] ?></small><br>
           <small>Purchase Product: <?= $clh['item'] ?></small><br>
           <small>Redeemed Code: <?= $clh['redeem_Code'] ?></small><br>
@@ -57,8 +58,10 @@
   <div class="history-item" data-date="<?= date('Y-m-d', strtotime($clh['created_at'])) ?>">
   <strong><?= date('F j, Y g:i A', strtotime($clh['created_at'])) ?></strong><br>
           <p style="color:green;">+ <?= $clh['gatherPoints']?> Points</p>
-          <small>Convert at <?= $clh['address'] ?></small><br>
+          <p><?= $clh['totalCurrentPoints']?></p>
           <small>weight:  <?= $clh['weight'] . ' ' . $clh['categ'] ?></small><br>
+          <small>Convert at <?= $clh['address'] ?></small><br>
+
   
   <div style="margin-top: 1.5rem;">
   <?php endforeach; ?>

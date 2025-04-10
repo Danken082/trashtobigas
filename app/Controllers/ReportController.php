@@ -106,6 +106,8 @@ $sheet->setCellValue('M1', 'Date');
     
     
     }
+
+    
     public function redemptionHistory()
     {
 
@@ -116,22 +118,22 @@ $sheet->setCellValue('M1', 'Date');
         if ($filterDate) {
             $history = $historyModel->select('redeemed_items.id, redeemed_items.user_id, redeemed_items.client_id, redeemed_items.product_id, 
                 redeemed_items.points_used, redeemed_items.quantity, redeemed_items.redeem_Code, redeemed_items.created_at, 
-                registrationdb.address, registrationdb.lastName, registrationdb.firstName, user_tbl.userName,
+                registrationdb.address, registrationdb.lastName, registrationdb.firstName, user_tbl.userName,  
                 inventory_table.item, inventory_table.point_price')
                 ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
                 ->join('user_tbl', 'user_tbl.id = redeemed_items.user_id')
-                ->join('inventory_table', 'user_tbl.id = inventory_table.user_id')
+                ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
                 ->orderBy('redeemed_items.created_at', 'DESC')
                 ->where("DATE(redeemed_items.created_at)", $filterDate)
                 ->findAll();
         } else {
-            $history = $historyModel->select('redeemed_items.id, redeemed_items.user_id, redeemed_items.client_id, redeemed_items.product_id, 
-                redeemed_items.points_used, redeemed_items.quantity, redeemed_items.redeem_Code, redeemed_items.created_at, 
+            $history = $historyModel->select('redeemed_items.id, redeemed_items.user_id, redeemed_items.client_id, redeemed_items.product_id,
+            redeemed_items.points_used, redeemed_items.quantity, redeemed_items.redeem_Code, redeemed_items.created_at, 
                 registrationdb.address, registrationdb.lastName, registrationdb.firstName, user_tbl.userName,
                 inventory_table.item, inventory_table.point_price')
                 ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
                 ->join('user_tbl', 'user_tbl.id = redeemed_items.user_id')
-                ->join('inventory_table', 'user_tbl.id = inventory_table.user_id')
+                ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
                 ->orderBy('redeemed_items.created_at')
                 ->findAll();
         }
@@ -157,7 +159,7 @@ $sheet->setCellValue('M1', 'Date');
         $sheet->setCellValue('B' . $row, $hst['userName']);
         $sheet->setCellValue('C' . $row, $hst['address']);
         $sheet->setCellValue('D' . $row, $hst['item']);
-        $sheet->setCellValue('E' . $row, $hst['redeemcode']);
+        $sheet->setCellValue('E' . $row, $hst['redeem_Code']);
         $sheet->setCellValue('F' . $row, date('F j, Y g:i A', strtotime($hst['created_at'])));
         $row++;
     }

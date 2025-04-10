@@ -85,6 +85,7 @@ class ProductController extends BaseController {
             'product_id' => $item->productId,
             'points_used' => $item->totalCost,
             // 'quantity' => $item->quantity,
+            'totalCurrentPoints'=> $newPoints,
             'redeem_Code' => 'RC_' . $code
         ];
     }

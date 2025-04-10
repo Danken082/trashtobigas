@@ -65,7 +65,7 @@ class ClientController extends BaseController
         else{
         $perPage = 5;
         $page = 5;
-        $data = ['clienthistory' => $this->history->select('redeemed_items.user_id, redeemed_items.client_id, redeemed_items.product_id,
+        $data = ['clienthistory' => $this->history->select('redeemed_items.user_id, redeemed_items.client_id, redeemed_items.product_id, redeemed_items.totalCurrentPoints,
                  redeemed_items.points_used, redeemed_items.redeem_Code, redeemed_items.created_at, user_tbl.address, user_tbl.userName, inventory_table.item')
                  ->join('user_tbl', 'user_tbl.id = redeemed_items.user_id')
                  ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
@@ -73,7 +73,7 @@ class ClientController extends BaseController
                  ->orderBy('created_at', 'DESC')->paginate($perPage),
                 'pager' => $this->history->pager,
                 'code' => $this->history->where('client_id', session()->get('id'))->groupBy('redeem_Code')->findAll(),
-                'clienthistoryCon' => $this->historyCon->select('history.client_id, history.user_id, history.gatherPoints, history.weight, history.categ, history.created_at,
+                'clienthistoryCon' => $this->historyCon->select('history.client_id, history.user_id, history.gatherPoints, history.weight, history.categ, history.created_at, history.totalCurrentPoints,
                 user_tbl.address, user_tbl.userName')->join('user_tbl', 'user_tbl.id = history.user_id')->where('client_id', session()->get('id'))->findAll(),
                 ];
         return view('user/history', $data);
