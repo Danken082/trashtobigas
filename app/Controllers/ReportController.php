@@ -26,7 +26,7 @@ class ReportController extends BaseController
                 ->join('registrationdb', 'registrationdb.id = history.client_id')
                 ->join('user_tbl', 'user_tbl.id = history.user_id')
                 ->orderBy('history.created_at', 'DESC')
-                ->where("DATE(created_at)", $filterDate)
+                ->where("DATE(history.created_at)", $filterDate)
                 ->findAll();
         } else {
             $history = $historyModel->select('history.id, history.user_id, history.client_id, history.gatherPoints,
