@@ -1145,3 +1145,33 @@ in SYSTEMPATH\Router\Router.php on line 737.
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
  7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
  8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-10 07:36:00 --> ErrorException: Undefined array key "totalCurrentPoints"
+[Method: GET, Route: showredeemed]
+in APPPATH\Views\admin\viewRedeemPoints.php on line 170.
+ 1 APPPATH\Views\admin\viewRedeemPoints.php(170): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Backup\\trashtobigas\\app\\Views\\admin\\viewRedeemPoints.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH\Controllers\AdminController.php(599): view()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->redeemItemsHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-10 07:36:38 --> ErrorException: Undefined array key "totalCurrentPoints"
+[Method: GET, Route: showredeemed]
+in APPPATH\Views\admin\viewRedeemPoints.php on line 170.
+ 1 APPPATH\Views\admin\viewRedeemPoints.php(170): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Backup\\trashtobigas\\app\\Views\\admin\\viewRedeemPoints.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH\Controllers\AdminController.php(599): view()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->redeemItemsHistory()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')

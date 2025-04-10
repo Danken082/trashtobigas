@@ -117,6 +117,11 @@ table td {
   }
 }
 
+.table-responsive {
+  overflow-x: auto;
+}
+
+
 </style>
 <body>
 <div class="navbar">
@@ -134,6 +139,7 @@ table td {
 
 <div class="d-flex justify-content-between mb-3">
         <div>
+          <label for="Filter Date">Filter Date:</label>
             <input type="date" id="filter-date" class="form-control" style="font-size: 20px; display: inline-block; width: auto;">
             <input type="text" id="search-name" class="form-control mt-2" placeholder="Search by client name" style="font-size: 20px;">
         </div>
@@ -143,46 +149,44 @@ table td {
 
         </div>
     </div>
-    <table class="table table-striped table-hover table-bordered">
-        <thead class="table-dark">
-            <tr>
-                <th>Client Name</th>
-                <th>Staff Username</th>
-                <th>Address</th>
-                <th>Gather Points</th>
-                <th>Weight</th>
-                <th>Cathegory</th>
-                <th>Date</th>
-                <!-- <th>Date Redeem</th> -->
-                
-            </tr>
-        </thead>
-
-        <?php foreach($history as $hst):?>
-        <tbody>
-        <tr>
-            <td><?= $hst['firstName'] . ' '.  $hst['lastName']?></td>
-            <td><?= $hst['userName']?></td>
-            <td><?= $hst['address']?></td>
-            <td><?= $hst['gatherPoints']?></td>
-            <td><?= $hst['weight']?></td>
-            <td><?= $hst['categ']?></td>
-            <td data-date="<?= date('Y-m-d', strtotime($hst['created_at'])) ?>">
-            <?= date('F j, Y g:i A', strtotime($hst['created_at'])) ?>
-            </td>
-
-
-
-        </tr>
-        </tbody>
-        <?php endforeach;?>
-    </table>
+    <div class="table-responsive">
+  <table class="table table-striped table-hover table-bordered" id="history-table">
+    <thead class="table-dark">
+      <tr>
+        <th>Client Name</th>
+        <th>Staff Username</th>
+        <th>Address</th>
+        <th>Gather Points</th>
+        <th>Current Points</th>
+        <th>Weight</th>
+        <th>Cathegory</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach($history as $hst): ?>
+      <tr>
+        <td><?= $hst['firstName'] . ' ' . $hst['lastName']?></td>
+        <td><?= $hst['userName']?></td>
+        <td><?= $hst['address']?></td>
+        <td><?= $hst['gatherPoints']?></td>
+        <td><?= $hst['totalCurrentPoints']?></td>
+        <td><?= $hst['weight']?></td>
+        <td><?= $hst['categ']?></td>
+        <td data-date="<?= date('Y-m-d', strtotime($hst['created_at'])) ?>">
+          <?= date('F j, Y g:i A', strtotime($hst['created_at'])) ?>
+        </td>
+      </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
 </div>
-
-
 <nav>
-    <ul class="pagination" id="pagination"></ul>
+  <ul class="pagination justify-content-center" id="pagination"></ul>
 </nav>
+
+
+
     <script src="/js/admin/include/jquery/jsquery.min.js"></script>
     <script src="/js/admin/include/bootstrap/bootstrap.bundle.min.js"></script>
 
@@ -235,6 +239,47 @@ $(document).ready(function() {
     // Bind events
     $('#filter-date').on('change', filterTable);
     $('#search-name').on('input', filterTable);
+});
+
+
+$(document).ready(function () {
+    const rowsPerPage = 5;
+    const rows = $('#history-table tbody tr');
+    const rowsCount = rows.length;
+    const pageCount = Math.ceil(rowsCount / rowsPerPage);
+    const pagination = $('#pagination');
+
+    function displayRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        rows.hide();
+        rows.slice(start, end).show();
+    }
+
+    function generatePagination() {
+        pagination.empty();
+        for (let i = 1; i <= pageCount; i++) {
+            pagination.append(
+                `<li class="page-item"><a class="page-link" href="#">${i}</a></li>`
+            );
+        }
+
+        pagination.find('li:first').addClass('active');
+
+        pagination.find('a').on('click', function (e) {
+            e.preventDefault();
+            const page = parseInt($(this).text());
+
+            pagination.find('li').removeClass('active');
+            $(this).parent().addClass('active');
+
+            displayRows(page);
+        });
+    }
+
+    // Initialize
+    displayRows(1);
+    generatePagination();
 });
 </script>
 

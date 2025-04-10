@@ -543,6 +543,7 @@ public function search()
         redeemed_items.product_id,
         redeemed_items.created_at, 
         redeemed_items.points_used, 
+        redeemed_items.totalCurrentPoints, 
         redeemed_items.redeem_Code, 
         user_tbl.lastName, 
         user_tbl.firstName,
@@ -574,6 +575,7 @@ public function search()
         redeemed_items.product_id,
         redeemed_items.created_at, 
         redeemed_items.points_used, 
+        redeemed_items.totalCurrentPoints,
         redeemed_items.redeem_Code, 
         user_tbl.lastName, 
         user_tbl.firstName,
@@ -609,7 +611,7 @@ public function search()
         {
             
       $data['history'] = $this->history->select('history.id, history.user_id, history.client_id, history.gatherPoints,
-      registrationdb.address,  history.categ, history.weight, history.created_at,
+      registrationdb.address,  history.categ, history.weight, history.totalCurrentPoints, history.created_at,
         registrationdb.lastName, registrationdb.firstName,
         user_tbl.userName')
         ->join('registrationdb', 'registrationdb.id = history.client_id')
@@ -622,7 +624,7 @@ public function search()
         elseif(session()->get('role') === 'Admin')
         {
             $data['history'] = $this->history->select('history.id, history.user_id, history.client_id, history.gatherPoints,
-            registrationdb.address,  history.categ, history.weight, history.created_at,
+            registrationdb.address,  history.categ, history.weight, history.totalCurrentPoints, history.created_at,
               registrationdb.lastName, registrationdb.firstName,
               user_tbl.userName')
               ->join('registrationdb', 'registrationdb.id = history.client_id')

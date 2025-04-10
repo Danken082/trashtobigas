@@ -135,7 +135,8 @@ table td {
 
 <div class="d-flex justify-content-between mb-3">
         <div>
-            <input type="date" id="filter-date" class="form-control" style="font-size: 20px; display: inline-block; width: auto;">
+          <label for="filterdate">Filter Date: </label>
+          <input type="date" id="filter-date" class="form-control" style="font-size: 20px; display: inline-block; width: auto;">
             <input type="text" id="search-name" class="form-control mt-2" placeholder="Search by client name" style="font-size: 20px;">
         </div>
         <div class="align-self-end">
@@ -150,8 +151,9 @@ table td {
                <th>Client Name</th>
                 <th>Staff Name</th>
                 <th>Product Redeem</th>
-                <!-- <th>Quantity</th> -->
+                <th>Address</th>
                 <th>Points Use</th>
+                <th>Current Points</th>
                 <th>Date Redeem</th>
                 
             </tr>
@@ -166,6 +168,7 @@ table td {
             <td><?= $rdm['item'] ?></td>
             <td><?= $rdm['address'] ?></td>
             <td><?= $rdm['points_used'] ?></td>
+            <td><?= $rdm['totalCurrentPoints'] ?></td>
             <td data-date="<?= date('Y-m-d', strtotime($rdm['created_at'])) ?>">
                 <?= date('F j, Y g:i A', strtotime($rdm['created_at'])) ?>
             </td>
