@@ -138,10 +138,12 @@ class AdminController extends BaseController
     
         $this->client->save($data);
     
-        return $this->response->setJSON([
-            'status' => 'success',
-            'message' => 'Registration Successful'
-        ]);
+        // return $this->response->setJSON([
+        //     'status' => 'success',
+        //     'message' => 'Registration Successful'
+        // ]);
+
+        return redirect()->back();
     }
     
 
