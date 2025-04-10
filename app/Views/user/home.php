@@ -11,23 +11,9 @@
 <?php include('include/header.php');?>
 
   <div class="container">
-  <h2>Points History</h2>
-  <div class="history">
-    <div class="history-item">
-      <strong>March 25, 2025</strong><br>
-      Redeemed 100 points for discount. <br>
-      <small>Redeemed at barangay Ilaya</small>
-    </div>
-    <div class="history-item">
-      <strong>March 10, 2025</strong><br>
-      Redeemed 50 points for a free item.
-    </div>
-    <div class="history-item">
-      <strong>February 28, 2025</strong><br>
-      Redeemed 150 points for a voucher.
-    </div>
+  <h2>Welcome Client: <?= session()->get('idNumber')?></h2>
+  <h3>Click The Profile Menu For more</h3>
   </div>
-</div>
 
   <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 

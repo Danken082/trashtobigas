@@ -199,7 +199,7 @@ $('#export-link').on('click', function(e) {
         const exportUrl = "<?= base_url('report/redemption') ?>?date=" + selectedDate;
         window.location.href = exportUrl;
     });
-
+        
 
 $(document).ready(function() {
     // Set the date input to today

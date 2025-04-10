@@ -95,12 +95,17 @@ class AdminController extends BaseController
     {
         // ID generator
         $newId = $this->generateIdNumber();
+        $verificationToken = substr(md5(rand()), 0, 8);
+
+        $email = $this->request->getVar('email');
+
+        $this->clientEmail($email, $verificationToken);
     
         // Validation rules
         $rules = [
             'firstName' => 'required|min_length[3]',
             'lastName' => 'required|min_length[3]',
-            'email' => 'required|min_length[5]|valid_email',
+            'email' => 'required|min_length[5]|valid_email|is_unique[registrationdb.email]',
             'contactNo' => 'required',
             'birthdate' => 'required|valid_date'
         ];
@@ -114,16 +119,21 @@ class AdminController extends BaseController
     
         // Data to save
         $data = [
-            'idNumber' => $newId,
-            'user_ID' => session()->get('id'),
+            'idNumber'  => $newId,
+            'user_ID'   => session()->get('id'),
             'firstName' => $this->request->getVar('firstName'),
-            'lastName' => $this->request->getVar('lastName'),
-            'address' => session()->get('address'),
-            'email'  => $this->request->getVar('email'),
-            'qrcode' => $newId . '.png',
-            'gender' => $this->request->getVar('gender'),
+            'lastName'  => $this->request->getVar('lastName'),
+            'address'   => session()->get('address'),
+            'email'     => $this->request->getVar('email'),
+            'qrcode'    => $newId . '.png',
+            'gender'    => $this->request->getVar('gender'),
             'contactNo' => $this->request->getVar('contactNo'),
-            'birthdate' => $this->request->getVar('birthdate')
+            'birthdate' => $this->request->getVar('birthdate'),
+            'address'   => $this->request->getVar('address'),
+            'password'  => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+            'auth'      => $verificationToken,  
+            'status'    => 'Inactive',
+            'img'       => 'profile-logo.png'
         ];
     
         $this->client->save($data);
@@ -134,6 +144,15 @@ class AdminController extends BaseController
         ]);
     }
     
+
+    private function clientEmail($email)
+    {
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('rontaledankeneth@gmail.com', 'Trashtobigas');
+        $emailService->setSubject('Email Verification');
+        $emailService->setMessage("Hello This is Your Verification Token Dont Share it to any one ");
+    }
 
 
     //qr generator

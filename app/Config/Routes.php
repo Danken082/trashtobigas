@@ -8,6 +8,10 @@ use CodeIgniter\Router\RouteCollection;
 
 //insert ng basura
 
+
+if(session()->get('role') === 'Admin' || session()->get('role') === 'Staff')
+{
+
 $routes->get('/home', 'AdminController::home', ['filter' => 'authFilter']);
 // $routes->get('/ecommerce', 'AdminController::ecommerce');
 $routes->get('/inventory', 'AdminController::inventory', ['filter' => 'authFilter']);
@@ -54,7 +58,7 @@ $routes->get('/products/delete/(:num)', 'ProductController::delete/$1',  ['filte
 $routes->get('/ecommerce', 'ProductController::index', ['filter' => 'authFilter']);
 
 
-$routes->get('/login', 'AuthController::login', ['filter' => 'guestFilter']);
+
 $routes->post('login', 'AuthController::attemptLogin');
 
 
@@ -92,12 +96,14 @@ $routes->post('edit/rangespoints', 'TrashController::updatepoints', ['filter' =>
 $routes->get('deleteRanges/(:num)', 'TrashController::deleteRanges/$1', ['filter' => 'authFilter']);
 
 
-$routes->get('ecommerce/(:num)', 'ProductController::index/$1', ['filter' => 'authFilter']);
+$routes->get('ecommerce/(:any)', 'ProductController::index/$1', ['filter' => 'authFilter']);
 $routes->post('redeem', 'ProductController::redeem', ['filter' => 'authFilter']);
 $routes->get('/report/export', 'ReportController::exportExcel');
 $routes->get('/report/redemption', 'ReportController::redemptionHistory');
 
 
+   
+}
 if(session()->get('role')=='Admin')
 {
 
@@ -107,6 +113,19 @@ $routes->post('updateUser', 'AuthController::updateUser',['filter'=> 'authFilter
 
 
 }
+$routes->get('/adminlogin', 'AuthController::login', ['filter' => 'guestFilter']);
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 $routes->get('showredeemed', 'AdminController::redeemItemsHistory');
 $routes->get('historyPointsConvertion', 'AdminController::viewHistoryPointsConvertion');
@@ -124,3 +143,11 @@ $routes->get('clienthome', 'ClientController::home');
 $routes->get('clientprofile', 'ClientController::profile');
 $routes->get('clienthistory', 'ClientController::history');
 $routes->get('/', 'ClientController::login');
+
+$routes->get('client/resetlink/(:any)', 'ClientController::clientresetview/$1');
+$routes->post('client/resetpassword/(:any)', 'ClientController::confirmtoreset/$1');
+$routes->match(['get', 'post'], 'resetauth', 'ClientController::resetPassword');
+$routes->post('clientloginauth', 'ClientController::loginAuth');
+$routes->get('clientLogout', 'ClientController::logout');
+$routes->post('uploadprofileimage', 'ClientController::uploadProfileImage');
+$routes->post('changepasswordprofile/', 'ClientController::changePassinProf/');

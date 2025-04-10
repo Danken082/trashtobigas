@@ -187,11 +187,49 @@ class AuthController extends Controller
     }
     public function sendEmailResetpassword($email, $verificationToken)
     {
+        $activationLink = base_url("resetpassword/" . $verificationToken);
+
+        $message = '<html>
+        <head>
+            <style>
+                .btn {
+                    background-color: #28a745;
+                    color: white;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    display: inline-block;
+                    margin-top: 15px;
+                }
+                .container {
+                    font-family: Arial, sans-serif;
+                    padding: 20px;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 10px;
+                    max-width: 500px;
+                    margin: auto;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>Email Verification</h2>
+                <p>Hello! Thank you for registering. Please click the button below to verify your email and activate your account.</p>
+                <a href="'.$activationLink.'" class="btn">Activate Account</a>
+                <p>If the button above does not work, copy and paste the link below into your browser:</p>
+                <p style="margin-top: 20px;">If you did not request this, please ignore this email.</p>
+            </div>
+        </body>
+    </html>
+';
+
+
         $emailService = \Config\Services::email();
         $emailService->setTo($email);
+        $emailService->setMailType('html');
         $emailService->setFrom('rontaledankeneth@gmail.com', 'Trashtobigas');
         $emailService->setSubject('Email Verification');
-        $emailService->setMessage("Dear user this is your Account Password Reseter Link <a href=". base_url() . '/resetpassword/' . $verificationToken .">Activate</a>" );
+        $emailService->setMessage($message);
 
         $emailService->send();
 

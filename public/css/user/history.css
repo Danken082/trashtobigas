@@ -150,3 +150,92 @@
         font-style: italic;
         margin-top: 1rem;
       }
+
+      .pagination {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      
+      .pagination a, .pagination strong {
+        padding: 8px 12px;
+        background-color: #f2f2f2;
+        color: #333;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      
+      .pagination strong {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      
+      .modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex; justify-content: center; align-items: center;
+        z-index: 9999;
+      }
+      
+      .modal-content {
+        background: white;
+        padding: 20px;
+        width: 90%;
+        max-width: 500px;
+        border-radius: 10px;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      
+
+
+      .tabs {
+        display: flex;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #ccc;
+      }
+    
+      .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-weight: bold;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.3s;
+      }
+    
+      .tab.active {
+        border-bottom: 3px solid #007bff;
+        color: #007bff;
+      }
+    
+      .tab-content {
+        display: none;
+      }
+    
+      .tab-content.active {
+        display: block;
+      }
+    
+      .modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .modal-content {
+        background: #fff;
+        padding: 1rem;
+        max-width: 600px;
+        width: 90%;
+        border-radius: 8px;
+      }

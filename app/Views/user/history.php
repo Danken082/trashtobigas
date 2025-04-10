@@ -9,32 +9,81 @@
 </head>
 <body>
 <?php include('include/header.php');?>
-  <div class="container">
-    <h2>Redeem History</h2>
+<div class="container">
+<div class="tabs">
+  <button class="tab active" data-tab="redeemTab">Redemption History</button>
+  <button class="tab" data-tab="convertTab">Conversion History</button>
+</div>
 
-    <div class="filter">
+
+
+  <div class="filter">
       <label for="filterDate"><strong>Filter by Date:</strong></label><br>
       <input type="date" id="filterDate" />
     </div>
 
-    <div id="historyList">
-      <div class="history-item" data-date="2025-03-25">
-        <strong>March 25, 2025</strong>
-        Redeemed 100 points for discount.<br>
-        <small>Redeemed at barangay Ilaya</small>
-      </div>
-      <div class="history-item" data-date="2025-03-10">
-        <strong>March 10, 2025</strong>
-        Redeemed 50 points for a free item.
-      </div>
-      <div class="history-item" data-date="2025-02-28">
-        <strong>February 28, 2025</strong>
-        Redeemed 150 points for a voucher.
-      </div>
-    </div>
 
-    <p id="noResults" class="no-results" style="display: none;">No history found for selected date.</p>
+  <div id="redeemTab" class="tab-content active">
+  <h2>Redeem History</h2>
+
+  <?php if (!empty($clienthistory)): ?>
+    <div id="historyRedeemList">
+      <?php foreach ($clienthistory as $clh): ?>
+        <div class="history-item" data-code="<?= $clh['redeem_Code'] ?>" data-date="<?= date('Y-m-d', strtotime($clh['created_at'])) ?>">
+          <strong><?= date('F j, Y g:i A', strtotime($clh['created_at'])) ?></strong><br>
+          <p style="color:red;">- <?= $clh['points_used']?> Points</p>
+          <small>Redeemed at <?= $clh['address'] ?></small><br>
+          <small>Purchase Product: <?= $clh['item'] ?></small><br>
+          <small>Redeemed Code: <?= $clh['redeem_Code'] ?></small><br>
+
+        </div>
+      <?php endforeach; ?>
+    </div>
+  <?php else: ?>
+    <strong>No history found</strong>
+  <?php endif; ?>
+
+  
+<div style="margin-top: 1.5rem;">
+  <?= $pager->links() ?>
+</div>
+
+</div>
+
+
+<?php if (!empty($clienthistoryCon)): ?>
+<div id="convertTab" class="tab-content">
+<?php foreach ($clienthistoryCon as $clh): ?>
+  <div class="history-item" data-date="<?= date('Y-m-d', strtotime($clh['created_at'])) ?>">
+  <strong><?= date('F j, Y g:i A', strtotime($clh['created_at'])) ?></strong><br>
+          <p style="color:green;">+ <?= $clh['gatherPoints']?> Points</p>
+          <small>Convert at <?= $clh['address'] ?></small><br>
+          <small>weight:  <?= $clh['weight'] . ' ' . $clh['categ'] ?></small><br>
+  
+  <div style="margin-top: 1.5rem;">
+  <?php endforeach; ?>
+    </div>
+  <?php else: ?>
+
+    <p>No conversion history available.</p>
+  <?php endif; ?>
+
+  
+</div>
+
+</div>
+
+  <p id="noResults" class="no-results" style="display: none;">No history found for selected date.</p>
+</div>
+
+<div id="redeemModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close-modal" style="float:right; cursor:pointer;">&times;</span>
+    <h3>Redeemed History with Same Code</h3>
+    <div id="modalContentArea"></div>
   </div>
+</div>
+
 
 
   <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
@@ -66,6 +115,59 @@
       sidebar.classList.toggle('open');
       overlay.classList.toggle('show');
     }
+
+
+
+    const showButtons = document.querySelectorAll('.show-redeem-btn');
+  const modal = document.getElementById('redeemModal');
+  const modalContentArea = document.getElementById('modalContentArea');
+  const closeModalBtn = document.querySelector('.close-modal');
+
+  showButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetCode = button.getAttribute('data-code');
+      modalContentArea.innerHTML = ''; // clear previous content
+
+      document.querySelectorAll('.history-item').forEach(item => {
+        if (item.getAttribute('data-code') === targetCode) {
+          const clone = item.cloneNode(true);
+          // Remove the "Show All" button inside modal clone
+          const btn = clone.querySelector('.show-redeem-btn');
+          if (btn) btn.remove();
+          modalContentArea.appendChild(clone);
+        }
+      });
+
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  // Tab switcher
+const tabs = document.querySelectorAll('.tab');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const targetId = tab.getAttribute('data-tab');
+
+    tabs.forEach(t => t.classList.remove('active'));
+    tabContents.forEach(tc => tc.classList.remove('active'));
+
+    tab.classList.add('active');
+    document.getElementById(targetId).classList.add('active');
+  });
+});
+
   </script>
 
 </body>

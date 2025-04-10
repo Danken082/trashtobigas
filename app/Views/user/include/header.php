@@ -1,11 +1,12 @@
 <header>
-    <div class="logo">Name</div>
-    <div class="profile-icon" onclick="toggleSidebar()"><img src="hello" alt="hello"></div>
+    <div class="logo"><?= session()->get('idNumber')?></div>
+    <div class="profile-icon" onclick="toggleSidebar()"><img src="<?= base_url('/images/client/') . session()->get('img') ?>" alt="hello"></div>
   </header>
 
   <div class="sidebar" id="sidebar">
     <h3>Profile Menu</h3>
-    <a href="#">My Profile</a>
-    <a href="#">History</a>
-    <a href="#">Logout</a>
+    <a href="<?= base_url('clienthome')?>">Home</a>
+    <a href="<?= base_url('clientprofile')?>">My Profile</a>
+    <a href="<?= base_url('clienthistory')?>">History</a>
+    <a href="<?= base_url('clientLogout')?>">Logout</a>
   </div>

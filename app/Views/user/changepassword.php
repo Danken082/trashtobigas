@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reset Code</title>
+  <title>Reset Password</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -109,21 +109,18 @@
             <div class="alert alert-danger">
                 <?= session()->getFlashdata('error') ?>
             </div>
-
-          <?php elseif(session()->getFlashdata('msg')):?>
-            <div class="alert alert-success">
-                <?= session()->getFlashdata('msg') ?>
-            </div>
-
-        <?php endif; ?>
-    <div class="login-title">Change Password</div>
-    <form action="<?= base_url('resetpasswordcon/') . $user['id']?>" method="post">
+  <?php endif;?>
+    <div class="login-title">Trash to Bigas Login</div>
+    <form action="<?= base_url('client/resetpassword/') . $userdets['uuid']?>" method="post">
       <input type="text" class="form-control" name="password" id="password" placeholder="Enter password" required>
       <input type="password" name="confirmpassword" class="form-control" id="confirmpassword" placeholder="Confirm password" required>
       <button type="submit" class="btn btn-login">Confirm Password</button>
 
     </form>
   </div>
+  <script>
+    
+  </script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
