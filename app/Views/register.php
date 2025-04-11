@@ -134,7 +134,7 @@
 <body>
   <div class="navbar">
     <div class="logo-search" id="searchToggle">
-        <a href="/">
+        <a href="/home">
       <div class="logo">
         <img src="<?= base_url('images/systemlogo.png') ?>" alt="Trash to Rice Logo" />
       </div>
@@ -192,7 +192,7 @@
             </div>
             <div class="modal-body">
                 <div id="alert-message"></div>
-                <form action="<?= base_url('registerUser')?>" method="post">
+                <form id="adminRegisterForm">
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">First Name</label>
@@ -238,7 +238,14 @@
                         <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" required>
+                            <!-- <input type="text" class="form-control" id="address" name="address" required> -->
+                            <select name="address" id="address"
+        class="form-control w-full p-3 border border-gray-300 rounded-lg shadow-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option disabled selected>--Select Address--</option>
+        <?php foreach($address as $add): ?>
+            <option value="<?= esc($add['banragay_name']) ?>"><?= esc($add['banragay_name']) ?></option>
+        <?php endforeach; ?>
+        </select>
                         </div>
                         
                         <div class="col-md-6 mb-3">
@@ -253,11 +260,6 @@
         </div>
     </div>
 </div>
-
-
-
-<?php include_once('include/offsetSidebar.php')?>
-
 
 
 

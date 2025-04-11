@@ -101,7 +101,9 @@ $routes->get('/report/export', 'ReportController::exportExcel');
 $routes->get('/report/redemption', 'ReportController::redemptionHistory');
 
 
-   
+$routes->post('changeProfileAdmin', 'AuthController::changePicture');
+
+
 
 if(session()->get('role')=='Admin')
 {
@@ -148,5 +150,5 @@ $routes->post('client/resetpassword/(:any)', 'ClientController::confirmtoreset/$
 $routes->match(['get', 'post'], 'resetauth', 'ClientController::resetPassword');
 $routes->post('clientloginauth', 'ClientController::loginAuth');
 $routes->get('clientLogout', 'ClientController::logout');
-$routes->post('uploadprofileimage', 'ClientController::uploadProfileImage');
+$routes->match(['get', 'post'],'uploadprofileimage', 'ClientController::uploadProfileImage');
 $routes->post('changepasswordprofile/', 'ClientController::changePassinProf/');

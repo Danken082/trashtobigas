@@ -189,11 +189,14 @@ class ClientController extends BaseController
 
     public function uploadProfileImage()
 {
-    $img = dd($this->request->getFile('profile_img'));
+    $img = $this->request->getFile('profile_img');
+    $user = $this->request->getFile('samplefile');
 
     if ($img && $img->isValid() && !$img->hasMoved()) {
         $newName = $img->getRandomName();
+        $imageService = \Config\Services::image();
         $img->move($_SERVER['DOCUMENT_ROOT'] . '/images/client/', $newName);
+
 
         // Update DB & session
         $id = session()->get('id');
@@ -201,9 +204,14 @@ class ClientController extends BaseController
         session()->set('img', $newName);
     }
 
-    // return redirect()->to(base_url('clientprofile'))->with('msg', 'Profile image updated.');
+    $oldImage = session()->get('img');
+    if ($oldImage !== 'profile.png' && file_exists($_SERVER['DOCUMENT_ROOT'] . 'images/client/' . $oldImage)) {
+        unlink($_SERVER['DOCUMENT_ROOT'] . 'images/client/' . $oldImage);
+    }
 
-    echo($img);
+    return redirect()->to(base_url('clientprofile'))->with('msg', 'Profile image updated.');
+
+    // echo($img);
     // echo(session()->get('img'));
     }
 

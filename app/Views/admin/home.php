@@ -46,6 +46,82 @@
 }
 
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+.show-changepassword.block {
+  display: flex;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 300px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.flash-message {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  animation: slideIn 0.4s ease;
+}
+
+.flash-message.success {
+  background-color: #e6ffed;
+  color: #207a43;
+  border-left: 6px solid #34d399;
+}
+
+.flash-message.error {
+  background-color: #ffe6e6;
+  color: #a33a3a;
+  border-left: 6px solid #f87171;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
     </style>
 </head>
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen relative">
@@ -73,6 +149,13 @@
         <h1 class="text-5xl font-bold text-black mb-8">Welcome!</h1>
         <div class="grid grid-cols-3 gap-6">
      
+        
+        <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55" onclick="openImageModal()">
+            <!-- <i class="fa fa-sign-out" aria-hidden="true"></i> -->
+            <img src="<?= base_url('images/admin/') . session()->get('img')?>" style="width:100px;" alt="profile img">
+                <p class="text-2xl font-semibold">Profile view</p>
+            </div>
+
             <a href="viewInventory"> 
                 <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
                     <i class="fas fa-store text-7xl text-orange-500 mb-6"></i>
@@ -117,23 +200,46 @@
             </div>
             </a>
 
-            
+            <a href="#" id="start-scan">
+            <div  class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
+                <i class="fas fa-qrcode text-7xl text-gray-400 mb-6"></i>
+                <button class="text-2xl font-semibold" >Read by QR</button>
+            </div>
+            </a>
+   
             <a href="<?= base_url('')?>/logout">
             <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
                 <p class="text-2xl font-semibold">Logout</p>
             </div>
             </a>
+
+
             <!-- <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
                 <i class="fas fa-clock text-7xl text-gray-400 mb-6"></i>
                 <p class="text-2xl font-semibold">Time Clock</p>
             </div> -->
-            <!-- <a href="#" id="start-scan">
-            <div  class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
-                <i class="fas fa-qrcode text-7xl text-gray-400 mb-6"></i>
-                <button class="text-2xl font-semibold" >Read by QR</button>
-            </div>
-            </a> -->
+
+<!-- modal previewing image to eid-->
+            <div id="imageModal" class="modal-overlay">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeImageModal()">&times;</span>
+    <h4>Profile Image</h4>
+
+    <form id="imageForm" action="<?= base_url('changeProfileAdmin') ?>" method="post" enctype="multipart/form-data">
+      <img id="previewImg" src="<?= base_url('/images/admin/') . session()->get('img') ?>" alt="Preview" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 10px;">
+
+      <input type="file" name="profile_img" id="profile_img" accept="image/*" style="margin-top: 10px;" onchange="previewSelectedImage(this)">
+      <!-- <input type="text" name="username" style="margin-top: 10px;" > -->
+
+      <div style="margin-top: 15px; display: flex; justify-content: flex-end; gap: 10px;">
+        <button type="button" onclick="closeImageModal()" style="padding: 8px 12px;">Cancel</button>
+        <button type="submit" style="padding: 8px 12px; background-color: #2d6a4f; color: #fff; border: none; border-radius: 5px;">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+ 
    
     <div id="qr-reader-container">
     <div id="qr-reader"></div>
@@ -239,6 +345,29 @@ function onScanSuccess(decodedText) {
     window.location.href = `applicantdetails/${decodedText}`;
 }
 
+
+
+//image previewing
+function openImageModal() {
+    document.getElementById('imageModal').classList.add('active');
+    }
+
+function closeImageModal() {
+  document.getElementById('imageModal').classList.remove('active');
+  document.getElementById('profile_img').value = '';
+}
+
+
+  function previewSelectedImage(input) {
+    const file = input.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById('previewImg').src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
 
 </script>
 

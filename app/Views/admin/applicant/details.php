@@ -43,8 +43,9 @@
         </a>
       </div>
     <div class="nav-links">
+    <?= session()->get('userName');?> 
     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-    <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="profile-logo" class="profile-logo">
+    <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="profile-logo" class="profile-logo">
 </a>
 
     </div>
@@ -81,8 +82,6 @@
     <hr />
   </div>
   
-  <!--profileMenu Modal-->
- <?php include('include/offsetSidebar.php')?>  
   <script>
     // Toggle search input, change icon, and toggle result display on click
     $('#searchToggle').click(function() {

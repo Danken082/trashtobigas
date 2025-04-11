@@ -4,17 +4,20 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use CodeIgniter\Controller;
-
+use App\Models\AddressModel;
 class AuthController extends Controller
 {
+
     private $maxLoginAttempts = 5;
     private $lockoutTime = 300;
 
+    private $address;
     private $user;
     public function __construct()
     {
 
         date_default_timezone_set('Asia/Manila');
+        $this->address = new AddressModel();
         $this->user = new UserModel;
     }
 
@@ -34,7 +37,8 @@ class AuthController extends Controller
     public function viewRegister()
     {
 
-        $data['user'] = $this->user->findAll();
+        $data =['user'=> $this->user->findAll(),
+                'address' => $this->address->findAll()];
         return view('register', $data);
     }
 
@@ -66,13 +70,19 @@ class AuthController extends Controller
     }
     public function register()
     {
-        
+        $rules = ['firstName' => 'required|min_length[2]',
+                   'lastName' => 'required|min_length[2]',
+                   'userName'=> 'required|min_length[3]|is_unique[user_tbl.userName]',
+                     'email' => 'required|valid_email'];
         $model = new UserModel();
 
 
         $email = $this->request->getPost('email');
         $verificationToken = substr(md5(rand()), 0, 8);
-
+        if(!$this->validate($rules))
+        {
+            return $this->response->setJSON(['status' => 'error', 'errors' => $this->validator->getErrors()]);
+        }
         $data = [
             'lastName' => $this->request->getPost('lastName'),
             'firstName' => $this->request->getPost('firstName'),
@@ -83,18 +93,45 @@ class AuthController extends Controller
             'role' => $this->request->getPost('role'),
             'status' => 'Inactive',
             'address' => $this->request->getPost('address'),
+            'img' => 'profile.png',
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
         ];
 
         $model->save($data);
-        // return $this->response->setJSON(['success' => true,
-        //                                  'message' => 'Resgistration Successful']);
-
         $this->accActivationsend($email, $verificationToken);
-        return redirect()->to('/register'); 
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Registration Successful'
+        ]);
+
+        // return redirect()->to('/register'); 
         
     }
 
+    public function changePicture()
+    {
+        $img = $this->request->getFile('profile_img');
+   
+        if ($img && $img->isValid() && !$img->hasMoved()) {
+            $newName = $img->getRandomName();
+            $imageService = \Config\Services::image();
+            $img->move($_SERVER['DOCUMENT_ROOT'] . '/images/admin/', $newName);
+    
+    
+            // Update DB & session
+            $id = session()->get('id');
+            $this->user->update($id, ['img' => $newName]);
+            session()->set('img', $newName);
+        }
+    
+        $oldImage = session()->get('img');
+        if ($oldImage !== 'profile.png' && file_exists($_SERVER['DOCUMENT_ROOT'] . 'images/admin/' . $oldImage)) {
+            unlink($_SERVER['DOCUMENT_ROOT'] . 'images/admin/' . $oldImage);
+        }
+    
+        return redirect()->to(base_url('home'))->with('msg', 'Profile image updated.');
+    }
     private function accActivationsend($email, $verificationToken)
     {
         $emailService = \Config\Services::email();
@@ -351,6 +388,7 @@ class AuthController extends Controller
             'contactNo' => $user['contactNo'],
             'role' => $user['role'],
             'status' => $user['status'],
+            'img'   => $user['img'],
             'isLoggedIn' => true
         ];
         $session->set($sessionData);

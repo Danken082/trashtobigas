@@ -110,7 +110,15 @@
     </style>
 </head>
 <body class="bg-gray-100 flex flex-col items-center p-6 min-h-screen">
-    <h1 class="text-3xl font-bold mb-6">Redeem Your Goods</h1>
+<div class="w-full flex items-center justify-between mb-6">
+    <div class="flex items-center">
+        <a href="/home">
+        <img src="<?= base_url('/images/systemlogo.png') ?>" alt="Logo" class="w-16 h-16 mr-4 rounded">
+        </a>
+        <h1 class="text-3xl font-bold text-black">Redeem Your Goods</h1>
+    </div>
+</div>
+
     <div class="text-lg font-semibold mb-4">Number Holder:<span id="name"> <?= strtoupper(esc($name)) ?></span></div>
     <div class="text-lg font-semibold mb-4">Your Points: <span id="totalPoints"><?= number_format(esc($totalPoints), 2) ?></span></div>
     
@@ -145,7 +153,7 @@
         <?php endif; ?>
     </div>
     <!-- Cart Section -->
-<div class="fixed bottom-10 right-10 bg-white shadow-lg rounded-lg p-6 w-80">
+<div class="fixed top-10 right-10 bg-white shadow-lg rounded-lg p-10 w-80">
     <h2 class="text-2xl font-semibold mb-4 text-center">Your Cart</h2>
     <div id="cart" class="text-black-500 text-center" style="font-size:20px;">Your cart is empty.</div>
     <div id="totalPrice" class="text-lg font-semibold mt-4 text-center">Total Price: 0 Points</div>

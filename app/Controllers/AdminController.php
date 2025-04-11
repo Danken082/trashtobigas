@@ -12,7 +12,7 @@ use App\Models\ProductModel;
 use App\Models\InventoryModel;
 use App\Models\RedeemHistoryModel;
 use App\Models\HistoryModel;
-
+use App\Models\AddressModel;
 
 //library for qr code
 use Endroid\QrCode\QrCode;
@@ -29,6 +29,8 @@ class AdminController extends BaseController
     private $client;
     private $inv;
     private $history;
+    private $address;
+
     public function __construct()
     {
         $this->log = new LogHistoryModel();  
@@ -37,6 +39,7 @@ class AdminController extends BaseController
         $this->inv = new InventoryModel();
         $this->redeem = new RedeemHistoryModel();
         $this->history = new HistoryModel();
+        $this->address = new AddressModel();
     }
     public function home()
     {
@@ -138,12 +141,12 @@ class AdminController extends BaseController
     
         $this->client->save($data);
     
-        // return $this->response->setJSON([
-        //     'status' => 'success',
-        //     'message' => 'Registration Successful'
-        // ]);
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Registration Successful'
+        ]);
 
-        return redirect()->back();
+        // return redirect()->back();
     }
     
 
@@ -336,7 +339,8 @@ public function search()
 
     public function editApplicant($id)
     {
-        $data = ['Applicant' => $this->client->find($id)];
+        $data = ['Applicant' => $this->client->find($id),
+                 'address' => $this->address->findAll()];
         
 
         return view('admin/editApplicant', $data);
@@ -405,7 +409,8 @@ public function search()
 
     public function viewAllApplicant()
     {
-     $data =  ['applicant' =>$this->client->findAll(),];
+     $data =  ['applicant' =>$this->client->findAll(),
+                'address' => $this->address->findAll()];
 
 
      return view('admin/applicant/editApplicant', $data);

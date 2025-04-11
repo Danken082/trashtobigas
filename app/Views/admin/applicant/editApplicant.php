@@ -127,8 +127,9 @@ thead th, tbody td {
       </a>
     </div>
     <div class="nav-links">
+        <?= session()->get('userName');?>
     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-    <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="profile-logo" class="profile-logo">
+    <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="profile-logo" class="profile-logo">
 </a>
 
       <!-- <a class="btn btn-primary mb-3 btn-register" style="background:purple;color:white;" data-bs-toggle="modal" data-bs-target="#registerModal">Register Applicant</a>
@@ -186,7 +187,7 @@ thead th, tbody td {
             </div>
             <div class="modal-body">
                 <div id="alert-message"></div>
-                <form action="<?= base_url()?> admin/register" method="post" >
+            <form id="adminRegisterForm">
                     
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -228,7 +229,13 @@ thead th, tbody td {
 
                     <div class="col-md-6 mb-3">
                             <label class="form-label">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" required>
+                            <select name="address" id="address"
+        class="form-control w-full p-3 border border-gray-300 rounded-lg shadow-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option disabled selected>--Select Address--</option>
+        <?php foreach($address as $add): ?>
+            <option value="<?= esc($add['banragay_name']) ?>"><?= esc($add['banragay_name']) ?></option>
+        <?php endforeach; ?>
+        </select>
                         </div>
                    
                         <div class="col-md-6 mb-3">
@@ -237,16 +244,13 @@ thead th, tbody td {
                         </div>
                         
                     </div>
-                    <button type="submit" class="btn btn-success col-md-12 row-md-3"  onclick="generateQrCode()">Register</button>
+                    <button type="submit" class="btn btn-success col-md-12 btn-lg row-md-3"  onclick="generateQrCode()">Register</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-
-
-<?php include_once('include/offsetSidebar.php')?>
 
 
 
@@ -407,7 +411,7 @@ $("#ContactNo").on("input", function () {
                                 data-points="${admin.totalPoints}"
                                 data-email="${admin.email}"
                                 data-birth="${admin.birthdate}">
-                                Edit Item
+                                Edit Information
                             </button>
                             <a class="btn btn-danger btn-lg" style="margin-top:5px;"
                             href="<?= base_url('deleteUser/')?>${admin.id}"
@@ -591,6 +595,8 @@ $("#idNumbers").on("input", function () {
                 $("#adminRegisterForm")[0].reset();
                 setTimeout(() => {
                     $("#registerModal").modal('hide');
+
+                    $("#qrModal").modal('show');
                     $("#alert-message").html('');
                     loadAdminData();
                 }, 2000);

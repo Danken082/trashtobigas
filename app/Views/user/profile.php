@@ -8,6 +8,19 @@
 </head>
 
 <style>
+
+  .show-changepassword{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  }
   .modal-overlay {
   position: fixed;
   top: 0;
@@ -22,6 +35,9 @@
 }
 
 .modal-overlay.active {
+  display: flex;
+}
+.show-changepassword.block {
   display: flex;
 }
 
@@ -126,49 +142,56 @@
 <?php endif; ?>
 
         <p></p>
-      <h3 style="margin-top: 2rem;">Change Password</h3>
-  <form action="<?= base_url('/changepasswordprofile/')?>" method="POST" style="margin-top: 1rem;">
-    <div style="margin-bottom: 1rem;">
-      <label for="current_password"><strong>Current Password:</strong></label><br>
-      <input type="password" id="current_password" name="currentpassword"  required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-top: 4px;">
-    </div>
-    <div style="margin-bottom: 1rem;">
-      <label for="new_password"><strong>New Password:</strong></label><br>
-      <input type="password" id="new_password" name="newpassword" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-top: 4px;">
-    </div>
-    <div style="margin-bottom: 1.5rem;">
-      <label for="confirm_password"><strong>Confirm New Password:</strong></label><br>
-      <input type="password" id="confirm_password" name="confirmpassword" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-top: 4px;">
-    </div>
-    <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">Update Password</button>
-  </form>
-</div>
+        <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;" onclick="openChangepassword()">Change Password</button>
 
+        <div id="changepasswordContainer" class="modal-overlay">
+
+  <div class="modal-box">
+    <button class="close-btn" onclick="closeChangepassword()">&times;</button>
+    <h3 style="margin-top: 2rem;">Change Password</h3>
+    <form action="<?= base_url('/changepasswordprofile/')?>" method="POST" style="margin-top: 1rem;">
+      <div style="margin-bottom: 1rem;">
+        <label for="current_password"><strong>Current Password:</strong></label><br>
+        <input type="password" id="current_password" name="currentpassword" required>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label for="new_password"><strong>New Password:</strong></label><br>
+        <input type="password" id="new_password" name="newpassword" required>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <label for="confirm_password"><strong>Confirm New Password:</strong></label><br>
+        <input type="password" id="confirm_password" name="confirmpassword" required>
+      </div>
+      <button type="submit">Update Password</button>
+    </form>
   </div>
+</div>
+</div>
+  
+
   
 
   <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-<!-- Profile Image Modal -->
-<div id="imageModal" class="modal-overlay">
+
+  <div id="imageModal" class="modal-overlay">
   <div class="modal-box">
     <span class="close-btn" onclick="closeImageModal()">&times;</span>
-    <h4 style="margin-bottom: 1rem;">Edit Profile Image</h4>
-<!--   
+    <h4>Profile Image</h4>
+
     <form id="imageForm" action="<?= base_url('uploadprofileimage') ?>" method="post" enctype="multipart/form-data">
-      <img id="previewImg" src="<?= base_url('/images/client/') . session()->get('img') ?>" 
-           alt="Preview" 
-           style="width: 100%; height: auto; margin-bottom: 15px; border-radius: 10px; border: 1px solid #ccc;">
+      <img id="previewImg" src="<?= base_url('/images/client/') . session()->get('img') ?>" alt="Preview" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 10px;">
 
-      <input type="file" name="profile_img" id="profile_img" accept="image/*" style="margin-bottom: 20px; width: 100%;">
+      <input type="file" name="profile_img" id="profile_img" accept="image/*" style="margin-top: 10px;" onchange="previewSelectedImage(this)">
+      <!-- <input type="text" name="username" style="margin-top: 10px;" > -->
 
-      <div style="display: flex; justify-content: flex-end; gap: 10px;">
-        <button type="button" onclick="closeImageModal()" style="padding: 8px 14px;">Cancel</button>
-        <button type="submit" style="padding: 8px 14px; background-color: #2d6a4f; color: #fff; border: none; border-radius: 5px;">Save</button>
+      <div style="margin-top: 15px; display: flex; justify-content: flex-end; gap: 10px;">
+        <button type="button" onclick="closeImageModal()" style="padding: 8px 12px;">Cancel</button>
+        <button type="submit" style="padding: 8px 12px; background-color: #2d6a4f; color: #fff; border: none; border-radius: 5px;">Save</button>
       </div>
     </form>
-  </div> -->
+  </div>
 </div>
-
+ 
 
 
   <script>
@@ -178,16 +201,28 @@
       sidebar.classList.toggle('open');
       overlay.classList.toggle('show');
     }
+    function openChangepassword() {
+  document.getElementById('changepasswordContainer').classList.add('active');
+}
+
+function closeChangepassword() {
+  document.getElementById('changepasswordContainer').classList.remove('active');
+  document.getElementById('current_password').value = '';
+  document.getElementById('new_password').value = '';
+  document.getElementById('confirm_password').value = '';
+}
+
 
 
     function openImageModal() {
     document.getElementById('imageModal').classList.add('active');
-  }
+    }
 
-  function closeImageModal() {
-    document.getElementById('imageModal').classList.remove('active');
-    document.getElementById('profile_img').value = '';
-  }
+function closeImageModal() {
+  document.getElementById('imageModal').classList.remove('active');
+  document.getElementById('profile_img').value = '';
+}
+
 
   function previewSelectedImage(input) {
     const file = input.files[0];
@@ -200,10 +235,10 @@
     }
   }
 
-  // Optional: close when clicking outside modal box
+  // Optional: Close modal on outside click
   window.onclick = function(event) {
     const modal = document.getElementById('imageModal');
-    if (event.target === modal) {
+    if (event.target == modal) {
       closeImageModal();
     }
   };

@@ -191,7 +191,7 @@ table td {
     <div class="nav-links">
     <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
       <p><?= session()->get('userName')?></p>
-    <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="profile-logo" class="profile-logo">
+      <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="profile-logo" class="profile-logo">
 
 </a>
 

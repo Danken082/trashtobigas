@@ -133,7 +133,7 @@ table td {
     <p><?= session()->get('userName')?></p>
     <a data-bs-toggle="offcanvas" href="#offcanvasExample">
     
-        <img src="<?= base_url('/images/logo/profile-logo.png')?>" alt="Profile" class="profile-logo">
+    <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="profile-logo" class="profile-logo">
     </a>
 </div>
 
