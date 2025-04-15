@@ -153,8 +153,8 @@ class TrashController extends ResourceController {
             'gatherPoints' => $points,
             'weight'=> $weight,
             'categ' => $categ,
-            ]);
-        
+            'totalCurrentPoints' => $updatePoints]);
+
         
             $updatePoints = $points + $applicant['totalPoints'];
             $client->update($id, ['totalPoints' => $updatePoints]);
@@ -162,7 +162,7 @@ class TrashController extends ResourceController {
             return $this->response->setJSON([
                 'status' => 'success',
                 'categ'  => strtoupper($categ),
-                'points' => $point,
+                'points' => $points,
                 'riceKilos' => $weight,
                 'totalPoints' => number_format($updatePoints, 2)
             ]);

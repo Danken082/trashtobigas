@@ -151,6 +151,10 @@ table td {
         </thead>
         <tbody id="adminTableBody"></tbody>
     </table>
+
+    <nav>
+    <ul class="pagination" id="pagination"></ul>
+</nav>
 </div>
 
 
@@ -433,9 +437,7 @@ function showImagePreview(imageSrc) {
 }
 </script>
 
-<nav>
-    <ul class="pagination" id="pagination"></ul>
-</nav>
+
     <script src="/js/admin/include/jquery/jsquery.min.js"></script>
     <script src="/js/admin/include/bootstrap/bootstrap.bundle.min.js"></script>
 
