@@ -148,12 +148,12 @@ class TrashController extends ResourceController {
 
 
             //saving to historyTable
-            $history->save(['client_id' => $applicant['id'],
-            'user_id' => session()->get('id'),
-            'gatherPoints' => $points,
-            'weight'=> $weight,
-            'categ' => $categ,
-            'totalCurrentPoints' => $updatePoints]);
+            // $history->save(['client_id' => $applicant['id'],
+            // 'user_id' => session()->get('id'),
+            // 'gatherPoints' => $points,
+            // 'weight'=> $weight,
+            // 'categ' => $categ,
+            // 'totalCurrentPoints' => $updatePoints]);
 
         
             $updatePoints = $points + $applicant['totalPoints'];
