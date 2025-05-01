@@ -314,7 +314,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="qrModalLabel">Generated QR Code</h5>
+
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                 </div>
                 <div class="modal-body text-center">
                     <img id="qr-image" style="display: none; max-width: 100%;">
