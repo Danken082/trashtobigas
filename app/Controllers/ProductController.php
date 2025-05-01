@@ -10,8 +10,10 @@ use App\Controllers\BaseController;
 class ProductController extends BaseController {
 
     private $redeem;
+    private $prod;
     public function __construct()
     {
+        $this->prod = new ProductModel();
         $this->redeem = new RedeemHistoryModel();
     }
     public function index($id) {
@@ -84,16 +86,29 @@ class ProductController extends BaseController {
             'user_id' => session()->get('id'), // Who processed the redemption
             'product_id' => $item->productId,
             'points_used' => $item->totalCost,
-            // 'quantity' => $item->quantity,
+            'quantity' => $item->quantity,
             'totalCurrentPoints'=> $newPoints,
             'redeem_Code' => 'RC_' . $code
         ];
+
+        $product = $this->prod->find($item->productId);
+        if ($product) {
+            $newQty = $product['quantity'] - $item->quantity;
+            $newQty = max($newQty, 0); // Prevent negative quantity
+    
+            // Update product quantity
+            $this->prod->update($item->productId, ['quantity' => $newQty]);
+
+            // $this->prod->whereIn('id', $item->productId)->set(['quantity' => $newQty])->update();
+        }
+
     }
+    // $this->prod->update($item->productId, ['quantity' => $newQty]);
 
     // Save all redemption records
     $this->redeem->insertBatch($redemptions);
 
-    return $this->response->setJSON(['success' => true, 'new_points' => number_format(esc($newPoints), 2)]);
+    return $this->response->setJSON(['success' => true, 'new_points' => number_format(esc($product['id']), 2)]);
 }
 
 }

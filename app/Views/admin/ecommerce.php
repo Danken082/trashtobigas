@@ -129,7 +129,10 @@
                     <img src="<?= base_url('/images/inventory/redeemed/' . esc($product['img'])) ?>" alt="<?= strtoupper(esc($product['item'])) ?>" class="w-full h-40 object-cover mb-4 rounded cursor-pointer" onclick="openModal('<?= base_url('/images/inventory/redeemed/' . esc($product['img'])) ?>')">
                     <h2 class="text-xl font-semibold"> <?= strtoupper(esc($product['item'])) ?> </h2>
                     <p class="text-gray-600"> <?= esc($product['point_price']) ?> Points</p>
+                    <p class="text-gray-600">Stocks: <?= esc($product['quantity']) ?></p>
                     <div class="flex items-center justify-center my-4">
+
+                <?php if(esc($product['quantity']) != 0):?>
         <button onclick="changeQuantity(<?= esc($product['id']) ?>, -1)" 
                 class="bg-red-500 text-white px-3 py-1 rounded-l hover:bg-red-600">
             -
@@ -141,6 +144,11 @@
                 class="bg-green-500 text-white px-3 py-1 rounded-r hover:bg-green-600">
             +
         </button>
+
+        <?php else:?>
+            <p class="text-gray-600">No available Stocks</p>
+
+            <?php endif;?>
     </div>
          <button class="mt-2 w-full bg-blue-500 text-white hover:bg-blue-600 p-2 rounded" 
                             onclick="addToCart(<?= esc($product['id']) ?>, '<?= esc($product['item']) ?>', <?= esc($product['point_price']) ?>, '<?= esc($user_id) ?>')">
@@ -233,14 +241,25 @@
             modal.style.display = 'none';
         }
 
-        function addToCart(productId, productName, price, user_id) {
-            const quantity = document.getElementById(`quantity-${productId}`).value;
-            const totalCost = price * quantity;
-            const cartItem = { productId, productName, quantity, totalCost, user_id };
+     function addToCart(productId, productName, price, user_id) {
+    const quantityInput = document.getElementById(`quantity-${productId}`);
+    const quantity = parseInt(quantityInput.value);
+    const totalCost = price * quantity;
 
-            cart.push(cartItem);
-            updateCartDisplay();
-        }
+    const existingItemIndex = cart.findIndex(item => item.productId === productId);
+
+    if (existingItemIndex !== -1) {
+        // Product already in cart, update quantity and totalCost
+        cart[existingItemIndex].quantity = parseInt(cart[existingItemIndex].quantity) + quantity;
+        cart[existingItemIndex].totalCost = cart[existingItemIndex].quantity * price;
+    } else {
+        // New product, add to cart
+        cart.push({ productId, productName, quantity, totalCost, user_id });
+    }
+
+    updateCartDisplay();
+}
+
 
         function updateCartDisplay() {
             const cartDiv = document.getElementById('cart');
@@ -275,6 +294,7 @@
             const totalPrice = cart.reduce((sum, item) => sum + item.totalCost, 0);
 
             if (points >= totalPrice) {
+                // console.log(productId);
                 fetch('/redeem', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

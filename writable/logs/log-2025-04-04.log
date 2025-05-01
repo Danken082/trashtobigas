@@ -1,0 +1,579 @@
+CRITICAL - 2025-04-04 00:43:03 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 00:43:03 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 00:43:23 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 00:43:23 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 01:24:37 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 01:24:38 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 01:24:49 --> ErrorException: Undefined variable $redeem
+[Method: GET, Route: historyPointsConvertion]
+in APPPATH\Views\admin\historyRedeemtionTable.php on line 138.
+ 1 APPPATH\Views\admin\historyRedeemtionTable.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Backup\\trashtobigas\\app\\Views\\admin\\historyRedeemtionTable.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH\Controllers\AdminController.php(553): view()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->viewHistoryPointsConvertion()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 01:25:08 --> ErrorException: Undefined variable $redeem
+[Method: GET, Route: historyPointsConvertion]
+in APPPATH\Views\admin\historyRedeemtionTable.php on line 138.
+ 1 APPPATH\Views\admin\historyRedeemtionTable.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Backup\\trashtobigas\\app\\Views\\admin\\historyRedeemtionTable.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render()
+ 5 APPPATH\Controllers\AdminController.php(553): view()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->viewHistoryPointsConvertion()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+ERROR - 2025-04-04 01:43:04 --> mysqli_sql_exception: Unknown column 'history.address' in 'field list' in C:\Backup\trashtobigas\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Backup\trashtobigas\system\Database\MySQLi\Connection.php(312): mysqli->query()
+#1 C:\Backup\trashtobigas\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 C:\Backup\trashtobigas\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 C:\Backup\trashtobigas\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+#4 C:\Backup\trashtobigas\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Backup\trashtobigas\system\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#6 C:\Backup\trashtobigas\app\Controllers\AdminController.php(552): CodeIgniter\BaseModel->findAll()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AdminController->viewHistoryPointsConvertion()
+#8 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#9 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#10 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#13 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#14 {main}
+CRITICAL - 2025-04-04 01:43:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'history.address' in 'field list'
+[Method: GET, Route: historyPointsConvertion]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+ 4 APPPATH\Controllers\AdminController.php(552): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->viewHistoryPointsConvertion()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 01:43:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'history.address' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+ 6 APPPATH\Controllers\AdminController.php(552): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->viewHistoryPointsConvertion()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 01:43:04 --> [Caused by] mysqli_sql_exception: Unknown column 'history.address' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query()
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll()
+ 7 APPPATH\Controllers\AdminController.php(552): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->viewHistoryPointsConvertion()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 03:09:57 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 03:09:57 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 11:26:48 --> ErrorException: Trying to access array offset on null
+[Method: POST, Route: forgotpassword]
+in APPPATH\Controllers\AuthController.php on line 126.
+ 1 APPPATH\Controllers\AuthController.php(126): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->forgot()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 11:27:05 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: forgotpassword]
+in APPPATH\Controllers\AuthController.php on line 126.
+ 1 APPPATH\Controllers\AuthController.php(126): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->forgot()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 11:27:27 --> ErrorException: Undefined array key "email"
+[Method: POST, Route: forgotpassword]
+in APPPATH\Controllers\AuthController.php on line 126.
+ 1 APPPATH\Controllers\AuthController.php(126): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->forgot()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+ERROR - 2025-04-04 11:54:14 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(147): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 11:54:14 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 11:54:14 --> 
+ERROR - 2025-04-04 11:55:08 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(147): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 11:55:08 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 11:55:08 --> 
+ERROR - 2025-04-04 12:36:57 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(147): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:36:57 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:36:57 --> 
+ERROR - 2025-04-04 12:37:22 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(147): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:37:22 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:37:22 --> 
+ERROR - 2025-04-04 12:39:15 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(147): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:39:15 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:39:15 --> 
+ERROR - 2025-04-04 12:45:53 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:45:53 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:45:53 --> 
+ERROR - 2025-04-04 12:46:17 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:46:17 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:46:17 --> 
+ERROR - 2025-04-04 12:46:38 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:46:38 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:46:38 --> 
+ERROR - 2025-04-04 12:47:01 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:47:01 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:47:01 --> 
+ERROR - 2025-04-04 12:47:21 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:47:21 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:47:21 --> 
+ERROR - 2025-04-04 12:47:42 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:47:42 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:47:42 --> 
+ERROR - 2025-04-04 12:48:10 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:48:10 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:48:10 --> 
+ERROR - 2025-04-04 12:48:44 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:48:44 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:48:44 --> 
+ERROR - 2025-04-04 12:50:07 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:50:07 --> 220 smtp.gmail.com ESMTP d2e1a72fcca58-739d97d1c5asm2427129b3a.2 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [136.158.220.42]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-739d97d1c5asm2427129b3a.2 - gsmtp
+
+ERROR - 2025-04-04 12:50:23 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Backup\trashtobigas\system\Email\Email.php:1762
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 C:\Backup\trashtobigas\system\Email\Email.php(1762): mail()
+#2 C:\Backup\trashtobigas\system\Email\Email.php(1694): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\Backup\trashtobigas\system\Email\Email.php(1589): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\Backup\trashtobigas\app\Controllers\AuthController.php(148): CodeIgniter\Email\Email->send()
+#5 C:\Backup\trashtobigas\system\CodeIgniter.php(933): App\Controllers\AuthController->sendSample()
+#6 C:\Backup\trashtobigas\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+#7 C:\Backup\trashtobigas\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+#8 C:\Backup\trashtobigas\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\Backup\trashtobigas\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#10 C:\Backup\trashtobigas\public\index.php(56): CodeIgniter\Boot::bootWeb()
+#11 C:\Backup\trashtobigas\system\rewrite.php(44): require_once('...')
+#12 {main}
+ERROR - 2025-04-04 12:50:23 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-04-04 12:50:23 --> 
+CRITICAL - 2025-04-04 05:07:23 --> TypeError: CodeIgniter\Router\RouteCollection::match(): Argument #1 ($verbs) must be of type array, string given, called in C:\Backup\trashtobigas\app\Config\Routes.php on line 115
+[Method: GET, Route: trysend]
+in SYSTEMPATH\Router\RouteCollection.php on line 1019.
+ 1 APPPATH\Config\Routes.php(115): CodeIgniter\Router\RouteCollection->match()
+ 2 SYSTEMPATH\Router\RouteCollection.php(340): require('C:\\Backup\\trashtobigas\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 05:07:25 --> TypeError: CodeIgniter\Router\RouteCollection::match(): Argument #1 ($verbs) must be of type array, string given, called in C:\Backup\trashtobigas\app\Config\Routes.php on line 115
+[Method: GET, Route: /]
+in SYSTEMPATH\Router\RouteCollection.php on line 1019.
+ 1 APPPATH\Config\Routes.php(115): CodeIgniter\Router\RouteCollection->match()
+ 2 SYSTEMPATH\Router\RouteCollection.php(340): require('C:\\Backup\\trashtobigas\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 05:07:36 --> TypeError: CodeIgniter\Router\RouteCollection::match(): Argument #1 ($verbs) must be of type array, string given, called in C:\Backup\trashtobigas\app\Config\Routes.php on line 115
+[Method: GET, Route: /]
+in SYSTEMPATH\Router\RouteCollection.php on line 1019.
+ 1 APPPATH\Config\Routes.php(115): CodeIgniter\Router\RouteCollection->match()
+ 2 SYSTEMPATH\Router\RouteCollection.php(340): require('C:\\Backup\\trashtobigas\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 13:47:08 --> ErrorException: Trying to access array offset on null
+[Method: GET, Route: resetpassword/df01e692]
+in APPPATH\Controllers\AuthController.php on line 189.
+ 1 APPPATH\Controllers\AuthController.php(189): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->resetPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 13:47:32 --> ErrorException: Trying to access array offset on null
+[Method: GET, Route: resetpassword/ef832283]
+in APPPATH\Controllers\AuthController.php on line 189.
+ 1 APPPATH\Controllers\AuthController.php(189): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->resetPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 13:47:40 --> ErrorException: Trying to access array offset on null
+[Method: GET, Route: resetpassword/ef832283]
+in APPPATH\Controllers\AuthController.php on line 189.
+ 1 APPPATH\Controllers\AuthController.php(189): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->resetPassword()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 06:13:35 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 06:13:35 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 06:58:08 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')
+CRITICAL - 2025-04-04 06:58:09 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: applicantdetails/%3C]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars()
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')

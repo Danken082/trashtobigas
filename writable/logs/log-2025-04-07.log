@@ -1,0 +1,16 @@
+CRITICAL - 2025-04-07 03:31:04 --> ErrorException: include(include/header): Failed to open stream: No such file or directory
+[Method: GET, Route: clienthistory]
+in APPPATH\Views\user\history.php on line 66.
+ 1 APPPATH\Views\user\history.php(66): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH\Views\user\history.php(66): include()
+ 3 SYSTEMPATH\View\View.php(234): include('C:\\Backup\\trashtobigas\\app\\Views\\user\\history.php')
+ 4 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render()
+ 6 APPPATH\Controllers\ClientController.php(27): view()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClientController->history()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\Backup\\trashtobigas\\public\\index.php')

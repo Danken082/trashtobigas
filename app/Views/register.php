@@ -293,7 +293,7 @@
                             <label class="form-label">Role</label>
                             <select name="role" required class="form-control">
                                 <option disabled selected>--Select Role--</option>
-                                <option value="Staff">Staff</option>
+                                <option value="Staff">Barangay Staff</option>
                                 <option value="Admin">Admin</option>
                             </select>
                         </div>
