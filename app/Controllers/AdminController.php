@@ -333,7 +333,16 @@ public function search()
     {
        $data =['details' => $this->client->where('idNumber', $id)->first()];
 
+     
+     if($data['details'])
+     {
+        
        return view('admin/applicant/details', $data);
+       
+     }
+     else{
+        return redirect()->back()->with('msg', 'Client Does`nt exist');
+     }
 
     }
 

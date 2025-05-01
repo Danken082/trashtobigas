@@ -147,8 +147,19 @@
     <!-- Page Content -->
     <div class="relative z-10 text-center mt-20">
         <h1 class="text-5xl font-bold text-black mb-8">Welcome!</h1>
+
+        
+        <?php if (session()->getFlashdata('msg')): ?>
+    <div class="flash-message error">
+        <i class="fas fa-cross-circle text-red-500"></i>
+        <span><?= session()->getFlashdata('msg') ?></span>
+    </div>
+<?php endif; ?>
+
         <div class="grid grid-cols-3 gap-6">
      
+
+
         
         <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55" onclick="openImageModal()">
             <!-- <i class="fa fa-sign-out" aria-hidden="true"></i> -->
