@@ -157,6 +157,7 @@ table td, table th {
         </div>
     </div>
     <div class="table-responsive">
+    <p style="font-size:20px;">Total Redeemed: <?= $countHistory?> </p>
   <table class="table table-striped table-hover table-bordered" id="history-table">
     <thead class="table-dark">
       <tr>

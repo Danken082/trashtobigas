@@ -129,7 +129,7 @@
                     <img src="<?= base_url('/images/inventory/redeemed/' . esc($product['img'])) ?>" alt="<?= strtoupper(esc($product['item'])) ?>" class="w-full h-40 object-cover mb-4 rounded cursor-pointer" onclick="openModal('<?= base_url('/images/inventory/redeemed/' . esc($product['img'])) ?>')">
                     <h2 class="text-xl font-semibold"> <?= strtoupper(esc($product['item'])) ?> </h2>
                     <p class="text-gray-600"> <?= esc($product['point_price']) ?> Points</p>
-                    <p class="text-gray-600">Stocks: <?= esc($product['quantity']) ?></p>
+                    <p class="text-gray-600" id="newQuantity">Stocks: <?= esc($product['quantity']) ?></p>
                     <div class="flex items-center justify-center my-4">
 
                 <?php if(esc($product['quantity']) != 0):?>
@@ -304,7 +304,9 @@
                 .then(data => {
                     if (data.success) {
                         points = data.new_points;
+                        newQty = data.quantity;
                         document.getElementById('totalPoints').innerText = points;
+                        document.getElementById('newQuantity').innerText = newQty;
                         const receiptItems = document.getElementById('receipt-items');
                         const receiptTotal = document.getElementById('receipt-total');
                         const cuttentPoints = document.getElementById('receipt-total-points');

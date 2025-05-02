@@ -53,6 +53,9 @@ class ProductController extends BaseController {
     public function redeem()
 {
 
+    $db = \Config\Database::connect();
+$db->transBegin();
+
     $code = $this->generateAlphanumericBarcode();
     $request = $this->request->getJSON();
     $userModel = new ClientModel();
@@ -71,6 +74,9 @@ class ProductController extends BaseController {
     $totalCost = array_sum(array_column($request->cart, 'totalCost')); // Sum all item costs
 
     if ($user['totalPoints'] < $totalCost) {
+
+        $db->transRollback();
+
         return $this->response->setJSON(['success' => false, 'message' => 'Not enough points']);
     }
 
@@ -108,7 +114,9 @@ class ProductController extends BaseController {
     // Save all redemption records
     $this->redeem->insertBatch($redemptions);
 
-    return $this->response->setJSON(['success' => true, 'new_points' => number_format(esc($newPoints), 2)]);
+    $db->transCommit();
+
+    return $this->response->setJSON(['success' => true, 'new_points' => number_format(esc($newPoints), 2), 'quantity' => $newQty]);
 }
 
 }

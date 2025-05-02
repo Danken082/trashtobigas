@@ -637,6 +637,8 @@ public function search()
         ->where('history.user_id' ,$userId)
         ->findAll();
 
+        $data['countHistory'] = $this->history->where('user_id' ,$userId)->countAllResults();
+
         }
         elseif(session()->get('role') === 'Admin')
         {
@@ -648,7 +650,7 @@ public function search()
               ->join('user_tbl', 'user_tbl.id = history.user_id')
               ->orderBy('history.created_at', 'DESC')
               ->findAll();
-            // $data = $this->history->countAllResults();
+            $data['countHistory'] = $this->history->countAllResults();
         }
         return view("admin/historyRedeemtionTable", $data);
 
