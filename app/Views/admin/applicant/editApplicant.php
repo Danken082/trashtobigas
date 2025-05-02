@@ -722,6 +722,46 @@ $(document).ready(function() {
 
 
 
+<script>
+function printClientID() {
+  const content = document.querySelector('#clientID .id-card').outerHTML;
+
+  const win = window.open('', '', 'height=700,width=500');
+  win.document.write(`
+    <html>
+      <head>
+        <title>Client ID</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+          .id-card {
+            border: 2px solid #0d6efd;
+            border-radius: 15px;
+            max-width: 320px;
+            margin: auto;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 20px;
+            text-align: center;
+          }
+          .id-card img {
+            max-height: 60px;
+            margin: 5px;
+          }
+          .id-details p {
+            margin: 4px 0;
+          }
+        </style>
+      </head>
+      <body onload="window.print(); setTimeout(() => window.close(), 500);">
+        ${content}
+      </body>
+    </html>
+  `);
+  win.document.close();
+}
+</script>
+
+
 <script src="/js/admin/include/jquery/jsquery.min.js"></script>
 <script src="/js/admin/include/bootstrap/bootstrap.bundle.min.js"></script>
 
