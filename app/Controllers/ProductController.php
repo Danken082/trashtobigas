@@ -19,7 +19,10 @@ class ProductController extends BaseController {
     public function index($id) {
         $productModel = new ProductModel();
         $clientModel = new ClientModel();
+        $user = new UserModel();
         $userID = session()->get('id');
+
+        $getRole =  $user->where('id', $userID)->first();
 
         // Fetch client points, ensuring it's set to 0 if the client is not found
         $client = $clientModel->where('idNumber', $id)->first();
@@ -27,13 +30,31 @@ class ProductController extends BaseController {
         $totalPoints = $client ? $client['totalPoints'] : 0;
         $user_id = $client ? $client['id'] : 0;
 
-        $data = [
-            'products' => $productModel->findAll(),
-            'totalPoints' => $totalPoints,
-            'name' => $name,
-            'user_id'     => $user_id
-        ];
-
+        // $data = [
+        //     'products' => $productModel->findAll(),
+        //     'totalPoints' => $totalPoints,
+        //     'name' => $name,
+        //     'user_id'     => $user_id
+        // ];
+        
+        if($getRole['role'] === 'Staff')
+        {
+            $data = [
+                'products' => $productModel->where('user_ID', $userID)->findAll(),
+                'totalPoints' => $totalPoints,
+                'name' => $name,
+                'user_id'     => $user_id
+            ];
+        }
+        else
+        {
+            $data = [
+                'products' => $productModel->findAll(),
+                'totalPoints' => $totalPoints,
+                'name' => $name,
+                'user_id'     => $user_id
+            ];
+        }
         return view('admin/ecommerce', $data);
     }
 
