@@ -228,8 +228,8 @@
                             <label class="form-label">Role</label>
                             <select name="role" class="form-control">
                                 <option disabled selected>--Select Role--</option>
-                                <option value="Staff">Staff</option>
-                                <option value="Admin">Admin</option>
+                                <option value="Staff">Barangay Admin</option>
+                                <option value="Admin">City Admin</option>
                             </select>
                         </div>
 
@@ -398,7 +398,8 @@ $("#ContactNo").on("input", function () {
                         <td>${admin.firstName} ${admin.lastName}</td>
                         <td>${admin.contactNo}</td>
                         <td>${admin.address}</td>
-                        <td>${admin.role}</td>
+                        <td>${ admin.role === 'Staff' ? 'Barangay Admin' : admin.role === 'Admin' ? 'City Admin' : admin.role }</td>
+
                         <td>${admin.status}</td>
                         <td>${new Date(admin.updated_at).toLocaleDateString('en-US', { 
                                 year: 'numeric', 
