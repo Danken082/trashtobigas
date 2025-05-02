@@ -121,6 +121,13 @@ table td {
   overflow-x: auto;
 }
 
+table td, table th {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+
 
 </style>
 <body>

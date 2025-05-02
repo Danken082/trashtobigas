@@ -104,6 +104,11 @@ table td {
   height: auto;
   padding: 10px 15px;
 }
+table td, table th {
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
 
 
 @media (max-width: 768px) {
@@ -126,7 +131,7 @@ table td {
     </div>
     </a>
     <a data-bs-toggle="offcanvas" href="#offcanvasExample">
-    <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="profile-logo" class="profile-logo">
+    <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="profile-logo" class="profile-logo">  
     </a>
 </div>
 
@@ -145,6 +150,7 @@ table td {
 
         </div>
     </div>
+  <p style="font-size:20px;">Total Redeemed: <?= $countRedeem?> </p>
     <table class="table table-striped table-hover table-bordered">
         <thead class="table-dark">
             <tr>
@@ -152,8 +158,10 @@ table td {
                 <th>Staff Name</th>
                 <th>Product Redeem</th>
                 <th>Address</th>
+                <th>Redeem Code</th>
                 <th>Points Use</th>
                 <th>Current Points</th>
+                
                 <th>Date Redeem</th>
                 
             </tr>
@@ -168,6 +176,7 @@ table td {
             <td><?= $rdm['item'] ?></td>
             <td><?= $rdm['address'] ?></td>
             <td><?= $rdm['points_used'] ?></td>
+            <td><?= $rdm['redeem_Code'] ?></td>
             <td><?= $rdm['totalCurrentPoints'] ?></td>
             <td data-date="<?= date('Y-m-d', strtotime($rdm['created_at'])) ?>">
                 <?= date('F j, Y g:i A', strtotime($rdm['created_at'])) ?>

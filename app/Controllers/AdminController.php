@@ -550,6 +550,7 @@ public function search()
 
     if(session()->get('role') === 'Staff')
     {
+        $data['countRedeem'] = $this->redeem->where('redeemed_items.user_id', $user_id)->countAllResults();
         $data['redeem'] = $this->redeem->select('
         redeemed_items.id, 
         redeemed_items.user_id, 
@@ -575,12 +576,14 @@ public function search()
       ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
       ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
       ->orderBy('redeemed_items.created_at')
-      ->groupBy('redeemed_items.redeem_Code')
+    //   ->groupBy('redeemed_items.redeem_Code')
       ->where('redeemed_items.user_id', $user_id)
       ->findAll();
     }
     elseif(session()->get('role') === 'Admin')
     {
+
+        $data['countRedeem'] = $this->redeem->countAllResults();
         
         $data['redeem'] = $this->redeem->select('
         redeemed_items.id, 
@@ -607,7 +610,7 @@ public function search()
       ->join('inventory_table', 'inventory_table.id = redeemed_items.product_id')
       ->join('registrationdb', 'registrationdb.id = redeemed_items.client_id')
       ->orderBy('redeemed_items.created_at', 'DESC')
-      ->groupBy('redeemed_items.redeem_Code')
+    //   ->groupBy('redeemed_items.redeem_Code')
       ->findAll();
     }
         
@@ -645,9 +648,11 @@ public function search()
               ->join('user_tbl', 'user_tbl.id = history.user_id')
               ->orderBy('history.created_at', 'DESC')
               ->findAll();
-                  
+            // $data = $this->history->countAllResults();
         }
         return view("admin/historyRedeemtionTable", $data);
+
+        // var_dump($data);
     }
 
 }
