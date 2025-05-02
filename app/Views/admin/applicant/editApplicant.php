@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <script src="https://unpkg.com/html5-qrcode"></script>
   <script src="\js\admin\include\jquery.min.js"></script>
   <style>
@@ -165,7 +167,19 @@ thead th, tbody td {
     <!-- Search bar to search by address -->
     <div class="mb-3">
         <?php if(session()->get('role') == 'Admin'):?>
-        <input type="text" id="searchAddress" class="form-control" placeholder="Search by Address" />
+        <!-- <input type="text" id="searchAddress" class="form-control" placeholder="Search by Address" /> -->
+
+        <div class="col-md-6 mb-3">
+                            <label class="form-label">Search Address:</label>
+  <select name="address" id="searchAddress"
+    class="form-control w-full p-3 border border-gray-300 rounded-lg shadow-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <option disabled selected>--Select Address--</option>
+    <?php foreach($address as $add): ?>
+        <option value="<?= esc($add['banragay_name']) ?>"><?= esc($add['banragay_name']) ?></option>
+    <?php endforeach; ?>
+</select>
+
+                        </div>
         <?php elseif(session()->get('role') == 'Staff'):?>
         <input type="text" id="idNumber" class="form-control" placeholder="Search by ID Number" />
         <?php endif;?>
@@ -697,50 +711,28 @@ $("#idNumbers").on("input", function () {
 }
 
 
+$(document).ready(function() {
+    $('#searchAddress').select2({
+      placeholder: "--Select Address--",
+      allowClear: true
+    });
+  });
+
 </script>
 
-<script>
-function printClientID() {
-  const content = document.querySelector('#clientID .id-card').outerHTML;
-
-  const win = window.open('', '', 'height=700,width=500');
-  win.document.write(`
-    <html>
-      <head>
-        <title>Client ID</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-          .id-card {
-            border: 2px solid #0d6efd;
-            border-radius: 15px;
-            max-width: 320px;
-            margin: auto;
-            font-family: 'Poppins', sans-serif;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            padding: 20px;
-            text-align: center;
-          }
-          .id-card img {
-            max-height: 60px;
-            margin: 5px;
-          }
-          .id-details p {
-            margin: 4px 0;
-          }
-        </style>
-      </head>
-      <body onload="window.print(); setTimeout(() => window.close(), 500);">
-        ${content}
-      </body>
-    </html>
-  `);
-  win.document.close();
-}
-</script>
 
 
 <script src="/js/admin/include/jquery/jsquery.min.js"></script>
 <script src="/js/admin/include/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+<!-- Select2 CSS -->
+
+
+<!-- jQuery and Select2 JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 
 
 

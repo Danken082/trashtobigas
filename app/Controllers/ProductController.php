@@ -108,7 +108,7 @@ class ProductController extends BaseController {
     // Save all redemption records
     $this->redeem->insertBatch($redemptions);
 
-    return $this->response->setJSON(['success' => true, 'new_points' => number_format(esc($product['id']), 2)]);
+    return $this->response->setJSON(['success' => true, 'new_points' => number_format(esc($newPoints), 2)]);
 }
 
 }
