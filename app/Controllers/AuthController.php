@@ -29,7 +29,7 @@ class AuthController extends Controller
 
     public function showUser()
     {
-       $users = $this->user->findAll();
+       $users = $this->user->orderBy('created_at', 'DESC')->findAll();
 
         return $this->response->setJSON($users);
     }
