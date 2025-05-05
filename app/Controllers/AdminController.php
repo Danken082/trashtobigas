@@ -13,6 +13,7 @@ use App\Models\InventoryModel;
 use App\Models\RedeemHistoryModel;
 use App\Models\HistoryModel;
 use App\Models\AddressModel;
+use App\Models\WarningModel;
 
 //library for qr code
 use Endroid\QrCode\QrCode;
@@ -30,6 +31,7 @@ class AdminController extends BaseController
     private $inv;
     private $history;
     private $address;
+    private $warning;
 
     public function __construct()
     {
@@ -40,10 +42,16 @@ class AdminController extends BaseController
         $this->redeem = new RedeemHistoryModel();
         $this->history = new HistoryModel();
         $this->address = new AddressModel();
+        $this->warning = new WarningModel();
+        //time zone in ph
+        date_default_timezone_set('Asia/Manila');
     }
     public function home()
     {
-        return view('admin/home');
+
+        // $data['alert'] = $this->warning->where('toDate <', date('Y-m-d H:i:s'))->findAll();
+        $data['alert'] = $this->warning->limit(1)->findAll();
+        return view('admin/home', $data);
     }
 
     public function ecommerce()
@@ -119,7 +127,19 @@ class AdminController extends BaseController
                 'errors' => $this->validator->getErrors()
             ]);
         }
+        $firstName = $this->request->getVar('firstName');
+        $lastName = $this->request->getVar('lastName');
+        $existing = $this->client
+        ->where('firstName', $firstName)
+        ->where('lastName', $lastName)
+        ->first();
     
+        if ($existing) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Client Exist'
+            ]);
+        }
         // Data to save
         $data = [
             'idNumber'  => $newId,
@@ -136,8 +156,9 @@ class AdminController extends BaseController
             'password'  => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             'auth'      => $verificationToken,  
             'status'    => 'Inactive',
-            'img'       => 'profile-logo.png'
+            'img'       => 'profile.png'
         ];
+        
     
         $this->client->save($data);
     
@@ -657,5 +678,61 @@ public function search()
         // var_dump($data);
     }
 
+    //this is for Alert and delete it when the date has come
+
+    public function warningMessage()
+    {
+        $data = ['message' => $this->request->getPost('alertMessage'),
+                 'fromDate' => $this->request->getPost('fromdate'),
+                 'status' => 1];
+        
+        $this->warning->insert($data);
+
+        return redirect()->back();
+    }
+
+    //delete when it is finish
+
+    public function deleteFinishMaintenance()
+    {
+       return $this->waning->where('toDate <', date('Y-m-d H:i:s'))->delete();
+    }
+
+        public function deleteExpired()
+    {
+        $key = $this->request->getGet('key');
+        if ($key !== 'mysecret123') {
+            return "Unauthorized.";
+        }
+
+        $warning = new WarningModel();
+        $warning->where('toDate <', date('Y-m-d H:i:s'))->delete();
+        return "Expired Alert deleted.";
+    }
+
+
+    public function autoDeleteExpired()
+    {
+        $warning = new WarningModel();
+
+        // Delete all records where `toDate` is less than the current date/time
+        $deleted = $warning->where('toDate <', date('Y-m-d H:i:s'))->delete();
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Expired warnings deleted.',
+            'deleted_count' => $deleted
+        ]);
+    }
+//for updating the status of alert
+    public function updateStatus($id)
+    {
+
+        // $data = ['status' => $this->request->getPost('status')];
+        $this->warning->delete($id);
+
+        return redirect()->back()->with('msg', 'Maintenance Updated');
+
+    }
 }
 

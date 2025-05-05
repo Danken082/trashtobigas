@@ -113,7 +113,19 @@ $routes->get('register', 'AuthController::viewregister', ['filter' => 'authFilte
 $routes->post('updateUser', 'AuthController::updateUser',['filter'=> 'authFilter']);
 
 
+
+//for alert
+$routes->post('updatestatus/(:any)', 'AdminController::updateStatus/$1' , ['filter' => 'authFilter']);
+$routes->post('/pushwarning', 'AdminController::warningMessage', ['filter' => 'authFilter']);
+
+
 }
+
+
+
+
+$routes->get('auto-delete-expired', 'AdminController::autoDeleteExpired');
+
 $routes->get('/adminlogin', 'AuthController::login', ['filter' => 'guestFilter']);
  
 

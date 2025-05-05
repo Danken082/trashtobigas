@@ -76,6 +76,16 @@
   position: relative;
 }
 
+.modal-box2 {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
 .close-btn {
   position: absolute;
   top: 12px;
@@ -162,11 +172,18 @@
 
         
         <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55" onclick="openImageModal()">
+
+          <?php if(session()->get('img') == null || session()->get('img') == "profile.png"):?>
             <!-- <i class="fa fa-sign-out" aria-hidden="true"></i> -->
-            <img src="<?= base_url('images/admin/') . session()->get('img')?>" style="width:100px;" alt="profile img">
+            <img src="<?= base_url('images/admin/') . "profile.png"?>" style="width:100px;" alt="profile img">
+            <?php else:?>
+              <img src="<?= base_url('images/admin/') . session()->get('img')?>" style="width:100px;" alt="profile img">
+            <?php endif;?>
+         
                 <p class="text-2xl font-semibold">Profile view</p>
             </div>
 
+            
             <a href="viewInventory"> 
                 <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
                     <i class="fas fa-store text-7xl text-orange-500 mb-6"></i>
@@ -194,6 +211,16 @@
                 <p class="text-2xl font-semibold">Users</p>
             </div>
             </a>
+            
+            <?php if(empty($alert)):?>
+            <a href="#"  onclick="showWarningModal()">
+            <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
+                <i class="fas fa-exclamation-triangle text-7xl text-red-500 mb-6 items-center"></i>
+                <p class="text-2xl font-semibold">Warning to users</p>
+            </div>
+            </a>
+            
+            <?php endif;?>
             <?php endif;?>
 
             
@@ -217,7 +244,21 @@
                 <button class="text-2xl font-semibold" >Read by QR</button>
             </div>
             </a>
-   
+            <?php if(!empty($alert)):?>
+              <?php foreach($alert as $item):?>
+            
+                <a href="#"  onclick="showViewWarningModal()">
+                <div class="bg-red-100 p-6 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
+    <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-4"></i>
+  <p class="text-2xl font-semibold text-red-800"><small>Click to view Alerts</small></p>
+  <p class="text-1xl font-semibold text-red-800"><small>When this is not visible maintenance is done</small></p>
+ 
+</div>
+
+            </a>
+
+              <?php endforeach;?>
+            <?php endif;?>   
             <a href="<?= base_url('')?>/logout">
             <div class="bg-white p-20 rounded-sm shadow-xl flex flex-col items-center w-55 h-55">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -231,15 +272,18 @@
                 <p class="text-2xl font-semibold">Time Clock</p>
             </div> -->
 
-<!-- modal previewing image to eid-->
+          <!-- modal previewing image to eid-->
             <div id="imageModal" class="modal-overlay">
   <div class="modal-box">
     <span class="close-btn" onclick="closeImageModal()">&times;</span>
     <h4>Profile Image</h4>
 
     <form id="imageForm" action="<?= base_url('changeProfileAdmin') ?>" method="post" enctype="multipart/form-data">
-      <img id="previewImg" src="<?= base_url('/images/admin/') . session()->get('img') ?>" alt="Preview" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 10px;">
-
+    <?php if(session()->get('img') == null || session()->get('img') == "profile.png"):?>
+      <img id="previewImg" src="<?= base_url('/images/admin/') . "profile.png"?>" alt="Preview" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 10px;">
+      <?php else:?>
+        <img id="previewImg" src="<?= base_url('/images/admin/') . session()->get('img');?>" alt="Preview" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 10px;">
+      <?php endif;?> 
       <input type="file" name="profile_img" id="profile_img" accept="image/*" style="margin-top: 10px;" onchange="previewSelectedImage(this)">
       <!-- <input type="text" name="username" style="margin-top: 10px;" > -->
 
@@ -261,6 +305,61 @@
     <div id="qr-result"></div>
         </div>
     </div>
+        <div id="alertModal" class="modal-overlay">
+          <div class="modal-box"><span class="close-btn" onclick="closeWarningModal()">&times;</span>
+          <form id="alertForm" action="<?= base_url('pushwarning') ?>" method="post" enctype="multipart/form-data">
+          <div class="bg-white flex flex-col items-center w-55 h-55">
+                <i class="fas fa-exclamation-triangle text-7xl text-red-500 mb-6 items-center"></i>
+                <!-- <input type="textarea" name="alertMessage" id="alert"> -->
+                <textarea name="alertMessage" id="alert" cols="30" required rows="10" class="w-full border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+<br>
+
+        <label for="fromdate">Start Date:</label>
+                <input type="datetime-local" name="fromdate" required id="date" class="w-full border border-gray-400 rounded-md p-2" min="<?= date('Y-m-d H:i:s') ?>">
+        <!-- <label for="todate">Expected Date End Maintenance:</label>
+                <input type="datetime-local" name="todate" id="date" required class="w-full border border-gray-400 rounded-md p-2"> -->
+            </div>
+         
+        
+          <div style="margin-top: 15px; display: flex; justify-content: flex-end; gap: 10px;">
+        <button type="button" onclick="closeWarningModal()" style="padding: 8px 12px;">Cancel</button>
+        <button type="submit" style="padding: 8px 12px; background-color: #2d6a4f; color: #fff; border: none; border-radius: 5px;">Save</button>
+      </div>  
+      </form>  
+    </div>
+        </div>
+
+        <div id="viewModal" class="modal-overlay">
+          <div class="modal-box2"><span class="close-btn" onclick="closeViewModal()">&times;</span>
+        <?php foreach($alert as $item):?>
+ <p class="text-2xl font-semibold text-red-800"><small>Start Date: </small><?= date('F j, Y g:i A', strtotime($item['fromDate'])) ?></p>
+  <p class="text-2xl font-semibold text-red-800"><small>Message: </small><?= $item['message']?></p>
+
+
+        <?php if(session()->get('role') == 'Admin'):?>
+          
+          <form action="<?= base_url('updatestatus/' . $item['id'])?>" method="post">
+        <select name="status" id="status" required class="w-full border border-gray-400 rounded-md p-2">
+
+
+
+        <option selected disabled value="<?= $item['status'] ?>">
+    <?= $item['status'] === '1' ? 'Undergoing' : ($item['status'] === '0' ? 'Done' : $item['status']) ?>
+  </option>
+
+          <!-- <option value="0">Done</option> -->
+          <!-- <option value=""></option> -->
+        </select>
+        <div style="margin-top: 15px; display: flex; justify-content: flex-end; gap: 10px;">
+         <button type="submit" style="padding: 8px 12px; background-color: #2d6a4f; color: #fff; border: none; border-radius: 10px; font-size:25px;">Done Maitenance</button>
+      </div>
+      
+      </form>
+
+        <?php endif;?>
+        <?php endforeach;?>
+        </div>
+        </div>
     
     <script>
 $(document).ready(function () {
@@ -359,14 +458,37 @@ function onScanSuccess(decodedText) {
 
 
 //image previewing
-function openImageModal() {
-    document.getElementById('imageModal').classList.add('active');
-    }
+  function openImageModal() {
+      document.getElementById('imageModal').classList.add('active');
+      }
 
-function closeImageModal() {
-  document.getElementById('imageModal').classList.remove('active');
-  document.getElementById('profile_img').value = '';
-}
+  function closeImageModal() {
+    document.getElementById('imageModal').classList.remove('active');
+    document.getElementById('profile_img').value = '';
+  }
+
+  
+  //warningModal
+  function showWarningModal()
+  {
+    document.getElementById('alertModal').classList.add('active');
+  }
+
+  function closeWarningModal()
+  {
+    document.getElementById('alertModal').classList.remove('active');
+  }
+
+  function showViewWarningModal()
+  {
+    document.getElementById('viewModal').classList.add('active');
+  }
+
+  function closeViewModal()
+  {
+    document.getElementById('viewModal').classList.remove('active');
+  }
+
 
 
   function previewSelectedImage(input) {

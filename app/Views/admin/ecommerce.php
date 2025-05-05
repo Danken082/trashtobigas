@@ -115,6 +115,8 @@
         <a href="/home">
         <img src="<?= base_url('/images/systemlogo.png') ?>" alt="Logo" class="w-16 h-16 mr-4 rounded">
         </a>
+
+
         <h1 class="text-3xl font-bold text-black">Redeem Your Goods</h1>
     </div>
 </div>
@@ -128,8 +130,9 @@
                 <div class="p-4 bg-white shadow-md rounded-lg text-center">
                     <img src="<?= base_url('/images/inventory/redeemed/' . esc($product['img'])) ?>" alt="<?= strtoupper(esc($product['item'])) ?>" class="w-full h-40 object-cover mb-4 rounded cursor-pointer" onclick="openModal('<?= base_url('/images/inventory/redeemed/' . esc($product['img'])) ?>')">
                     <h2 class="text-xl font-semibold"> <?= strtoupper(esc($product['item'])) ?> </h2>
-                    <p class="text-gray-600"> <?= esc($product['point_price']) ?> Points</p>
-                    <p class="text-gray-600" id="newQuantity">Stocks: <?= esc($product['quantity']) ?></p>
+                    <p class="text-gray-600 font-semibold"> <?= esc($product['point_price']) ?> Points</p>
+                    <p class="text-gray-600 font-bold" id="newQuantity">Stocks: <?= esc($product['quantity']) ?></p>
+                    
                     <div class="flex items-center justify-center my-4">
 
                 <?php if(esc($product['quantity']) != 0):?>
@@ -146,7 +149,7 @@
         </button>
 
         <?php else:?>
-            <p class="text-gray-600">No available Stocks</p>
+            <p class="text-gray-600" style="color:red;">No available Stocks</p>
 
             <?php endif;?>
     </div>
@@ -176,12 +179,15 @@
         <img id="modalImage" src="" alt="Preview">
     </div>
 
+    
     <!-- Receipt Section (Hidden until printing) -->
    <!-- Receipt Section (Hidden until printing) -->
    <div id="receipt" class="hidden">
     <div style="font-family: Arial, sans-serif; width: 200px; margin: 0 auto; text-align: center;">
         <div style="display: flex; justify-content: center;">
             <img src="<?= base_url('/images/logo/city_logo.jfif') ?>" alt="City Logo"
+                style="width: 60px; height: 60px; margin-bottom: 5px;">
+                <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="City Logo"
                 style="width: 60px; height: 60px; margin-bottom: 5px;">
         </div>
         <h2 style="font-size: 10px; border-bottom: 1px dashed #000;">
@@ -210,6 +216,27 @@
         <p style="font-size: 10px;">*** System-generated receipt ***</p>
     </div>
 </div>
+
+
+<div id="customAlert" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 text-center max-w-xs">
+        <p id="customAlertMessage" class="text-lg text-gray-800 mb-6" style="font-size:25px;">Message here</p>
+        <button onclick="closeNoPointsAlert()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">OK</button>
+    </div>
+</div>
+
+<div id="customConfirm" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 text-center max-w-sm">
+        <p class="text-lg text-gray-800 mb-6" id="customConfirmMessage" style="font-size:22px;">
+            Are you sure you want to redeem these products?
+        </p>
+        <div class="flex justify-center gap-4">
+            <button onclick="confirmCheckout()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Yes</button>
+            <button onclick="cancelCheckout()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">No</button>
+        </div>
+    </div>
+</div>
+ 
 
     <script>
         let points = <?= json_encode($totalPoints) ?>;
@@ -285,60 +312,84 @@
             totalPriceDiv.innerText = `Total Price: ${totalPrice} Points`;
         }
 
-        function checkout() {
-            if (cart.length === 0) {
-                alert('Your cart is empty!');
-                return;
+        function showNoPointsAlert(message) {
+                document.getElementById('customAlertMessage').innerText = message;
+                document.getElementById('customAlert').classList.remove('hidden');
             }
 
-            const totalPrice = cart.reduce((sum, item) => sum + item.totalCost, 0);
-
-            if (points >= totalPrice) {
-                // console.log(productId);
-                fetch('/redeem', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ cart })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        points = data.new_points;
-                        newQty = data.quantity;
-                        document.getElementById('totalPoints').innerText = points;
-                        document.getElementById('newQuantity').innerText = newQty;
-                        const receiptItems = document.getElementById('receipt-items');
-                        const receiptTotal = document.getElementById('receipt-total');
-                        const cuttentPoints = document.getElementById('receipt-total-points');
-
-                        receiptItems.innerHTML = '';
-
-                        cart.forEach(item => {
-                            receiptItems.innerHTML += `
-                                <tr>
-                                    <td>${item.productName}</td>
-                                    <td>${item.quantity}</td>
-                                    <td>${item.totalCost}</td>
-                                </tr>`;
-                        });
-
-                        receiptTotal.innerText = totalPrice;
-                        document.getElementById('receipt-total-points').innerText = points;
-                        updateCartDisplay();
-                        document.getElementById('receipt').classList.remove('hidden');
-                        window.print();
-                        document.getElementById('receipt').classList.add('hidden');
-                        alert('Redemption successful!');
-                        cart = [];
-                    } else {
-                        alert('Redemption failed: ' + data.message);
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-            } else {
-                alert('Not enough points!');
+            function closeNoPointsAlert() {
+                document.getElementById('customAlert').classList.add('hidden');
             }
+
+
+            function checkout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+
+    const totalPrice = cart.reduce((sum, item) => sum + item.totalCost, 0);
+
+    if (points >= totalPrice) {
+        // Show custom confirmation modal
+        document.getElementById('customConfirm').classList.remove('hidden');
+    } else {
+        showNoPointsAlert('Not enough points!');
+    }
+}
+
+
+function confirmCheckout() {
+    document.getElementById('customConfirm').classList.add('hidden');
+
+    const totalPrice = cart.reduce((sum, item) => sum + item.totalCost, 0);
+
+    fetch('/redeem', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cart })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            points = data.new_points;
+            newQty = data.quantity;
+            document.getElementById('totalPoints').innerText = points;
+            document.getElementById('newQuantity').innerText = newQty;
+
+            const receiptItems = document.getElementById('receipt-items');
+            const receiptTotal = document.getElementById('receipt-total');
+            receiptItems.innerHTML = '';
+
+            cart.forEach(item => {
+                receiptItems.innerHTML += `
+                    <tr>
+                        <td>${item.productName}</td>
+                        <td>${item.quantity}</td>
+                        <td>${item.totalCost}</td>
+                    </tr>`;
+            });
+
+            receiptTotal.innerText = totalPrice;
+            document.getElementById('receipt-total-points').innerText = points;
+            updateCartDisplay();
+            document.getElementById('receipt').classList.remove('hidden');
+            window.print();
+            document.getElementById('receipt').classList.add('hidden');
+            alert('Redemption successful!');
+            window.location.href = '/home';
+            cart = [];
+        } else {
+            alert('Redemption failed: ' + data.message);
         }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function cancelCheckout() {
+    document.getElementById('customConfirm').classList.add('hidden');
+}
+
     </script>
 </body>
 </html>
