@@ -315,7 +315,7 @@
 <br>
 
         <label for="fromdate">Start Date:</label>
-                <input type="datetime-local" name="fromdate" required id="date" class="w-full border border-gray-400 rounded-md p-2" min="<?= date('Y-m-d H:i:s') ?>">
+                <input type="datetime-local" name="fromdate" required id="date" class="w-full border border-gray-400 rounded-md p-2">
         <!-- <label for="todate">Expected Date End Maintenance:</label>
                 <input type="datetime-local" name="todate" id="date" required class="w-full border border-gray-400 rounded-md p-2"> -->
             </div>
