@@ -117,6 +117,8 @@ class TrashController extends ResourceController {
                     break;
                 }
             }
+
+            //updatingPoints
             $updatePoints = $points + $applicant['totalPoints'];
             $client->update($id, ['totalPoints' => $updatePoints]);
 
@@ -146,6 +148,9 @@ class TrashController extends ResourceController {
                 }
             }
 
+            //updatingPoints
+            $updatePoints = $points + $applicant['totalPoints'];
+            $client->update($id, ['totalPoints' => $updatePoints]);
 
             //saving to historyTable
             $history->save(['client_id' => $applicant['id'],
@@ -154,10 +159,6 @@ class TrashController extends ResourceController {
             'weight'=> $weight,
             'categ' => $categ,
             'totalCurrentPoints' => $updatePoints]);
-
-        
-            $updatePoints = $points + $applicant['totalPoints'];
-            $client->update($id, ['totalPoints' => $updatePoints]);
 
             return $this->response->setJSON([
                 'status' => 'success',
