@@ -184,12 +184,13 @@
    <!-- Receipt Section (Hidden until printing) -->
    <div id="receipt" class="hidden">
     <div style="font-family: Arial, sans-serif; width: 200px; margin: 0 auto; text-align: center;">
-        <div style="display: flex; justify-content: center;">
-            <img src="<?= base_url('/images/logo/city_logo.jfif') ?>" alt="City Logo"
-                style="width: 60px; height: 60px; margin-bottom: 5px;">
-                <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="City Logo"
-                style="width: 60px; height: 60px; margin-bottom: 5px;">
-        </div>
+    <div style="display: flex; justify-content: center;">
+    <img src="<?= base_url('/images/logo/city_logo.jfif') ?>" alt="City Logo"
+        style="width: 60px; height: 60px; margin-bottom: 5px;">
+    <img src="<?= base_url('/images/admin/') . session()->get('img')?>" alt="City Logo"
+        style="width: 60px; height: 60px; margin-bottom: 5px;">
+</div>
+
         <h2 style="font-size: 10px; border-bottom: 1px dashed #000;">
             ECO REDEMPTION
         </h2>
@@ -210,7 +211,7 @@
 
         <hr style="border: 0; border-bottom: 1px dashed #000;">
         <p style="font-size: 12px;"><strong>Total Redeem Points:</strong> <span id="receipt-total">0</span></p>
-        <p style="font-size: 12px;"><strong>Current Points:</strong> 0</p> 
+        <p style="font-size: 12px;"><strong>Current Points:</strong><?= number_format(esc($totalPoints), 2) ?></p> 
         <p style="font-size: 12px;"><strong>Total New Points:</strong> <span id="receipt-total-points">0</span></p>
         <p style="font-size: 12px;">Thank you for redeeming with us!</p>
         <p style="font-size: 10px;">*** System-generated receipt ***</p>
