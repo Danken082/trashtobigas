@@ -377,7 +377,7 @@ function confirmCheckout() {
             window.print();
             document.getElementById('receipt').classList.add('hidden');
             alert('Redemption successful!');
-            window.location.href = '/home';
+            // window.location.href = '/home';
             cart = [];
         } else {
             alert('Redemption failed: ' + data.message);
