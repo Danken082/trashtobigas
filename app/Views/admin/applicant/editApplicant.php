@@ -150,10 +150,10 @@ thead th, tbody td {
 
   #clientID, #clientID * {
     visibility: visible;
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
     width: 100%;
   }
