@@ -138,6 +138,12 @@ thead th, tbody td {
 
 
 @media print {
+
+  .id-header img {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+  }
   html, body {
     margin: 0;
     padding: 0;
