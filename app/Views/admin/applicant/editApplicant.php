@@ -397,10 +397,11 @@ thead th, tbody td {
 
       <!-- ID Card -->
       <div class="id-card text-center p-3" id="printID">
-        <div class="id-header mb-2 d-flex justify-content-center align-items-center">
-          <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo" style="width: 60px; height: 60px; margin-bottom: 5px;">
-          <img src="<?= base_url('images/logo/city_logo.jfif') ?>" alt="Logo" style="width: 60px; height: 60px; margin-bottom: 5px;">
-        </div>
+      <div class="id-header mb-2 d-flex justify-content-center align-items-center">
+      <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo" style="width: 25px; height: 25px;">
+          <img src="<?= base_url('images/logo/city_logo.jfif') ?>" alt="Logo" style="width: 25px; height: 25px;">
+
+</div>
         <h5 class="mt-2 mb-0">Trash to Rice Exchange</h5>
         <small>Official Client ID</small>
 
