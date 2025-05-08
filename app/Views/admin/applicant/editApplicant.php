@@ -140,9 +140,9 @@ thead th, tbody td {
 @media print {
 
   .id-header img {
-    width: 25px;
-    height: 25px;
-    margin: 0 5px;
+    width: 25px !important;
+    height: 25px !important;
+    margin: 0 5px !important;
   }
   html, body {
     margin: 0;
@@ -404,8 +404,8 @@ thead th, tbody td {
       <!-- ID Card -->
       <div class="id-card text-center p-3" id="printID">
       <div class="id-header mb-2 d-flex justify-content-center align-items-center">
-      <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo" style="width: 25px; height: 25px;">
-          <img src="<?= base_url('images/logo/city_logo.jfif') ?>" alt="Logo" style="width: 25px; height: 25px;">
+      <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo" style="width: 50px; height: 50;">
+          <img src="<?= base_url('images/logo/city_logo.jfif') ?>" alt="Logo" style="width: 50; height: 50;">
 
 </div>
         <h5 class="mt-2 mb-0">Trash to Rice Exchange</h5>
