@@ -137,6 +137,34 @@ thead th, tbody td {
 }
 
 
+@media print {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #clientID, #clientID * {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  
+  .printButton {
+    display: none !important;
+  }
+  
+}
+
 </style>
 </head>
 <body>
@@ -366,30 +394,32 @@ thead th, tbody td {
 <div class="modal fade" id="clientID" tabindex="-1" aria-labelledby="clientIDLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content p-3">
-      <div class="id-card text-center p-3">
-        <div class="id-header mb-2">
+
+      <!-- ID Card -->
+      <div class="id-card text-center p-3" id="printID">
+        <div class="id-header mb-2 d-flex justify-content-center align-items-center">
           <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo" style="height: 40px;">
           <img src="<?= base_url('images/logo/city_logo.jfif') ?>" alt="Logo" style="height: 40px;">
-          <h5 class="mt-2 mb-0">Trash to Rice Exchange</h5>
-          <small>Official Client ID</small>
         </div>
-         <div class="id-details">
+        <h5 class="mt-2 mb-0">Trash to Rice Exchange</h5>
+        <small>Official Client ID</small>
+
+        <div class="id-details mt-2">
           <p><strong>ID Number:</strong> <span id="cardIDNumber"></span></p>
           <p><strong>Name:</strong> <span id="cardFullName"></span></p>
           <p><strong>Address:</strong> <span id="cardAddress"></span></p>
           <p><strong>Contact:</strong> <span id="cardContact"></span></p>
         </div>
-
-
       </div>
+
+      <!-- Print Button (Hidden in print) -->
       <div class="text-center mt-3">
-  <button class="btn btn-outline-primary" onclick="printClientID()">Print</button>
-</div>
+        <button class="btn btn-outline-primary printButton" onclick="window.print()">Print</button>
+      </div>
 
     </div>
   </div>
 </div>
-
 
 
     <!-- Bootstrap JS Bundle -->
@@ -718,47 +748,17 @@ $(document).ready(function() {
     });
   });
 
-</script>
 
-
-
-<script>
-function printClientID() {
-  const content = document.querySelector('#clientID .id-card').outerHTML;
-
-  const win = window.open('', '', 'height=700,width=500');
-  win.document.write(`
-    <html>
-      <head>
-        <title>Client ID</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-          .id-card {
-            border: 2px solid #0d6efd;
-            border-radius: 15px;
-            max-width: 320px;
-            margin: auto;
-            font-family: 'Poppins', sans-serif;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            padding: 20px;
-            text-align: center;
-          }
-          .id-card img {
-            max-height: 60px;
-            margin: 5px;
-          }
-          .id-details p {
-            margin: 4px 0;
-          }
-        </style>
-      </head>
-      <body onload="window.print(); setTimeout(() => window.close(), 500);">
-        ${content}
-      </body>
-    </html>
-  `);
-  win.document.close();
+  function printIDCard() {
+  // Make sure the print section is visible before printing
+  document.getElementById("clientPrintID").classList.remove("hidden");
+  window.print();
+  // Optional: hide it again after printing
+  setTimeout(() => {
+    document.getElementById("clientPrintID").classList.add("hidden");
+  }, 1000);
 }
+
 </script>
 
 
