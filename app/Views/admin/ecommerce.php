@@ -291,72 +291,56 @@
     updateCartDisplay();
 }
 
-function updateCartDisplay() {
-    const cartDiv = document.getElementById('cart');
-    const totalPriceDiv = document.getElementById('totalPrice');
-    const checkoutButton = document.getElementById('checkoutButton');
-    cartDiv.innerHTML = '';
 
-    let totalPrice = 0;
+        function updateCartDisplay() {
+            const cartDiv = document.getElementById('cart');
+            const totalPriceDiv = document.getElementById('totalPrice');
+            const checkoutButton = document.getElementById('checkoutButton');
+            cartDiv.innerHTML = '';
 
+            let totalPrice = 0;
+            cart.forEach(item => {
+                cartDiv.innerHTML += `<p>${item.productName} x${item.quantity} - ${item.totalCost} Points</p>`;
+                totalPrice += item.totalCost;
+            });
+
+            if (cart.length === 0) {
+                cartDiv.innerHTML = 'Your cart is empty.';
+                checkoutButton.disabled = true;
+                checkoutButton.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                checkoutButton.disabled = false;
+                checkoutButton.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+
+            totalPriceDiv.innerText = `Total Price: ${totalPrice} Points`;
+        }
+
+        function showNoPointsAlert(message) {
+                document.getElementById('customAlertMessage').innerText = message;
+                document.getElementById('customAlert').classList.remove('hidden');
+            }
+
+            function closeNoPointsAlert() {
+                document.getElementById('customAlert').classList.add('hidden');
+            }
+
+
+            function checkout() {
     if (cart.length === 0) {
-        cartDiv.innerHTML = 'Your cart is empty.';
-        checkoutButton.disabled = true;
-        checkoutButton.classList.add('opacity-50', 'cursor-not-allowed');
-        totalPriceDiv.innerText = 'Total Price: 0 Points';
+        alert('Your cart is empty!');
         return;
     }
 
-    cart.forEach((item, index) => {
-    totalPrice += item.totalCost;
+    const totalPrice = cart.reduce((sum, item) => sum + item.totalCost, 0);
 
-    cartDiv.innerHTML += `
-        <div class="mb-4 border-b pb-2">
-            <p><strong>${item.productName}</strong></p>
-            <div class="flex justify-center items-center gap-2 my-2">
-                <button onclick="adjustCartQuantity(${index}, -1)" 
-                        class="bg-red-500 text-white px-2 rounded 
-                               ${item.quantity <= 1 ? 'opacity-50 cursor-not-allowed' : ''}"
-                        ${item.quantity <= 1 ? 'disabled' : ''}>
-                    -
-                </button>
-                <span>${item.quantity}</span>
-                <button onclick="adjustCartQuantity(${index}, 1)" 
-                        class="bg-green-500 text-white px-2 rounded">
-                    +
-                </button>
-            </div>
-            <p>${item.totalCost} Points</p>
-            <button onclick="removeFromCart(${index})" 
-                    class="mt-2 text-sm text-red-600 hover:underline">Remove</button>
-        </div>
-    `;
-});
-
-
-    checkoutButton.disabled = false;
-    checkoutButton.classList.remove('opacity-50', 'cursor-not-allowed');
-    totalPriceDiv.innerText = `Total Price: ${totalPrice} Points`;
-}
-
-function adjustCartQuantity(index, change) {
-    if (!cart[index]) return;
-
-    cart[index].quantity += change;
-
-    if (cart[index].quantity < 1) {
-        cart[index].quantity = 1;
+    if (points >= totalPrice) {
+        // Show custom confirmation modal
+        document.getElementById('customConfirm').classList.remove('hidden');
+    } else {
+        showNoPointsAlert('Not enough points!');
     }
-
-    cart[index].totalCost = cart[index].quantity * (cart[index].totalCost / (cart[index].quantity - change));
-    updateCartDisplay();
 }
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCartDisplay();
-}
-
 
 
 function confirmCheckout() {
