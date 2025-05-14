@@ -88,7 +88,7 @@ class AdminController extends BaseController
 
         if(session()->get('role') === 'Staff')
         {
-            $client = $this->client->where('user_ID', $userID)->findAll();
+            $client = $this->client->findAll();
         }
 
         elseif(session()->get('role') === 'Admin')

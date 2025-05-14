@@ -388,6 +388,7 @@ class AuthController extends Controller
             'contactNo' => $user['contactNo'],
             'role' => $user['role'],
             'status' => $user['status'],
+            'address' => $user['address'],
             'img'   => $user['img'],
             'isLoggedIn' => true
         ];
