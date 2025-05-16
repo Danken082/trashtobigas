@@ -343,7 +343,7 @@ function removeCartItem(index) {
                 showNoPointsAlert('Not enough points!');
             }
 
-            cart.length = 0;
+            // cart.length = 0;
             updateCartDisplay();
         }
 
