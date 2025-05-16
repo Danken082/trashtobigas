@@ -255,7 +255,7 @@ table td {
                       <label for="Category">Category</label>
                       <select name="categ" class="form-control" id="categ">
                         <option disabled selected>--Select Category--</option>
-                        <option value="kg/s">Kilo Grams</option>
+                        <option value="kg/s">Kilo  Grams</option>
                         <option value="gram/s">Gram/s</option>
                       </select>
                     </div>

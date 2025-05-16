@@ -14,6 +14,7 @@ use App\Models\RedeemHistoryModel;
 use App\Models\HistoryModel;
 use App\Models\AddressModel;
 use App\Models\WarningModel;
+use App\Models\UserModel;
 
 //library for qr code
 use Endroid\QrCode\QrCode;
@@ -32,6 +33,7 @@ class AdminController extends BaseController
     private $history;
     private $address;
     private $warning;
+    private $user;
 
     public function __construct()
     {
@@ -43,6 +45,7 @@ class AdminController extends BaseController
         $this->history = new HistoryModel();
         $this->address = new AddressModel();
         $this->warning = new WarningModel();
+        $this->user = new UserModel();
         //time zone in ph
         date_default_timezone_set('Asia/Manila');
     }
@@ -734,5 +737,53 @@ public function search()
         return redirect()->back()->with('msg', 'Maintenance Updated');
 
     }
+
+    public function customizeReceipt()
+    {
+        $userID = session()->get('id');
+    
+        // Validate input
+        $receiptCus = trim($this->request->getPost('receiptCus'));
+    
+        if (strlen($receiptCus) < 3) {
+            return redirect()->back()->with('error', 'Message must be at least 3 characters long.');
+        }
+    
+        // Update user data
+        $data = ['receiptCus' => $receiptCus];
+    
+        $customReceipt = $this->user->where('id', $userID)->set($data)->update();
+    
+        if ($customReceipt) {
+            return redirect()->back()->with('msg', 'Receipt has been updated.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to update receipt.');
+        }
+    }
+
+    //enable and disable client
+
+
+    public function enableClient($id)
+    {
+        $data = ['status' => 'Active'];
+        session()->set($data);
+        $this->client->where('id', $id)->set($data)->update();
+
+        return redirect()->back()->with('msg', 'Client Enabled Successfull');
+    }
+
+    public function disableClient($id)
+    {
+        $data = ['status' => 'Inactive'];
+        session()->set($data);
+        $this->client->where('id', $id)->set($data)->update();
+
+        return redirect()->back()->with('msgdis', 'Client Disable Successfull');
+    }
+
+
+
+
 }
 

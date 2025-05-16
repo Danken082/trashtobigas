@@ -190,8 +190,7 @@ class ClientController extends BaseController
     public function uploadProfileImage()
 {
     $img = $this->request->getFile('profile_img');
-    $user = $this->request->getFile('samplefile');
-
+   
     if ($img && $img->isValid() && !$img->hasMoved()) {
         $newName = $img->getRandomName();
         $imageService = \Config\Services::image();

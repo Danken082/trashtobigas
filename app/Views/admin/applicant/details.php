@@ -13,19 +13,20 @@
   <link rel="stylesheet" href="/css/main.css">
 
   <style>
- .convertion {
+.convertion {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    color: #007bff; /* Button text color */
-    background-color: transparent;
-    border: 2px solid #007bff; /* Border color */
+    color: #fff; /* White text for contrast */
+    background-color: #007bff; /* Bootstrap blue */
+    border: 2px solid #007bff; /* Match border with background */
     border-radius: 8px;
     text-align: center;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
+
 
 .convertion:hover {
     background-color: #007bff;

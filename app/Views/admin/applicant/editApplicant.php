@@ -197,6 +197,19 @@ thead th, tbody td {
   </div>
   <div class="container mt-5">
     <h2 class="text-center mb-4">Client List</h2>
+
+    <?php if (session()->getFlashdata('msg')): ?>
+    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+        <?= session()->getFlashdata('msg') ?>
+    </div>
+<?php endif; ?>
+
+<?php if (session()->getFlashdata('msgdis')): ?>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+        <?= session()->getFlashdata('msgdis') ?>
+    </div>
+<?php endif; ?>
+
     
     <!-- Search bar to search by address -->
     <div class="mb-3">
@@ -233,6 +246,7 @@ thead th, tbody td {
                     <th scope="col">Contact Number</th>
                     <th scope="col">Email</th>
                     <th scope="col">Action</th>
+                    <th scope="col">Update Status</th>
                 </tr>
             </thead>
             <tbody id="adminTableBody">
@@ -516,12 +530,24 @@ $("#ContactNo").on("input", function () {
                                 data-points="${admin.totalPoints}"
                                 data-email="${admin.email}"
                                 data-birth="${admin.birthdate}">
-                                Edit Information
+                                Information
                             </button>
                             <a class="btn btn-danger btn-lg" style="margin-top:5px;"
                             href="<?= base_url('deleteUser/')?>${admin.id}"
                             onclick="return confirm('Are you sure you want to delete this user')">Delete</a>
                         </td>
+
+                        <td> 
+                            <a class="btn btn-primary btn-lg" style="margin-top:5px;"
+                            href="<?= base_url('enableClient/')?>${admin.id}"
+                            onclick="return confirm('Are you sure you want to Enable this user')">Enable</a>\
+                            <a class="btn btn-danger btn-lg" style="margin-top:5px;"
+                            href="<?= base_url('disableClient/')?>${admin.id}"
+                            onclick="return confirm('Are you sure you want to Disable this user')">Disable</a></td>    
+                        </td>
+                            
+
+                            
                     </tr>`;
                 });
 

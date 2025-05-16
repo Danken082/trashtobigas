@@ -119,6 +119,15 @@ $routes->post('updatestatus/(:any)', 'AdminController::updateStatus/$1' , ['filt
 $routes->post('/pushwarning', 'AdminController::warningMessage', ['filter' => 'authFilter']);
 
 
+$routes->post('/customReceipt', 'AdminController::customizeReceipt');
+
+
+//disable and enable
+
+$routes->get('/enableClient/(:any)', 'AdminController::enableClient/$1');
+$routes->get('/disableClient/(:any)', 'AdminController::disableClient/$1');
+
+
 }
 
 

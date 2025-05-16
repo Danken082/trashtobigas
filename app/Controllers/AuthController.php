@@ -390,6 +390,7 @@ class AuthController extends Controller
             'status' => $user['status'],
             'address' => $user['address'],
             'img'   => $user['img'],
+            'receiptCus' => $user['receiptCus'],
             'isLoggedIn' => true
         ];
         $session->set($sessionData);
