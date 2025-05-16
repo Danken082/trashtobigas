@@ -162,6 +162,11 @@ class ClientController extends BaseController
         $email = $this->request->getGet('email');
         $userEmail = $this->client->where('email', $email)->first();
         // var_dump($email);
+        
+        if(!$userEmail)
+        {
+            return redirect()->back()->with('error', 'User Not Found');
+        }        
         $userid = $userEmail['id'];
 
         // var_dump($userid);

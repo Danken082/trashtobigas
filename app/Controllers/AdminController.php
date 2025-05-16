@@ -752,6 +752,9 @@ public function search()
         // Update user data
         $data = ['receiptCus' => $receiptCus];
     
+
+        session()->set($data);
+        
         $customReceipt = $this->user->where('id', $userID)->set($data)->update();
     
         if ($customReceipt) {
