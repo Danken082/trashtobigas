@@ -423,7 +423,7 @@ thead th, tbody td {
 
 </div>
         <h5 class="mt-2 mb-0">Trash to Bigas ID</h5>
-        <small>Client ID</small>
+        
 
         <div class="id-details mt-2">
           <p><strong>ID Number:</strong> <span id="cardIDNumber"></span></p>
