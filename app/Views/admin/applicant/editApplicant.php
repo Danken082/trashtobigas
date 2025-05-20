@@ -46,7 +46,7 @@
 }
 
     .logo img {
-      height: 40px;
+      height: 80px;
     }
 
     .nav-links a {
@@ -138,11 +138,10 @@ thead th, tbody td {
 
 
 @media print {
-
   .id-header img {
-    width: 25px !important;
-    height: 25px !important;
-    margin: 0 5px !important;
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 10px !important;
   }
   html, body {
     margin: 0;
@@ -418,8 +417,8 @@ thead th, tbody td {
       <!-- ID Card -->
       <div class="id-card text-center p-3" id="printID">
       <div class="id-header mb-2 d-flex justify-content-center align-items-center">
-      <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo" style="width: 50px; height: 50px;">
-          <img src="<?= base_url('images/logo/city_logo.jfif') ?>" alt="Logo" style="width: 50px; height: 50px;">
+      <img src="<?= base_url('images/systemlogo.png') ?>" alt="Logo" style="width: 80px; height: 80px;">
+          <img src="<?= base_url('images/logo/city_logo.jfif') ?>" alt="Logo" style="width: 80px; height: 80px;">
 
 </div>
         <h5 class="mt-2 mb-0">Trash to Bigas ID</h5>
