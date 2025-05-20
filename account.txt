@@ -12,4 +12,10 @@ client
 sample@gmail.com
 1234567890
 
-https://trashtobigas.cityofcalapanapps.com/index.php/viewapplicants
+https://trashtobigas.cityofcalapanapps.com/index.php/adminlogin 
+
+// admin and barangay portal
+
+https://trashtobigas.cityofcalapanapps.com/index.php/
+
+//client portal
