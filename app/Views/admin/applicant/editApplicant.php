@@ -422,8 +422,8 @@ thead th, tbody td {
           <img src="<?= base_url('images/logo/city_logo.jfif') ?>" alt="Logo" style="width: 50px; height: 50px;">
 
 </div>
-        <h5 class="mt-2 mb-0">Trash to Rice Exchange</h5>
-        <small>Official Client ID</small>
+        <h5 class="mt-2 mb-0">Trash to Bigas ID</h5>
+        <small>Client ID</small>
 
         <div class="id-details mt-2">
           <p><strong>ID Number:</strong> <span id="cardIDNumber"></span></p>

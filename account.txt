@@ -1,0 +1,13 @@
+ADmin
+
+admin01
+123456789
+
+user barangay
+Jpvega
+1234567890
+
+client
+
+sample@gmail.com
+1234567890

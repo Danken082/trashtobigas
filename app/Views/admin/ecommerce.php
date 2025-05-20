@@ -366,7 +366,7 @@ function removeCartItem(index) {
                         const receiptTotal = document.getElementById('receipt-total');
                         receiptItems.innerHTML = '';
                         cart.forEach(item => {
-                            receiptItems.innerHTML += `<tr><td>${item.productName}</td><td>${item.quantity}</td><td>${item.totalCost}</td></tr>`;
+                            receiptItems.innerHTML += `<tr><td>${item.productName}</td><td>${item.quantity}</td><td>${item.totalCost}</td><hr style="border: 0; border-bottom: 1px dashed #000;"></tr>`;
                         });
                         receiptTotal.innerText = totalPrice;
                         document.getElementById('receipt-total-points').innerText = points;
